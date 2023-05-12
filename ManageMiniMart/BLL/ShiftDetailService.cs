@@ -38,7 +38,6 @@ namespace ManageMiniMart.BLL
         }
         public List<ShiftDetailView> convertToShiftDetailView(List<Shift_detail> shift_Details)
         {
-            db.SaveChanges();
             List<ShiftDetailView> shiftDetailViews= new List<ShiftDetailView>();
             foreach(var shift in shift_Details)
             {
@@ -87,6 +86,8 @@ namespace ManageMiniMart.BLL
         }
         public List<ShiftDetailView> getListShiftViewByShiftDate(DateTime shift_date)
         {
+            db = null;
+            db = new Manage_MinimartEntities();
             List<ShiftDetailView> list = new List<ShiftDetailView>();
             
             var s=db.Shift_detail.Where(p=> p.shift_date == shift_date.Date).ToList();

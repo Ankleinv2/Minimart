@@ -20,12 +20,10 @@ namespace ManageMiniMart.BLL
             userService = new UserService();
         }
         // Get
-        public List<Person> getAllEmployee()
-        {
-            return db.People.ToList();
-        }
         public List<PersonView> getAllEmployeeView()
         {
+            db = null;
+            db = new Manage_MinimartEntities();
             List<PersonView> list = new List<PersonView>();
 
             foreach (var person in db.People.ToList())

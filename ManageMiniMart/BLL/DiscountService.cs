@@ -68,6 +68,8 @@ namespace ManageMiniMart.BLL
         // Get
         public List<DiscountView> getAllDiscountView()
         {
+            db = null;
+            db = new Manage_MinimartEntities();
             return convertToDiscountView(db.Discounts.ToList());
         }
         public Discount getDiscountById(int id)

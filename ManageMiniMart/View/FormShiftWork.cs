@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Forms;
@@ -35,10 +36,9 @@ namespace ManageMiniMart.View
         // Load
         public void loadShiftView()
         {
+            dgvShift.DataSource = null;
             var s = shiftDetailService.getListShiftViewByShiftDate(dtpShiftDate.Value.Date);
             dgvShift.DataSource = s.ToList();
-            dgvShift.Update();
-            dgvShift.Refresh();
         }
         // btnAdd
         private void btnAdd_Click(object sender, EventArgs e)

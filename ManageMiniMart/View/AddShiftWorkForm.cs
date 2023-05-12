@@ -73,9 +73,6 @@ namespace ManageMiniMart.View
         {
             Shift_detail shift_Detail = shiftDetailService.getShift_detailById(shift);
             List<string> personIds = shiftWorkService.getAllPersonID_By_ShiftDetailID(shift);
-
-
-
             foreach (string personId in personIds)
             {
                 addEmployee(personId);

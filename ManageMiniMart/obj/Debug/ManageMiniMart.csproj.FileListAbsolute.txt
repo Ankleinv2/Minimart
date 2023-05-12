@@ -585,7 +585,6 @@ C:\Users\ACER\Desktop\PBL3\ManageMiniMart\ManageMiniMart\obj\Debug\ManageMiniMar
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ManageMiniMart.exe.config
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ManageMiniMart.exe
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ManageMiniMart.pdb
-C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\CustomControl.dll
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\EntityFramework.dll
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\FontAwesome.Sharp.dll
@@ -593,7 +592,6 @@ C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\Guna.UI2.dll
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\LiveCharts.dll
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\LiveCharts.WinForms.dll
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\LiveCharts.Wpf.dll
-C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\CustomControl.pdb
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\EntityFramework.xml
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\LiveCharts.pdb

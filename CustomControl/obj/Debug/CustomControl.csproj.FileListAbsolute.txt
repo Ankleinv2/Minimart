@@ -16,3 +16,9 @@ C:\Users\ACER\Desktop\PBL3\ManageMiniMart\CustomControl\obj\Debug\CustomControl.
 C:\Users\ACER\Desktop\PBL3\ManageMiniMart\CustomControl\obj\Debug\CustomControl.csproj.CoreCompileInputs.cache
 C:\Users\ACER\Desktop\PBL3\ManageMiniMart\CustomControl\obj\Debug\CustomControl.dll
 C:\Users\ACER\Desktop\PBL3\ManageMiniMart\CustomControl\obj\Debug\CustomControl.pdb
+H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\CustomControl\bin\Debug\CustomControl.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\CustomControl\bin\Debug\CustomControl.pdb
+H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\CustomControl\obj\Debug\CustomControl.csproj.AssemblyReference.cache
+H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\CustomControl\obj\Debug\CustomControl.csproj.CoreCompileInputs.cache
+H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\CustomControl\obj\Debug\CustomControl.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\CustomControl\obj\Debug\CustomControl.pdb

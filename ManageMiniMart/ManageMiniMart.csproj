@@ -401,12 +401,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CustomControl\CustomControl.csproj">
-      <Project>{22A75696-BAD4-40FF-8231-AE1D98802F03}</Project>
-      <Name>CustomControl</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>

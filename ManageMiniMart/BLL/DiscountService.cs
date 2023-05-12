@@ -85,6 +85,11 @@ namespace ManageMiniMart.BLL
         // Delete 1 discount
         public void deleteDiscount(Discount discount)
         {
+            var product_Discount = db.Product_Discount.Where(p => p.discount_id == discount.discount_id).ToList();
+            foreach (var item in product_Discount)
+            {
+                db.Product_Discount.Remove(item);
+            }
             db.Discounts.Remove(discount);
             db.SaveChanges();
         }

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPayment));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRemove = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.showPoint = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.checkUsePoint = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -51,7 +52,6 @@
             this.btnSearchCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvProduct = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.showPoint = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +79,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(127, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 41);
+            this.label1.Size = new System.Drawing.Size(245, 52);
             this.label1.TabIndex = 2;
             this.label1.Text = "Pay by cash";
             // 
@@ -91,7 +91,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label2.Location = new System.Drawing.Point(37, 188);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 19);
+            this.label2.Size = new System.Drawing.Size(136, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "PaymentMethod";
             // 
@@ -103,7 +103,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label3.Location = new System.Drawing.Point(37, 303);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 19);
+            this.label3.Size = new System.Drawing.Size(118, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Product name";
             // 
@@ -156,7 +156,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label5.Location = new System.Drawing.Point(37, 245);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 19);
+            this.label5.Size = new System.Drawing.Size(106, 23);
             this.label5.TabIndex = 3;
             this.label5.Text = "Customer ID";
             // 
@@ -235,29 +235,40 @@
             this.panel3.Size = new System.Drawing.Size(901, 361);
             this.panel3.TabIndex = 13;
             // 
+            // showPoint
+            // 
+            this.showPoint.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.showPoint.BackColor = System.Drawing.Color.Transparent;
+            this.showPoint.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPoint.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.showPoint.Location = new System.Drawing.Point(760, 301);
+            this.showPoint.Name = "showPoint";
+            this.showPoint.Size = new System.Drawing.Size(3, 2);
+            this.showPoint.TabIndex = 17;
+            // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(600, 257);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(668, 300);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(71, 22);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(91, 27);
             this.guna2HtmlLabel1.TabIndex = 16;
-            this.guna2HtmlLabel1.Text = "Use point";
+            this.guna2HtmlLabel1.Text = "Use point:";
             this.guna2HtmlLabel1.Visible = false;
             // 
             // checkUsePoint
             // 
             this.checkUsePoint.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkUsePoint.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.checkUsePoint.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.checkUsePoint.CheckedState.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.checkUsePoint.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.checkUsePoint.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.checkUsePoint.Location = new System.Drawing.Point(594, 285);
+            this.checkUsePoint.Location = new System.Drawing.Point(609, 300);
             this.checkUsePoint.Name = "checkUsePoint";
-            this.checkUsePoint.Size = new System.Drawing.Size(77, 46);
+            this.checkUsePoint.Size = new System.Drawing.Size(53, 28);
             this.checkUsePoint.TabIndex = 15;
             this.checkUsePoint.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.checkUsePoint.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -359,21 +370,21 @@
             // 
             // dgvProduct
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            this.dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProduct.AutoGenerateColumns = false;
             this.dgvProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProduct.ColumnHeadersHeight = 50;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -387,15 +398,15 @@
             this.amountDataGridViewTextBoxColumn});
             this.dgvProduct.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dgvProduct.DataSource = this.productInBillBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProduct.Location = new System.Drawing.Point(0, 0);
@@ -428,17 +439,6 @@
             this.dgvProduct.ThemeStyle.RowsStyle.Height = 50;
             this.dgvProduct.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProduct.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // showPoint
-            // 
-            this.showPoint.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.showPoint.BackColor = System.Drawing.Color.Transparent;
-            this.showPoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showPoint.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.showPoint.Location = new System.Drawing.Point(681, 296);
-            this.showPoint.Name = "showPoint";
-            this.showPoint.Size = new System.Drawing.Size(3, 2);
-            this.showPoint.TabIndex = 17;
             // 
             // productIdDataGridViewTextBoxColumn
             // 

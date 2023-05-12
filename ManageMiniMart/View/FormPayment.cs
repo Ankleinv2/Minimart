@@ -206,12 +206,13 @@ namespace ManageMiniMart.View
                         percentOff = (int)discount.sale;
                     }
                     totalMoney += (product.Price * (100-percentOff)/100)*product.Amount;
+
                     Bill_Product bill_Product = new Bill_Product
                     {
                         bill_id = idBill,
                         product_id = product.ProductId,
                         quantity = product.Amount,
-                        price = product.Price * (100 - percentOff) / 100
+                        price = product.Price * (100 - percentOff) / 100 // Lưu giá ở đây là giá sau khi đã áp dụng giảm giá
                     };
                     // sau khi thêm sản phẩm vào bill thì giảm số lượng hàng hóa có trong kho
                     product1.quantity = product1.quantity - product.Amount;

@@ -81,6 +81,7 @@ namespace ManageMiniMart.View
                 lblTotalPay.Text = "0";
             }
             else lblTotalPay.Text = TotalPayAfterDiscount.ToString("#,## VNĐ").Replace(',', '.');
+            lblUsedPoint.Text = bill.used_points.ToString();
         }
 
         // Drag from

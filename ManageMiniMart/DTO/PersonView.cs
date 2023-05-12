@@ -15,5 +15,6 @@ namespace ManageMiniMart.DTO
         public string phone_number { get; set; }
         public string salary { get; set; }
         public string email { get; set; }
+        public string role { get; set; }
     }
 }

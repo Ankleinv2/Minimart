@@ -35,7 +35,6 @@ namespace ManageMiniMart.View
         {
             if (txtDiscountName.Text == "") throw new Exception("Discount name is not empty");
             if(DateTime.Compare(dtpStartTime.Value,dtpEndTime.Value) > 0) throw new Exception("End Time should be Greater Than or Equal to Start Time");
-            if (DateTime.Compare(dtpStartTime.Value, DateTime.Now) < 0) throw new Exception("Start Time shoule be Greater Than or Equal to current date");
             try
             {
                 Convert.ToInt32(txtSale.Text);

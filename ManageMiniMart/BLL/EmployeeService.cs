@@ -13,9 +13,11 @@ namespace ManageMiniMart.BLL
     public class EmployeeService
     {
         private Manage_MinimartEntities db;
+        private UserService userService;
         public EmployeeService()
         {
             db = new Manage_MinimartEntities();
+            userService = new UserService();
         }
         // Get
         public List<Person> getAllEmployee()
@@ -25,18 +27,26 @@ namespace ManageMiniMart.BLL
         public List<PersonView> getAllEmployeeView()
         {
             List<PersonView> list = new List<PersonView>();
+
             foreach (var person in db.People.ToList())
             {
+                Account account = userService.getAccountByPersonId(person.person_id);
+                Role s = new Role();
+                if (account != null)
+                {
+                    s = db.Roles.FirstOrDefault(x => x.role_id == account.role_id);
+                }
                 list.Add(new PersonView
                 {
                     person_id = person.person_id,
                     person_name = person.person_name,
                     birthdate = String.Format("{0:dd/MM/yyyy}", person.birthdate),
-                    address=person.address,
-                    phone_number=person.phone_number,
-                    salary=Double.Parse(person.salary.ToString()).ToString("#,## VNĐ").Replace(',','.'),
-                    email=person.email,
-                }); 
+                    address = person.address,
+                    phone_number = person.phone_number,
+                    salary = Double.Parse(person.salary.ToString()).ToString("#,## VNĐ").Replace(',', '.'),
+                    email = person.email,
+                    role = account != null ? s.role_name : ""
+                });
             }
             return list;
         }

@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Manage_Minimart2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="person_id" />
+    </Key>
+    <Property Name="person_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Person" Relationship="Self.FK__Account__person___48CFD27E" FromRole="Account" ToRole="Person" />
+    <NavigationProperty Name="Role" Relationship="Self.FK__Account__role_id__49C3F6B7" FromRole="Account" ToRole="Role" />
+    <NavigationProperty Name="Shift_work" Relationship="Self.FK__Shift_wor__perso__4D94879B" FromRole="Account" ToRole="Shift_work" />
+  </EntityType>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="bill_id" />
+    </Key>
+    <Property Name="bill_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="person_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="customer_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="created_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="payment_method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Bill__customer_i__52593CB8" FromRole="Bill" ToRole="Customer" />
+    <NavigationProperty Name="Person" Relationship="Self.FK__Bill__person_id__5165187F" FromRole="Bill" ToRole="Person" />
+    <NavigationProperty Name="Bill_Product" Relationship="Self.FK__Bill_Prod__bill___5535A963" FromRole="Bill" ToRole="Bill_Product" />
+  </EntityType>
+  <EntityType Name="Bill_Product">
+    <Key>
+      <PropertyRef Name="product_id" />
+      <PropertyRef Name="bill_id" />
+    </Key>
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="bill_id" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <Property Name="price" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK__Bill_Prod__bill___5535A963" FromRole="Bill_Product" ToRole="Bill" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Bill_Prod__produ__5441852A" FromRole="Bill_Product" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="category_id" />
+    </Key>
+    <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="category_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Products" Relationship="Self.FK__Product__categor__3A81B327" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="customer_id" />
+    </Key>
+    <Property Name="customer_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="customer_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="birthdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="point" Type="Int32" />
+    <Property Name="created_time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__customer_i__52593CB8" FromRole="Customer" ToRole="Bill" />
+  </EntityType>
+  <EntityType Name="Discount">
+    <Key>
+      <PropertyRef Name="discount_id" />
+    </Key>
+    <Property Name="discount_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="discount_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_time" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="end_time" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="sale" Type="Int32" />
+    <NavigationProperty Name="Product_Discount" Relationship="Self.FK__Product_D__disco__3E52440B" FromRole="Discount" ToRole="Product_Discount" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="person_id" />
+    </Key>
+    <Property Name="person_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="person_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="birthdate" Type="DateTime" Precision="0" />
+    <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="phone_number" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="salary" Type="Double" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Account" Relationship="Self.FK__Account__person___48CFD27E" FromRole="Person" ToRole="Account" />
+    <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__person_id__5165187F" FromRole="Person" ToRole="Bill" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="category_id" Type="Int32" Nullable="false" />
+    <Property Name="brand" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Double" Nullable="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bill_Product" Relationship="Self.FK__Bill_Prod__produ__5441852A" FromRole="Product" ToRole="Bill_Product" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Product__categor__3A81B327" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="Product_Discount" Relationship="Self.FK__Product_D__produ__3D5E1FD2" FromRole="Product" ToRole="Product_Discount" />
+  </EntityType>
+  <EntityType Name="Product_Discount">
+    <Key>
+      <PropertyRef Name="product_discount_id" />
+    </Key>
+    <Property Name="product_discount_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int32" Nullable="false" />
+    <Property Name="discount_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Discount" Relationship="Self.FK__Product_D__disco__3E52440B" FromRole="Product_Discount" ToRole="Discount" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product_D__produ__3D5E1FD2" FromRole="Product_Discount" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="role_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK__Account__role_id__49C3F6B7" FromRole="Role" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="Shift_detail">
+    <Key>
+      <PropertyRef Name="shift_id" />
+    </Key>
+    <Property Name="shift_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="shift_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="shift_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="start_time" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="end_time" Type="Time" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Shift_work" Relationship="Self.FK__Shift_wor__shift__4E88ABD4" FromRole="Shift_detail" ToRole="Shift_work" />
+  </EntityType>
+  <EntityType Name="Shift_work">
+    <Key>
+      <PropertyRef Name="person_id" />
+      <PropertyRef Name="shift_id" />
+    </Key>
+    <Property Name="person_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="shift_id" Type="Int32" Nullable="false" />
+    <Property Name="check_done" Type="Boolean" />
+    <NavigationProperty Name="Account" Relationship="Self.FK__Shift_wor__perso__4D94879B" FromRole="Shift_work" ToRole="Account" />
+    <NavigationProperty Name="Shift_detail" Relationship="Self.FK__Shift_wor__shift__4E88ABD4" FromRole="Shift_work" ToRole="Shift_detail" />
+  </EntityType>
+  <Association Name="FK__Account__person___48CFD27E">
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="person_id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="person_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Account__role_id__49C3F6B7">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Shift_wor__perso__4D94879B">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Shift_work" Type="Self.Shift_work" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="person_id" />
+      </Principal>
+      <Dependent Role="Shift_work">
+        <PropertyRef Name="person_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill__customer_i__52593CB8">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="customer_id" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill__person_id__5165187F">
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="person_id" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="person_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill_Prod__bill___5535A963">
+    <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+    <End Role="Bill_Product" Type="Self.Bill_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill">
+        <PropertyRef Name="bill_id" />
+      </Principal>
+      <Dependent Role="Bill_Product">
+        <PropertyRef Name="bill_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill_Prod__produ__5441852A">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Bill_Product" Type="Self.Bill_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Bill_Product">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product__categor__3A81B327">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="category_id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product_D__disco__3E52440B">
+    <End Role="Discount" Type="Self.Discount" Multiplicity="1" />
+    <End Role="Product_Discount" Type="Self.Product_Discount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Discount">
+        <PropertyRef Name="discount_id" />
+      </Principal>
+      <Dependent Role="Product_Discount">
+        <PropertyRef Name="discount_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Product_D__produ__3D5E1FD2">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Product_Discount" Type="Self.Product_Discount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Product_Discount">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Shift_wor__shift__4E88ABD4">
+    <End Role="Shift_detail" Type="Self.Shift_detail" Multiplicity="1" />
+    <End Role="Shift_work" Type="Self.Shift_work" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shift_detail">
+        <PropertyRef Name="shift_id" />
+      </Principal>
+      <Dependent Role="Shift_work">
+        <PropertyRef Name="shift_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Manage_MinimartEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Bills" EntityType="Self.Bill" />
+    <EntitySet Name="Bill_Product" EntityType="Self.Bill_Product" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Discounts" EntityType="Self.Discount" />
+    <EntitySet Name="People" EntityType="Self.Person" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Product_Discount" EntityType="Self.Product_Discount" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Shift_detail" EntityType="Self.Shift_detail" />
+    <EntitySet Name="Shift_work" EntityType="Self.Shift_work" />
+    <AssociationSet Name="FK__Account__person___48CFD27E" Association="Self.FK__Account__person___48CFD27E">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Account__role_id__49C3F6B7" Association="Self.FK__Account__role_id__49C3F6B7">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Shift_wor__perso__4D94879B" Association="Self.FK__Shift_wor__perso__4D94879B">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Shift_work" EntitySet="Shift_work" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill__customer_i__52593CB8" Association="Self.FK__Bill__customer_i__52593CB8">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill__person_id__5165187F" Association="Self.FK__Bill__person_id__5165187F">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill_Prod__bill___5535A963" Association="Self.FK__Bill_Prod__bill___5535A963">
+      <End Role="Bill" EntitySet="Bills" />
+      <End Role="Bill_Product" EntitySet="Bill_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill_Prod__produ__5441852A" Association="Self.FK__Bill_Prod__produ__5441852A">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Bill_Product" EntitySet="Bill_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product__categor__3A81B327" Association="Self.FK__Product__categor__3A81B327">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product_D__disco__3E52440B" Association="Self.FK__Product_D__disco__3E52440B">
+      <End Role="Discount" EntitySet="Discounts" />
+      <End Role="Product_Discount" EntitySet="Product_Discount" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Product_D__produ__3D5E1FD2" Association="Self.FK__Product_D__produ__3D5E1FD2">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Product_Discount" EntitySet="Product_Discount" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Shift_wor__shift__4E88ABD4" Association="Self.FK__Shift_wor__shift__4E88ABD4">
+      <End Role="Shift_detail" EntitySet="Shift_detail" />
+      <End Role="Shift_work" EntitySet="Shift_work" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

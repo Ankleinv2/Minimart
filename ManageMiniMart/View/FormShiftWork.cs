@@ -35,7 +35,7 @@ namespace ManageMiniMart.View
         // Load
         public void loadShiftView()
         {
-            dgvShift.Invalidate();
+            dgvShift.DataSource = null;
             var s = shiftDetailService.getListShiftViewByShiftDate(dtpShiftDate.Value.Date);
             dgvShift.DataSource = s.ToList();
         }

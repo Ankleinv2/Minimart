@@ -23,7 +23,7 @@ namespace ManageMiniMart.BLL
         }
         public List<CBBItem> getCBBDiscount() {                         // combobox Discount
             List<CBBItem> list = new List<CBBItem>();
-            var p = db.Discounts.Select(o => new { o.discount_id, o.discount_name }).ToList();
+            var p = db.Discounts.ToList();
             list.Add(new CBBItem
             {
                 Value = 0,
@@ -31,12 +31,14 @@ namespace ManageMiniMart.BLL
             });
             foreach (var item in p)
             {
-                list.Add(new CBBItem 
+                if (item.end_time >= DateTime.Now)
                 {
-                    Value = item.discount_id,
-                    Text = item.discount_name 
-                    
-                });
+                    list.Add(new CBBItem
+                    {
+                        Value = item.discount_id,
+                        Text = item.discount_name
+                    });
+                }
             }
             return list;
         }

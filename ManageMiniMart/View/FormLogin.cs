@@ -78,7 +78,12 @@ namespace Register_Login
                         Hide();
                         employee.Show();
                     }
-                    else throw new Exception($"Khong phai ca lam cua nhan vien {account.Person.person_name}");
+                    else
+                    {
+                        txtPassword.Text = "";
+                        txtPassword.Focus();
+                        throw new Exception($"Khong phai ca lam cua nhan vien {account.Person.person_name}");
+                    }
                 }
                 else
                 {

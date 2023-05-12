@@ -52,6 +52,7 @@ namespace ManageMiniMart.View
             double totalBeforeDiscount = 0;
             double TotalMoneyBeforeDiscount = 0;
             double TotalPayAfterDiscount = 0;
+            double totalDiscount = 0;
             foreach (Bill_Product bill_Product in getAllProductInBill)
             {
                 totalBeforeDiscount = bill_Product.quantity * bill_Product.Product.price;
@@ -64,17 +65,18 @@ namespace ManageMiniMart.View
                     Product_name = bill_Product.Product.product_name,
                     Price = Double.Parse(bill_Product.Product.price.ToString()).ToString("#,## VNĐ").Replace(',', '.'),
                     Quantity = bill_Product.quantity,
-                    Total = Double.Parse(totalBeforeDiscount.ToString()).ToString("#,## VNĐ").Replace(',', '.'),
+                    Total = Double.Parse(TotalPayAfterDiscount.ToString()).ToString("#,## VNĐ").Replace(',', '.'),
                 };
                 billDetails.Add(details);
 
             }
+            lblTotalMoney.Text = TotalPayAfterDiscount.ToString("#,## VNĐ").Replace(',', '.');
             if (bill.used_points > 0)
             {
                 TotalPayAfterDiscount -= (int)bill.used_points * 1000;
             }
             dgvBillDetail.DataSource = billDetails;
-            lblTotalMoney.Text= TotalMoneyBeforeDiscount.ToString("#,## VNĐ").Replace(',', '.');
+            
             lblDiscount.Text = (TotalMoneyBeforeDiscount - TotalPayAfterDiscount).ToString("#,## VNĐ").Replace(',', '.');
             if (TotalPayAfterDiscount == 0)
             {

@@ -94,6 +94,7 @@ namespace Register_Login
             Show();
             txtUserId.Text = "";
             txtPassword.Text = "";
+            txtUserId.Focus();
         }
         private void closeForm()
         {

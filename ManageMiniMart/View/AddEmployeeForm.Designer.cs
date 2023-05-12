@@ -404,7 +404,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(199, 25);
-            this.txtAddress.TabIndex = 0;
+            this.txtAddress.TabIndex = 4;
             // 
             // label5
             // 

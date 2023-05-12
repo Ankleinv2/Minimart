@@ -35,15 +35,8 @@ namespace ManageMiniMart.View
                 CustomFormInput c = new CustomFormInput();
                 string amount = c.show("Quantity","Amount product");
                 //int amountProduct = Convert.ToInt32(amount);
-                int amountProduct;
-                try
-                {
-                    amountProduct = Convert.ToInt32(amount);
-                }
-                catch (FormatException)
-                {
-                    throw new Exception("Invalid number");
-                }
+                if (amount == "") return;
+                if (!Int32.TryParse(amount, out int amountProduct)) throw new Exception("Invalid number");
                 int productId = Convert.ToInt32(dgvProduct.SelectedRows[0].Cells[0].Value.ToString());
                 this.productDelegate(productId, amountProduct);
             }

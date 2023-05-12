@@ -41,15 +41,16 @@
             this.btnSortBy = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvBill = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.billViewBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.billViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.billViewBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ShowDetail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.billViewBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.billViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.billViewBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dtpBillDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Controls.Add(this.dtpBillDate);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -264,18 +266,6 @@
             this.dgvBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBill_CellContentClick);
             // 
-            // billViewBindingSource2
-            // 
-            this.billViewBindingSource2.DataSource = typeof(ManageMiniMart.DTO.BillView);
-            // 
-            // billViewBindingSource
-            // 
-            this.billViewBindingSource.DataSource = typeof(ManageMiniMart.DTO.BillView);
-            // 
-            // billViewBindingSource1
-            // 
-            this.billViewBindingSource1.DataSource = typeof(ManageMiniMart.DTO.BillView);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -318,6 +308,37 @@
             this.ShowDetail.Name = "ShowDetail";
             this.ShowDetail.Text = "Show Detail";
             this.ShowDetail.UseColumnTextForButtonValue = true;
+            // 
+            // billViewBindingSource2
+            // 
+            this.billViewBindingSource2.DataSource = typeof(ManageMiniMart.DTO.BillView);
+            // 
+            // billViewBindingSource
+            // 
+            this.billViewBindingSource.DataSource = typeof(ManageMiniMart.DTO.BillView);
+            // 
+            // billViewBindingSource1
+            // 
+            this.billViewBindingSource1.DataSource = typeof(ManageMiniMart.DTO.BillView);
+            // 
+            // dtpBillDate
+            // 
+            this.dtpBillDate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpBillDate.BorderColor = System.Drawing.Color.LightSeaGreen;
+            this.dtpBillDate.BorderRadius = 9;
+            this.dtpBillDate.BorderThickness = 1;
+            this.dtpBillDate.Checked = true;
+            this.dtpBillDate.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.dtpBillDate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpBillDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dtpBillDate.Location = new System.Drawing.Point(173, 25);
+            this.dtpBillDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpBillDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpBillDate.Name = "dtpBillDate";
+            this.dtpBillDate.Size = new System.Drawing.Size(177, 36);
+            this.dtpBillDate.TabIndex = 36;
+            this.dtpBillDate.Value = new System.DateTime(2023, 4, 8, 22, 56, 26, 751);
+            this.dtpBillDate.ValueChanged += new System.EventHandler(this.dtpBillDate_ValueChanged);
             // 
             // FormBill
             // 
@@ -363,5 +384,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn ShowDetail;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpBillDate;
     }
 }

@@ -65,5 +65,10 @@ namespace ManageMiniMart
                 f.ShowDialog();
             }
         }
+
+        private void dtpBillDate_ValueChanged(object sender, EventArgs e)
+        {
+            dgvBill.DataSource = billService.getAllBillViewByBillDate(dtpBillDate.Value.Date).ToList();
+        }
     }
 }

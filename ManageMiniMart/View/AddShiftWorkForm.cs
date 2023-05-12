@@ -21,7 +21,7 @@ namespace ManageMiniMart.View
         private EmployeeService employeeService;
         private ShiftDetailService shiftDetailService;
         private ShiftWorkService shiftWorkService;
-        private List<Person> employeeList = new List<Person>();
+        private List<Person> employeeList;
 
         public AddShiftWorkForm()
         {
@@ -29,6 +29,7 @@ namespace ManageMiniMart.View
             employeeService = new EmployeeService();
             shiftDetailService = new ShiftDetailService();
             shiftWorkService = new ShiftWorkService();
+            employeeList = new List<Person>();
             lblShiftId.Text = "";
             dtpShiftDate.Value = DateTime.Now;
             dtpStartTime.Value =DateTime.Parse( DateTime.Now.ToShortTimeString());

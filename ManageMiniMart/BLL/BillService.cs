@@ -2,6 +2,7 @@
 using ManageMiniMart.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
@@ -107,6 +108,11 @@ namespace ManageMiniMart.BLL
             }
             
             return list;
+        }
+        public List<BillView> getAllBillViewByBillDate(DateTime bill_date)
+        {
+            var bills = db.Bills.Where(b => DbFunctions.TruncateTime(b.created_time) == bill_date).ToList(); //stackoverflow.com/questions/14601676/the-specified-type-member-date-is-not-supported-in-linq-to-entities-only-init
+            return convertToBillView(bills);
         }
     }
 }

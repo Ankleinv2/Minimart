@@ -22,7 +22,7 @@ namespace Register_Login
         private bool check;                             // bỏ bool check
         private UserService userService;
         private EmployeeService employeeService;
-        private ShiftDetailService shiftDetailService = new ShiftDetailService();
+        private ShiftDetailService shiftDetailService;
         private DiscountService discountService;
         private ProductDiscountService productDiscountService;
         public FormLogin(bool check = false)            // bỏ bool check
@@ -32,6 +32,7 @@ namespace Register_Login
             employeeService = new EmployeeService();
             discountService= new DiscountService();
             productDiscountService= new ProductDiscountService();
+            shiftDetailService = new ShiftDetailService();
             this.check = check;
             autoDeleteDiscountWhenOutOfTime();
         }

@@ -23,7 +23,7 @@ namespace ManageMiniMart.View
             InitializeComponent();
             shiftDetailService = new ShiftDetailService();
             shiftWorkService = new ShiftWorkService();
-            loadAllShiftView();
+            loadShiftView();
             if (checkLoadFormShiftWorkEmployeeOrManager == false)
             {
                 btnAdd.Visible = false;
@@ -33,17 +33,18 @@ namespace ManageMiniMart.View
             dtpShiftDate.Value=DateTime.Now;
         }
         // Load
-        public void loadAllShiftView()
+        public void loadShiftView()
         {
-            dgvShift.DataSource= null;
-            dgvShift.DataSource = shiftDetailService.getAllShiftDetailView();
+            dgvShift.Invalidate();
+            var s = shiftDetailService.getListShiftViewByShiftDate(dtpShiftDate.Value.Date);
+            dgvShift.DataSource = s.ToList();
         }
         // btnAdd
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddShiftWorkForm addShiftWork = new AddShiftWorkForm();
             addShiftWork.ShowDialog();
-            loadAllShiftView();
+            loadShiftView();
         }
         // btnEdit
         private void btnEdit_Click(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace ManageMiniMart.View
             AddShiftWorkForm shiftWork= new AddShiftWorkForm();
             shiftWork.setFormAddShift(shift_id);
             shiftWork.ShowDialog();
-            loadAllShiftView();
+            loadShiftView();
         }
         // btnDelete
         private void btnDelete_Click(object sender, EventArgs e)
@@ -70,13 +71,12 @@ namespace ManageMiniMart.View
             {
                 shiftDetailService.deleteShiftDetailbyListShiftID(listShiftID);
             }
-            loadAllShiftView();
+            loadShiftView();
         }
         // datetimepicker value changed
         private void dtpShiftDate_ValueChanged(object sender, EventArgs e)
         {
-            DateTime shiftDate=dtpShiftDate.Value.Date;
-            var s=shiftDetailService.getListShiftViewByShiftDate(shiftDate);
+            var s=shiftDetailService.getListShiftViewByShiftDate(dtpShiftDate.Value.Date);
             dgvShift.DataSource = s.ToList();
         }
     }

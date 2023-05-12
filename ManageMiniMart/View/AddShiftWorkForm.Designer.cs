@@ -153,7 +153,7 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label8.Location = new System.Drawing.Point(268, 21);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(225, 40);
+            this.label8.Size = new System.Drawing.Size(180, 32);
             this.label8.TabIndex = 30;
             this.label8.Text = "Shiftwork form";
             // 
@@ -403,6 +403,7 @@
             // 
             // dtpShiftDate
             // 
+            this.dtpShiftDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpShiftDate.Checked = true;
             this.dtpShiftDate.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.dtpShiftDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -440,7 +441,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label4.Location = new System.Drawing.Point(88, 125);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 23);
+            this.label4.Size = new System.Drawing.Size(63, 19);
             this.label4.TabIndex = 32;
             this.label4.Text = "End time";
             // 
@@ -452,7 +453,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label3.Location = new System.Drawing.Point(88, 80);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 23);
+            this.label3.Size = new System.Drawing.Size(69, 19);
             this.label3.TabIndex = 32;
             this.label3.Text = "Start time";
             // 
@@ -462,7 +463,7 @@
             this.lblShiftId.AutoSize = true;
             this.lblShiftId.Location = new System.Drawing.Point(549, 31);
             this.lblShiftId.Name = "lblShiftId";
-            this.lblShiftId.Size = new System.Drawing.Size(0, 16);
+            this.lblShiftId.Size = new System.Drawing.Size(0, 13);
             this.lblShiftId.TabIndex = 31;
             this.lblShiftId.Visible = false;
             // 
@@ -474,7 +475,7 @@
             this.lblShiftdate.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblShiftdate.Location = new System.Drawing.Point(88, 43);
             this.lblShiftdate.Name = "lblShiftdate";
-            this.lblShiftdate.Size = new System.Drawing.Size(83, 23);
+            this.lblShiftdate.Size = new System.Drawing.Size(67, 19);
             this.lblShiftdate.TabIndex = 29;
             this.lblShiftdate.Text = "Shift date";
             // 
@@ -486,7 +487,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Location = new System.Drawing.Point(88, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 23);
+            this.label1.Size = new System.Drawing.Size(74, 19);
             this.label1.TabIndex = 29;
             this.label1.Text = "Shift name";
             // 
@@ -570,7 +571,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label5.Location = new System.Drawing.Point(88, 159);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 23);
+            this.label5.Size = new System.Drawing.Size(104, 19);
             this.label5.TabIndex = 26;
             this.label5.Text = "EmployeeName";
             // 

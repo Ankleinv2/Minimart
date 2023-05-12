@@ -173,6 +173,7 @@ namespace ManageMiniMart.View
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (listProductInBill.Count == 0) throw new Exception("Chua co san pham trong gio hang");
             MyMessageBox myMessage = new MyMessageBox();
             DialogResult rs = myMessage.show("Are you complete ?", "Confirm", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.INFO);
             if(rs == DialogResult.Yes)

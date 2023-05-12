@@ -158,7 +158,7 @@ namespace ManageMiniMart
                 productService.saveProduct(product);
             }
             MyMessageBox messageBox = new MyMessageBox();
-            messageBox.show("Add successful");
+            messageBox.show("Successful","Notification");
             this.formProduct();
             Dispose();
         }

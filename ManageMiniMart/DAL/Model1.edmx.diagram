@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f04162d5fc6b439695449be0ce8be99e" Name="Diagram1">
+      <Diagram DiagramId="e5ccb77cc90b410bb651c08a970d9a1d" Name="Diagram1">
         <EntityTypeShape EntityType="Manage_MinimartModel.Account" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Manage_MinimartModel.Bill" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Manage_MinimartModel.Bill_Product" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />

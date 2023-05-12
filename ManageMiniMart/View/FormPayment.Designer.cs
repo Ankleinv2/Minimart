@@ -79,7 +79,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(127, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 52);
+            this.label1.Size = new System.Drawing.Size(199, 41);
             this.label1.TabIndex = 2;
             this.label1.Text = "Pay by cash";
             // 
@@ -91,7 +91,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label2.Location = new System.Drawing.Point(37, 188);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 23);
+            this.label2.Size = new System.Drawing.Size(112, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "PaymentMethod";
             // 
@@ -103,7 +103,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label3.Location = new System.Drawing.Point(37, 303);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 23);
+            this.label3.Size = new System.Drawing.Size(95, 19);
             this.label3.TabIndex = 3;
             this.label3.Text = "Product name";
             // 
@@ -156,7 +156,7 @@
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label5.Location = new System.Drawing.Point(37, 245);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 23);
+            this.label5.Size = new System.Drawing.Size(87, 19);
             this.label5.TabIndex = 3;
             this.label5.Text = "Customer ID";
             // 
@@ -239,9 +239,9 @@
             // 
             this.showPoint.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.showPoint.BackColor = System.Drawing.Color.Transparent;
-            this.showPoint.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPoint.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showPoint.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.showPoint.Location = new System.Drawing.Point(760, 301);
+            this.showPoint.Location = new System.Drawing.Point(759, 303);
             this.showPoint.Name = "showPoint";
             this.showPoint.Size = new System.Drawing.Size(3, 2);
             this.showPoint.TabIndex = 17;
@@ -250,11 +250,12 @@
             // 
             this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Enabled = false;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(668, 300);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(668, 303);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(91, 27);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(93, 24);
             this.guna2HtmlLabel1.TabIndex = 16;
             this.guna2HtmlLabel1.Text = "Use point:";
             this.guna2HtmlLabel1.Visible = false;
@@ -548,6 +549,9 @@
         private System.Windows.Forms.BindingSource productInBillBindingSource;
         private Guna.UI2.WinForms.Guna2Button btnSearchCustomer;
         private System.Windows.Forms.BindingSource productInBillBindingSource1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch checkUsePoint;
+        private Guna.UI2.WinForms.Guna2HtmlLabel showPoint;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
@@ -556,8 +560,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn saleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch checkUsePoint;
-        private Guna.UI2.WinForms.Guna2HtmlLabel showPoint;
     }
 }

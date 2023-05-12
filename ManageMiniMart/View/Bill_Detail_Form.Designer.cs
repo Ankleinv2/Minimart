@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -46,6 +46,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblUsedPoint = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.lblTotalPay = new System.Windows.Forms.Label();
             this.lblDiscount = new System.Windows.Forms.Label();
             this.lblTotalMoney = new System.Windows.Forms.Label();
@@ -54,8 +56,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvBillDetail = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.lblUsedPoint = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -254,10 +254,35 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(0, 802);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 769);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1200, 198);
+            this.panel4.Size = new System.Drawing.Size(1200, 200);
             this.panel4.TabIndex = 31;
+            // 
+            // lblUsedPoint
+            // 
+            this.lblUsedPoint.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblUsedPoint.AutoSize = true;
+            this.lblUsedPoint.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsedPoint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblUsedPoint.Location = new System.Drawing.Point(588, 71);
+            this.lblUsedPoint.Name = "lblUsedPoint";
+            this.lblUsedPoint.Size = new System.Drawing.Size(21, 23);
+            this.lblUsedPoint.TabIndex = 34;
+            this.lblUsedPoint.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label10.Location = new System.Drawing.Point(392, 71);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 23);
+            this.label10.TabIndex = 33;
+            this.label10.Text = "Used point:";
             // 
             // lblTotalPay
             // 
@@ -265,7 +290,7 @@
             this.lblTotalPay.AutoSize = true;
             this.lblTotalPay.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPay.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTotalPay.Location = new System.Drawing.Point(583, 142);
+            this.lblTotalPay.Location = new System.Drawing.Point(589, 105);
             this.lblTotalPay.Name = "lblTotalPay";
             this.lblTotalPay.Size = new System.Drawing.Size(116, 23);
             this.lblTotalPay.TabIndex = 32;
@@ -277,11 +302,12 @@
             this.lblDiscount.AutoSize = true;
             this.lblDiscount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDiscount.Location = new System.Drawing.Point(583, 73);
+            this.lblDiscount.Location = new System.Drawing.Point(1006, 109);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(116, 23);
             this.lblDiscount.TabIndex = 32;
             this.lblDiscount.Text = "22/11/2022";
+            this.lblDiscount.Visible = false;
             // 
             // lblTotalMoney
             // 
@@ -289,7 +315,7 @@
             this.lblTotalMoney.AutoSize = true;
             this.lblTotalMoney.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalMoney.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTotalMoney.Location = new System.Drawing.Point(583, 32);
+            this.lblTotalMoney.Location = new System.Drawing.Point(583, 33);
             this.lblTotalMoney.Name = "lblTotalMoney";
             this.lblTotalMoney.Size = new System.Drawing.Size(116, 23);
             this.lblTotalMoney.TabIndex = 32;
@@ -301,11 +327,12 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(388, 73);
+            this.label6.Location = new System.Drawing.Point(811, 109);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 23);
             this.label6.TabIndex = 31;
             this.label6.Text = "Discount:";
+            this.label6.Visible = false;
             // 
             // label7
             // 
@@ -313,7 +340,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label7.Location = new System.Drawing.Point(387, 142);
+            this.label7.Location = new System.Drawing.Point(393, 105);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 23);
             this.label7.TabIndex = 31;
@@ -325,7 +352,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(387, 33);
+            this.label4.Location = new System.Drawing.Point(387, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 23);
             this.label4.TabIndex = 31;
@@ -341,31 +368,31 @@
             // 
             // dgvBillDetail
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            this.dgvBillDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.dgvBillDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBillDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBillDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBillDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBillDetail.ColumnHeadersHeight = 50;
             this.dgvBillDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBillDetail.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBillDetail.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvBillDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBillDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBillDetail.Location = new System.Drawing.Point(0, 0);
@@ -399,36 +426,12 @@
             this.dgvBillDetail.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBillDetail.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // lblUsedPoint
-            // 
-            this.lblUsedPoint.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblUsedPoint.AutoSize = true;
-            this.lblUsedPoint.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsedPoint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblUsedPoint.Location = new System.Drawing.Point(582, 108);
-            this.lblUsedPoint.Name = "lblUsedPoint";
-            this.lblUsedPoint.Size = new System.Drawing.Size(21, 23);
-            this.lblUsedPoint.TabIndex = 34;
-            this.lblUsedPoint.Text = "0";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label10.Location = new System.Drawing.Point(386, 108);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 23);
-            this.label10.TabIndex = 33;
-            this.label10.Text = "Used point:";
-            // 
             // Bill_Detail_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(1200, 1000);
+            this.ClientSize = new System.Drawing.Size(1200, 969);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);

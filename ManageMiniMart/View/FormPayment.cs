@@ -136,15 +136,16 @@ namespace ManageMiniMart.View
                 if (checkProduct_ExistIn_listProductInBill(productId))      // Nếu đã add trước đó rồi
                 {
                     ProductInBill productInBill = getProductInBillById(productId);
-                    productInBill.Amount += amount;
-                    if(productInBill.Amount > product.quantity)
+                    int amountCurrent = productInBill.Amount;
+                    if ((amountCurrent+amount) > product.quantity)
                     {
-                        //MyMessageBox myMessage = new MyMessageBox();
-                        //myMessage.show("Amount product in stock not enough for buy!", "Nofitication");
-                        int amountProduct = productInBill.Amount;
+                        MyMessageBox myMessage = new MyMessageBox();
+                        myMessage.show("Amount product in stock not enough for buy!", "Nofitication");
+                        return;
                     }
                     else
                     {
+                        productInBill.Amount += amount;
                         updateProduct(productInBill);
                     }
                     

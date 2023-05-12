@@ -17,6 +17,10 @@ namespace ManageMiniMart.BLL
         {
             db = new Manage_MinimartEntities();
         }
+        public List<Discount> getAllDiscount()
+        {
+            return db.Discounts.ToList();
+        }
         public List<CBBItem> getCBBDiscount() {                         // combobox Discount
             List<CBBItem> list = new List<CBBItem>();
             var p = db.Discounts.Select(o => new { o.discount_id, o.discount_name }).ToList();

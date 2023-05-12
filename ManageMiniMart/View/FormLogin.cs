@@ -19,20 +19,37 @@ namespace Register_Login
     public delegate void ShowLogin();               // để mở lại FormLogin
     public partial class FormLogin : Form
     {
-       
         private bool check;                             // bỏ bool check
         private UserService userService;
         private EmployeeService employeeService;
         private ShiftDetailService shiftDetailService = new ShiftDetailService();
+        private DiscountService discountService;
+        private ProductDiscountService productDiscountService;
         public FormLogin(bool check = false)            // bỏ bool check
         {
             InitializeComponent();
             userService = new UserService();
             employeeService = new EmployeeService();
+            discountService= new DiscountService();
+            productDiscountService= new ProductDiscountService();
             this.check = check;
+            autoDeleteDiscountWhenOutOfTime();
         }
 
-
+        private void autoDeleteDiscountWhenOutOfTime()
+        {
+            DateTime now = DateTime.Now;
+            foreach(var discount in discountService.getAllDiscount())
+            {
+                if(discount.end_time < now) {
+                    List<Product_Discount> product_s = productDiscountService.getProduct_Discount_By_DiscountID(discount.discount_id);
+                    foreach(var product in product_s)
+                    {
+                        productDiscountService.deleteProduct_Discount(product);
+                    }
+                }
+            }
+        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -94,6 +111,7 @@ namespace Register_Login
             Show();
             txtUserId.Text = "";
             txtPassword.Text = "";
+            txtUserId.Focus();
         }
         private void closeForm()
         {
@@ -122,39 +140,6 @@ namespace Register_Login
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        //private void btn_Register_Click(object sender, EventArgs e)
-        //{
-        //    string personId = txtUserRegister.Text;
-        //    string password = txtSignUpPassword.Text;
-        //    string confirm = txtConfirmPassword.Text;
-        //    // role: 1:Nhân viên; 2:Quản lí
-        //    int role = 1;
-        //    if(confirm.Equals(password) && password.Length > 4)
-        //    {
-        //        Account account = new Account
-        //        {
-        //            person_id= personId,
-        //            password= password,
-        //            role_id= role,
-        //        };
-        //        userService.SaveAccount(account);
-        //        MyMessageBox myMessage = new MyMessageBox();
-        //        myMessage.show("Add account successful");
-        //    }
-        //    else if(!confirm.Equals(password)) {
-        //        //Form_Alert form_Alert = new Form_Alert();
-        //        //form_Alert.showAlert("Confirm password wrong!", Form_Alert.enmType.error);
-        //        MyMessageBox myMessage = new MyMessageBox();
-        //        myMessage.show("Confirm password wrong!");
 
-        //    }
-        //    else if(password.Length < 4) {
-        //        //Form_Alert form_Alert = new Form_Alert();
-        //        //form_Alert.showAlert("Password should be greater 4 character", Form_Alert.enmType.error);
-        //        MyMessageBox myMessage = new MyMessageBox();
-        //        myMessage.show("Password should be greater 4 character");
-
-        //    }
-        //}
     }
 }

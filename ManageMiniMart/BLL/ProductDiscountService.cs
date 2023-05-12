@@ -36,5 +36,9 @@ namespace ManageMiniMart.BLL
                 db.SaveChanges();
             }
         }
+        public List<Product_Discount> getProduct_Discount_By_DiscountID(int discountId)
+        {
+            return db.Product_Discount.Where(p => p.discount_id == discountId).ToList();
+        }
     }
 }

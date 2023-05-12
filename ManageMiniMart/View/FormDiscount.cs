@@ -22,8 +22,6 @@ namespace ManageMiniMart.View
             InitializeComponent();
             discountService= new DiscountService();
             loadAllDiscountView();
-            
-            //dgvDiscount.DataSource= discountService.getAllDiscountView();
         }
         public void loadAllDiscountView()
         {
@@ -37,8 +35,6 @@ namespace ManageMiniMart.View
             AddDiscountForm addDiscount = new AddDiscountForm();
             addDiscount.ShowDialog();
             loadAllDiscountView();
-            //dgvDiscount.DataSource = null;
-            //dgvDiscount.DataSource = discountService.getAllDiscountView();
         }
 
         // btnEdit
@@ -48,8 +44,6 @@ namespace ManageMiniMart.View
             addDiscount.setDiscount(Convert.ToInt32(dgvDiscount.SelectedRows[0].Cells[0].Value.ToString()));
             addDiscount.ShowDialog();
             loadAllDiscountView();
-            //dgvDiscount.DataSource=null;
-            //dgvDiscount.DataSource = discountService.getAllDiscountView();
 
         }
         // btnDelete
@@ -57,19 +51,22 @@ namespace ManageMiniMart.View
         {
             List<Discount> list = new List<Discount>();
             string strings = "";
-            for(int i = 0; i < dgvDiscount.SelectedRows.Count; i++)
+            for (int i = 0; i < dgvDiscount.SelectedRows.Count; i++)
             {
-                int id = Convert.ToInt32(dgvDiscount.SelectedRows[i].Cells[0].Value.ToString());
-                Discount discount = discountService.getDiscountById(id);
-                list.Add(discount);
-
-                strings+=dgvDiscount.SelectedRows[i].Cells[1].Value.ToString()+", ";
+                strings += dgvDiscount.SelectedRows[i].Cells[1].Value.ToString() + ", ";
             }
             MyMessageBox messageBox = new MyMessageBox();
             DialogResult rs = messageBox.show("Are you sure delete " + strings, "Confirm delete", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.QUESTION);
             if(rs== DialogResult.Yes)
             {
-                discountService.deleteListDiscount(list);
+
+                for (int i = 0; i < dgvDiscount.SelectedRows.Count; i++)
+                {
+                    int id = Convert.ToInt32(dgvDiscount.SelectedRows[i].Cells[0].Value.ToString());
+                    Discount discount = discountService.getDiscountById(id);
+                    discountService.deleteDiscount(discount);
+                    
+                }
             }
             loadAllDiscountView();
         }

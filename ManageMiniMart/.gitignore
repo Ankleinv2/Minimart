@@ -1,0 +1,4 @@
+# Ignore app.config file
+app.config
+# Ignore DAL folder
+DAL/

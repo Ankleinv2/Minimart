@@ -54,10 +54,10 @@ namespace ManageMiniMart.View
                 role_id = currentAccount.role_id;
             }
             
-            if (password.Length < 4 || confirmPassword.Length < 4)
+            if (password.Length < 4)
             {
                 MyMessageBox messageBox = new MyMessageBox();
-                messageBox.show("Password and Confirm Password length must >= 4", "Notification");
+                messageBox.show("Password length must >= 4", "Notification");
             }
             else if (password != confirmPassword)
             {

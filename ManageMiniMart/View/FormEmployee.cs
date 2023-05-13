@@ -59,6 +59,7 @@ namespace ManageMiniMart.View
                 formRegister.setInfoRegister(true,personId);
                 formRegister.ShowDialog();  
             }
+            loadAllEmployee();
         }
         // Search employee name
         private void btnSearch_Click(object sender, EventArgs e)

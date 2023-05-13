@@ -267,49 +267,49 @@
             // personidDataGridViewTextBoxColumn
             // 
             this.personidDataGridViewTextBoxColumn.DataPropertyName = "person_id";
-            this.personidDataGridViewTextBoxColumn.HeaderText = "person_id";
+            this.personidDataGridViewTextBoxColumn.HeaderText = "ID";
             this.personidDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.personidDataGridViewTextBoxColumn.Name = "personidDataGridViewTextBoxColumn";
             // 
             // personnameDataGridViewTextBoxColumn
             // 
             this.personnameDataGridViewTextBoxColumn.DataPropertyName = "person_name";
-            this.personnameDataGridViewTextBoxColumn.HeaderText = "person_name";
+            this.personnameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.personnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.personnameDataGridViewTextBoxColumn.Name = "personnameDataGridViewTextBoxColumn";
             // 
             // birthdateDataGridViewTextBoxColumn
             // 
             this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "birthdate";
-            this.birthdateDataGridViewTextBoxColumn.HeaderText = "birthdate";
+            this.birthdateDataGridViewTextBoxColumn.HeaderText = "Birthdate";
             this.birthdateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
             // 
             // addressDataGridViewTextBoxColumn
             // 
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             // 
             // phonenumberDataGridViewTextBoxColumn
             // 
             this.phonenumberDataGridViewTextBoxColumn.DataPropertyName = "phone_number";
-            this.phonenumberDataGridViewTextBoxColumn.HeaderText = "phone_number";
+            this.phonenumberDataGridViewTextBoxColumn.HeaderText = "Phone number";
             this.phonenumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.phonenumberDataGridViewTextBoxColumn.Name = "phonenumberDataGridViewTextBoxColumn";
             // 
             // salaryDataGridViewTextBoxColumn
             // 
             this.salaryDataGridViewTextBoxColumn.DataPropertyName = "salary";
-            this.salaryDataGridViewTextBoxColumn.HeaderText = "salary";
+            this.salaryDataGridViewTextBoxColumn.HeaderText = "Salary";
             this.salaryDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             // 

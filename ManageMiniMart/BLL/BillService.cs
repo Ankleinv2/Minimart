@@ -43,7 +43,7 @@ namespace ManageMiniMart.BLL
                     CustomerName = bill.Customer != null ? bill.Customer.customer_name :"Unknow",
                     EmployeeName = bill.Person.person_name,
                     CreatedTime = bill.created_time.ToString(),
-                    Total= total,
+                    Total= total != 0 ? total.ToString("#,## VNĐ").Replace(',', '.') : "0 VNĐ",
                 });
             }
             return result;

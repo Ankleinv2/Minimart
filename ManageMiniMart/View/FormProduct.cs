@@ -48,10 +48,8 @@ namespace ManageMiniMart
 
             dgvProduct.DataSource = null;
             dgvProduct.DataSource = productService.getAllProductView();
+            dgvProduct.Columns["Category_name"].HeaderText = "Category";
             dgvProduct.Refresh();
-
-
-
         }
 
         // cbbCategory

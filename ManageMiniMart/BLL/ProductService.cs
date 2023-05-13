@@ -33,7 +33,7 @@ namespace ManageMiniMart.BLL
                 {
                     ProductId = product.product_id,
                     Name = product.product_name,
-                    Price = product.price,
+                    Price = product.price != 0 ? product.price.ToString("#,## VNĐ").Replace(',', '.') : "0 VNĐ",
                     Quantity = product.quantity,
                     Category_name = product.Category.category_name,
                     Brand = product.brand,

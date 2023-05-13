@@ -52,6 +52,8 @@
             this.btnSearchCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvProduct = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.productInBillBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productInBillBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,8 +62,6 @@
             this.saleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productInBillBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productInBillBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -442,6 +442,14 @@
             this.dgvProduct.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProduct.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // productInBillBindingSource
+            // 
+            this.productInBillBindingSource.DataSource = typeof(ManageMiniMart.DTO.ProductInBill);
+            // 
+            // productInBillBindingSource1
+            // 
+            this.productInBillBindingSource1.DataSource = typeof(ManageMiniMart.DTO.ProductInBill);
+            // 
             // productIdDataGridViewTextBoxColumn
             // 
             this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
@@ -473,7 +481,7 @@
             // categorynameDataGridViewTextBoxColumn
             // 
             this.categorynameDataGridViewTextBoxColumn.DataPropertyName = "Category_name";
-            this.categorynameDataGridViewTextBoxColumn.HeaderText = "Category_name";
+            this.categorynameDataGridViewTextBoxColumn.HeaderText = "Category";
             this.categorynameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.categorynameDataGridViewTextBoxColumn.Name = "categorynameDataGridViewTextBoxColumn";
             // 
@@ -497,14 +505,6 @@
             this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
             this.amountDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            // 
-            // productInBillBindingSource
-            // 
-            this.productInBillBindingSource.DataSource = typeof(ManageMiniMart.DTO.ProductInBill);
-            // 
-            // productInBillBindingSource1
-            // 
-            this.productInBillBindingSource1.DataSource = typeof(ManageMiniMart.DTO.ProductInBill);
             // 
             // FormPayment
             // 

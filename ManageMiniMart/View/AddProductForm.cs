@@ -79,6 +79,8 @@ namespace ManageMiniMart
             {
                 throw new Exception("Price and Quantity must be a number");
             }
+            if (Convert.ToInt32(txtPrice.Text) < 0) throw new Exception("Price can not be a negative number");
+            if (Convert.ToInt32(txtQuantity.Text) < 0) throw new Exception("Quantity can not be a negative number");
             if (cbbCategory.SelectedItem == null) throw new Exception("Catogory is not selected");
             if (discount_id > 0 && productId=="")                               // add, có discount
             {

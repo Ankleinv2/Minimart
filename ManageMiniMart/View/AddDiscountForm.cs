@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -17,10 +18,12 @@ namespace ManageMiniMart.View
     public partial class AddDiscountForm : Form
     {
         private DiscountService discountService;
+        private ProductDiscountService productDiscountService;
         public AddDiscountForm()
         {
             InitializeComponent();
             discountService= new DiscountService();
+            productDiscountService= new ProductDiscountService();
         }
         public void setDiscount(int discountId)
         {
@@ -33,7 +36,7 @@ namespace ManageMiniMart.View
         }
         private void btnSave_Click(object sender, EventArgs e)          // -> OK
         {
-            if (txtDiscountName.Text == "") throw new Exception("Discount name is not empty");
+            if (txtDiscountName.Text == "") throw new Exception("Discount name cannot be empty");
             if(DateTime.Compare(dtpStartTime.Value,dtpEndTime.Value) > 0) throw new Exception("End Time should be Greater Than or Equal to Start Time");
             try
             {
@@ -43,6 +46,7 @@ namespace ManageMiniMart.View
             {
                 throw new Exception("Sale must be a number");
             }
+            if (Convert.ToInt32(txtSale.Text) < 0) throw new Exception("Sale can not be a negative number");
             string discountName = txtDiscountName.Text;
             DateTime startTime = dtpStartTime.Value;                    // Bỏ ToUniversalTime() đi
             DateTime endTime = dtpEndTime.Value;
@@ -71,6 +75,17 @@ namespace ManageMiniMart.View
                     sale = sale
                 };
                 discountService.saveDiscount(discount);
+            }
+            foreach (var discount in discountService.getAllDiscount())
+            {
+                if (discount.end_time.Date < DateTime.Now.Date || discount.start_time.Date > DateTime.Now.Date)
+                {
+                    List<Product_Discount> product_s = productDiscountService.getProduct_Discount_By_DiscountID(discount.discount_id);
+                    foreach (var product in product_s)
+                    {
+                        productDiscountService.deleteProduct_Discount(product);
+                    }
+                }
             }
             MyMessageBox messageBox = new MyMessageBox();
             messageBox.show("Save discount successful!!","Notification");

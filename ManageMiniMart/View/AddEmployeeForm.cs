@@ -81,18 +81,20 @@ namespace ManageMiniMart.View
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtEmployeeId.Enabled == true && txtEmployeeId.Text=="") throw new Exception("Employee ID cannot be empty");
-            if (txtEmployeeId.Enabled == true &&  employeeService.checkEmployeeID_Exist(txtEmployeeId.Text) == true) throw new Exception("Employee ID cannot be the same as the existing Employee ID");
-            if (txtEmployeeName.Text=="") throw new Exception("Employee name cannot be empty");
+            if (txtEmployeeId.Enabled == true && txtEmployeeId.Text == "") throw new Exception("Employee ID cannot be empty");
+            if (txtEmployeeId.Enabled == true && employeeService.checkEmployeeID_Exist(txtEmployeeId.Text) == true) throw new Exception("Employee ID cannot be the same as the existing Employee ID");
+            if (txtEmployeeName.Text == "") throw new Exception("Employee name cannot be empty");
             if (DateTime.Compare(dtpBirthdate.Value, DateTime.Now) > 0) throw new Exception("Start Time shoule be Smaller Than or Equal to current date");
+            if (txtPhoneNumber.Text != "" && txtPhoneNumber.Text.Length != 10) throw new Exception("Phone number length must be equal to 10");
             try
             {
                 Convert.ToDouble(txtSalary.Text);
             }
-            catch(Exception)
+            catch (Exception)
             {
-                throw new Exception("Salary must be a number");
+                throw new Exception("Salary must be a interger number");
             }
+            if (Convert.ToDouble(txtSalary.Text) < 0) throw new Exception("Salary can not be a negative number");
             string employeeId = txtEmployeeId.Text;
             string employeeName = txtEmployeeName.Text;
             DateTime dateTimeConverter = dtpBirthdate.Value;

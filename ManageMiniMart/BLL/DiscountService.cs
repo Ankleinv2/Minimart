@@ -31,7 +31,7 @@ namespace ManageMiniMart.BLL
             });
             foreach (var item in p)
             {
-                if (item.end_time >= DateTime.Now && item.start_time <= DateTime.Now)
+                if (item.end_time.Date >= DateTime.Now.Date && item.start_time.Date <= DateTime.Now.Date)
                 {
                     list.Add(new CBBItem
                     {

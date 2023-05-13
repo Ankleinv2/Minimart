@@ -87,12 +87,12 @@ namespace ManageMiniMart.View
 
         private void setCustomerId_Input(string customerId)
         {
-            txtCustomerId.Text = customerId;
-            if (customerService.getCustomerPoint(txtCustomerId.Text) != 0)
+            txtCustomerName.Text = customerService.getCustomerById(customerId).customer_name;
+            if (customerService.getCustomerPoint(customerId) != 0)
             {
                 checkUsePoint.Visible = true;
                 guna2HtmlLabel1.Visible = true;
-                showPoint.Text = customerService.getCustomerPoint(txtCustomerId.Text).ToString() + " points";
+                showPoint.Text = customerService.getCustomerPoint(customerId).ToString() + " points";
             }
             else
             {
@@ -103,7 +103,7 @@ namespace ManageMiniMart.View
         }
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
-            string customerName = txtCustomerId.Text;
+            string customerName = txtCustomerName.Text;
             SelectCustomerForm selectCustomerForm = new SelectCustomerForm(setCustomerId_Input);
             selectCustomerForm.setCustomer(customerName);
             selectCustomerForm.Show();
@@ -177,7 +177,7 @@ namespace ManageMiniMart.View
             DialogResult rs = myMessage.show("Are you complete ?", "Confirm", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.INFO);
             if(rs == DialogResult.Yes)
             {
-                string customerId = txtCustomerId.Text;
+                string customerId = txtCustomerName.Text;
                 Customer customer = customerService.getCustomerById(customerId);
                 if(customer == null)
                 {
@@ -247,9 +247,9 @@ namespace ManageMiniMart.View
 
                 //MyMessageBox myMessage1 = new MyMessageBox();
                 //myMessage1.show("Total money = " + totalMoney);
-                Bill_Detail_Form f = new Bill_Detail_Form(); //hien ra detail bill khi an print
-                f.setDatagridView(bill.bill_id);
-                f.ShowDialog();
+                Details_Bill_Print details_Bill = new Details_Bill_Print();
+                details_Bill.setDatagridView(idBill);
+                details_Bill.ShowDialog();
             }
         }
 

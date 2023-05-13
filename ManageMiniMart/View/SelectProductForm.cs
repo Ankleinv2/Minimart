@@ -33,13 +33,20 @@ namespace ManageMiniMart.View
             if (dgvProduct.Columns[e.ColumnIndex].Name == "ADD")
             {
                 CustomFormInput c = new CustomFormInput();
-                string amount = c.show("Quantity","Amount product");
-                //int amountProduct = Convert.ToInt32(amount);
+                string amount = c.show("Quantity", "Amount product");
+                int amountProduct;
                 if (amount == "") return;
-                if (!Int32.TryParse(amount, out int amountProduct)) throw new Exception("Invalid number");
+                else if (Convert.ToInt32(amount) < 0)
+                {
+                    throw new Exception("Quantity can not be a negative number");
+                }
+                else
+                {
+                    amountProduct = Convert.ToInt32(amount);
+                }
                 int productId = Convert.ToInt32(dgvProduct.SelectedRows[0].Cells[0].Value.ToString());
-                this.productDelegate(productId, amountProduct);
-            }
+                this.productDelegate(productId, amountProduct);    // truyền productId, amountProduct lại về AddProductInBill bên FormPayment
+            }
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

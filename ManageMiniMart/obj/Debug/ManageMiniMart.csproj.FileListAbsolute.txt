@@ -607,7 +607,6 @@ C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.Cust
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddCustomerForm.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddEmployeeForm.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddShiftWorkForm.resources
-C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.Bill_Detail_Form.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.DashboardEmployee.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormEmployee.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddDiscountForm.resources
@@ -680,3 +679,4 @@ H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\Manage
 H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\ManageMiniMart\bin\Debug\LiveCharts.Wpf.pdb
 H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\ManageMiniMart\bin\Debug\LiveCharts.Wpf.xml
 H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.CopyComplete
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.Details_Bill_Print.resources

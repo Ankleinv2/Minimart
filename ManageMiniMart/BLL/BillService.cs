@@ -79,7 +79,10 @@ namespace ManageMiniMart.BLL
             {
                 total += bill_Product.price * bill_Product.quantity;
             }
-
+            if (bill.used_points > 0)
+            {
+                total -= (int)bill.used_points * 1000;
+            }
             return total;
         }
         // Add

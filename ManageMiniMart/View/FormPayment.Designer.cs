@@ -77,11 +77,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(127, 9);
+            this.label1.Location = new System.Drawing.Point(142, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 41);
+            this.label1.Size = new System.Drawing.Size(178, 41);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Pay by cash";
+            this.label1.Text = "PAYMENT";
             // 
             // label2
             // 
@@ -245,6 +245,7 @@
             this.showPoint.Name = "showPoint";
             this.showPoint.Size = new System.Drawing.Size(3, 2);
             this.showPoint.TabIndex = 17;
+            this.showPoint.Text = null;
             // 
             // guna2HtmlLabel1
             // 

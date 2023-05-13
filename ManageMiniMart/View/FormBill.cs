@@ -23,6 +23,7 @@ namespace ManageMiniMart
             loadAllBill();
             setCBBSort1();
             setCBBSort2();
+            dtpBillDate.Value = DateTime.Now;
         }
         public void loadAllBill()
         {

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
@@ -69,9 +69,11 @@
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 78);
+            this.panel1.Size = new System.Drawing.Size(900, 63);
             this.panel1.TabIndex = 3;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -87,9 +89,10 @@
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 30;
             this.btnExit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnExit.Location = new System.Drawing.Point(1144, 12);
+            this.btnExit.Location = new System.Drawing.Point(858, 10);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(28, 30);
+            this.btnExit.Size = new System.Drawing.Size(21, 24);
             this.btnExit.TabIndex = 33;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -100,11 +103,12 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(457, 21);
+            this.label8.Location = new System.Drawing.Point(372, 10);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(224, 40);
+            this.label8.Size = new System.Drawing.Size(115, 32);
             this.label8.TabIndex = 30;
-            this.label8.Text = "Bill detail form";
+            this.label8.Text = "Bill detail";
             // 
             // panel3
             // 
@@ -119,9 +123,10 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 78);
+            this.panel3.Location = new System.Drawing.Point(0, 63);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1200, 245);
+            this.panel3.Size = new System.Drawing.Size(900, 199);
             this.panel3.TabIndex = 30;
             // 
             // lblPaymentMethod
@@ -130,9 +135,10 @@
             this.lblPaymentMethod.AutoSize = true;
             this.lblPaymentMethod.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPaymentMethod.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblPaymentMethod.Location = new System.Drawing.Point(583, 189);
+            this.lblPaymentMethod.Location = new System.Drawing.Point(437, 154);
+            this.lblPaymentMethod.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPaymentMethod.Name = "lblPaymentMethod";
-            this.lblPaymentMethod.Size = new System.Drawing.Size(116, 23);
+            this.lblPaymentMethod.Size = new System.Drawing.Size(95, 19);
             this.lblPaymentMethod.TabIndex = 30;
             this.lblPaymentMethod.Text = "22/11/2022";
             // 
@@ -140,11 +146,12 @@
             // 
             this.lblEmployeeName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEmployeeName.AutoSize = true;
-            this.lblEmployeeName.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblEmployeeName.Location = new System.Drawing.Point(583, 144);
+            this.lblEmployeeName.Location = new System.Drawing.Point(437, 117);
+            this.lblEmployeeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmployeeName.Name = "lblEmployeeName";
-            this.lblEmployeeName.Size = new System.Drawing.Size(129, 29);
+            this.lblEmployeeName.Size = new System.Drawing.Size(95, 19);
             this.lblEmployeeName.TabIndex = 30;
             this.lblEmployeeName.Text = "22/11/2022";
             // 
@@ -152,11 +159,12 @@
             // 
             this.lblCustomerName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCustomerName.AutoSize = true;
-            this.lblCustomerName.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustomerName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCustomerName.Location = new System.Drawing.Point(583, 99);
+            this.lblCustomerName.Location = new System.Drawing.Point(437, 80);
+            this.lblCustomerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(129, 29);
+            this.lblCustomerName.Size = new System.Drawing.Size(95, 19);
             this.lblCustomerName.TabIndex = 30;
             this.lblCustomerName.Text = "22/11/2022";
             // 
@@ -166,9 +174,10 @@
             this.lblBillDate.AutoSize = true;
             this.lblBillDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBillDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblBillDate.Location = new System.Drawing.Point(583, 57);
+            this.lblBillDate.Location = new System.Drawing.Point(437, 46);
+            this.lblBillDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBillDate.Name = "lblBillDate";
-            this.lblBillDate.Size = new System.Drawing.Size(116, 23);
+            this.lblBillDate.Size = new System.Drawing.Size(95, 19);
             this.lblBillDate.TabIndex = 30;
             this.lblBillDate.Text = "22/11/2022";
             // 
@@ -178,9 +187,10 @@
             this.lap55.AutoSize = true;
             this.lap55.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lap55.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lap55.Location = new System.Drawing.Point(386, 58);
+            this.lap55.Location = new System.Drawing.Point(290, 47);
+            this.lap55.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lap55.Name = "lap55";
-            this.lap55.Size = new System.Drawing.Size(75, 23);
+            this.lap55.Size = new System.Drawing.Size(60, 19);
             this.lap55.TabIndex = 29;
             this.lap55.Text = "Bill date:";
             // 
@@ -190,9 +200,10 @@
             this.lblBill_id.AutoSize = true;
             this.lblBill_id.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBill_id.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblBill_id.Location = new System.Drawing.Point(583, 14);
+            this.lblBill_id.Location = new System.Drawing.Point(437, 11);
+            this.lblBill_id.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBill_id.Name = "lblBill_id";
-            this.lblBill_id.Size = new System.Drawing.Size(116, 23);
+            this.lblBill_id.Size = new System.Drawing.Size(95, 19);
             this.lblBill_id.TabIndex = 30;
             this.lblBill_id.Text = "22/11/2022";
             // 
@@ -202,9 +213,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(386, 14);
+            this.label2.Location = new System.Drawing.Point(290, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 23);
+            this.label2.Size = new System.Drawing.Size(46, 19);
             this.label2.TabIndex = 29;
             this.label2.Text = "Bill_id:";
             // 
@@ -214,9 +226,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(387, 99);
+            this.label1.Location = new System.Drawing.Point(290, 80);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 23);
+            this.label1.Size = new System.Drawing.Size(110, 19);
             this.label1.TabIndex = 29;
             this.label1.Text = "Customer name:";
             // 
@@ -226,9 +239,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label3.Location = new System.Drawing.Point(386, 189);
+            this.label3.Location = new System.Drawing.Point(290, 154);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 23);
+            this.label3.Size = new System.Drawing.Size(118, 19);
             this.label3.TabIndex = 26;
             this.label3.Text = "Payment method:";
             // 
@@ -238,9 +252,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Location = new System.Drawing.Point(386, 145);
+            this.label5.Location = new System.Drawing.Point(290, 118);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 23);
+            this.label5.Size = new System.Drawing.Size(109, 19);
             this.label5.TabIndex = 26;
             this.label5.Text = "Employee name:";
             // 
@@ -255,9 +270,10 @@
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 769);
+            this.panel4.Location = new System.Drawing.Point(0, 625);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1200, 200);
+            this.panel4.Size = new System.Drawing.Size(900, 162);
             this.panel4.TabIndex = 31;
             // 
             // lblUsedPoint
@@ -266,9 +282,10 @@
             this.lblUsedPoint.AutoSize = true;
             this.lblUsedPoint.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsedPoint.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblUsedPoint.Location = new System.Drawing.Point(588, 71);
+            this.lblUsedPoint.Location = new System.Drawing.Point(441, 58);
+            this.lblUsedPoint.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsedPoint.Name = "lblUsedPoint";
-            this.lblUsedPoint.Size = new System.Drawing.Size(21, 23);
+            this.lblUsedPoint.Size = new System.Drawing.Size(18, 19);
             this.lblUsedPoint.TabIndex = 34;
             this.lblUsedPoint.Text = "0";
             // 
@@ -278,9 +295,10 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label10.Location = new System.Drawing.Point(392, 71);
+            this.label10.Location = new System.Drawing.Point(290, 58);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 23);
+            this.label10.Size = new System.Drawing.Size(79, 19);
             this.label10.TabIndex = 33;
             this.label10.Text = "Used point:";
             // 
@@ -290,9 +308,10 @@
             this.lblTotalPay.AutoSize = true;
             this.lblTotalPay.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPay.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTotalPay.Location = new System.Drawing.Point(589, 105);
+            this.lblTotalPay.Location = new System.Drawing.Point(437, 117);
+            this.lblTotalPay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalPay.Name = "lblTotalPay";
-            this.lblTotalPay.Size = new System.Drawing.Size(116, 23);
+            this.lblTotalPay.Size = new System.Drawing.Size(95, 19);
             this.lblTotalPay.TabIndex = 32;
             this.lblTotalPay.Text = "22/11/2022";
             // 
@@ -302,12 +321,12 @@
             this.lblDiscount.AutoSize = true;
             this.lblDiscount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblDiscount.Location = new System.Drawing.Point(1006, 109);
+            this.lblDiscount.Location = new System.Drawing.Point(437, 86);
+            this.lblDiscount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(116, 23);
+            this.lblDiscount.Size = new System.Drawing.Size(95, 19);
             this.lblDiscount.TabIndex = 32;
             this.lblDiscount.Text = "22/11/2022";
-            this.lblDiscount.Visible = false;
             // 
             // lblTotalMoney
             // 
@@ -315,9 +334,10 @@
             this.lblTotalMoney.AutoSize = true;
             this.lblTotalMoney.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalMoney.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTotalMoney.Location = new System.Drawing.Point(583, 33);
+            this.lblTotalMoney.Location = new System.Drawing.Point(437, 28);
+            this.lblTotalMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalMoney.Name = "lblTotalMoney";
-            this.lblTotalMoney.Size = new System.Drawing.Size(116, 23);
+            this.lblTotalMoney.Size = new System.Drawing.Size(95, 19);
             this.lblTotalMoney.TabIndex = 32;
             this.lblTotalMoney.Text = "22/11/2022";
             // 
@@ -327,12 +347,12 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label6.Location = new System.Drawing.Point(811, 109);
+            this.label6.Location = new System.Drawing.Point(291, 87);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 23);
+            this.label6.Size = new System.Drawing.Size(66, 19);
             this.label6.TabIndex = 31;
             this.label6.Text = "Discount:";
-            this.label6.Visible = false;
             // 
             // label7
             // 
@@ -340,9 +360,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label7.Location = new System.Drawing.Point(393, 105);
+            this.label7.Location = new System.Drawing.Point(290, 118);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 23);
+            this.label7.Size = new System.Drawing.Size(67, 19);
             this.label7.TabIndex = 31;
             this.label7.Text = "Total pay:";
             // 
@@ -352,57 +373,60 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(387, 34);
+            this.label4.Location = new System.Drawing.Point(290, 28);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 23);
+            this.label4.Size = new System.Drawing.Size(87, 19);
             this.label4.TabIndex = 31;
             this.label4.Text = "Total money:";
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.dgvBillDetail);
-            this.panel5.Location = new System.Drawing.Point(0, 329);
+            this.panel5.Location = new System.Drawing.Point(0, 267);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1200, 467);
+            this.panel5.Size = new System.Drawing.Size(900, 379);
             this.panel5.TabIndex = 32;
             // 
             // dgvBillDetail
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            this.dgvBillDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.dgvBillDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvBillDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBillDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBillDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvBillDetail.ColumnHeadersHeight = 50;
             this.dgvBillDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBillDetail.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBillDetail.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvBillDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBillDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBillDetail.Location = new System.Drawing.Point(0, 0);
+            this.dgvBillDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvBillDetail.Name = "dgvBillDetail";
             this.dgvBillDetail.RowHeadersVisible = false;
             this.dgvBillDetail.RowHeadersWidth = 50;
             this.dgvBillDetail.RowTemplate.Height = 50;
             this.dgvBillDetail.RowTemplate.ReadOnly = true;
             this.dgvBillDetail.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBillDetail.Size = new System.Drawing.Size(1200, 467);
+            this.dgvBillDetail.Size = new System.Drawing.Size(900, 379);
             this.dgvBillDetail.TabIndex = 4;
             this.dgvBillDetail.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBillDetail.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -428,15 +452,16 @@
             // 
             // Bill_Detail_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(1200, 969);
+            this.ClientSize = new System.Drawing.Size(900, 787);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Bill_Detail_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bill_Detail_Form";

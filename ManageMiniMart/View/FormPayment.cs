@@ -170,7 +170,6 @@ namespace ManageMiniMart.View
             loadProductInBill();
         }
 
-
         private void btnPrint_Click(object sender, EventArgs e)
         {
             if (listProductInBill.Count == 0) throw new Exception("Chua co san pham trong gio hang");
@@ -245,9 +244,12 @@ namespace ManageMiniMart.View
                     billService.saveBill(bill);
                     customerService.saveCustomer(customer);
                 }
-                
-                MyMessageBox myMessage1 = new MyMessageBox();
-                myMessage1.show("Total money = " + totalMoney);
+
+                //MyMessageBox myMessage1 = new MyMessageBox();
+                //myMessage1.show("Total money = " + totalMoney);
+                Bill_Detail_Form f = new Bill_Detail_Form(); //hien ra detail bill khi an print
+                f.setDatagridView(bill.bill_id);
+                f.ShowDialog();
             }
         }
 

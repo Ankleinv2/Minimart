@@ -65,19 +65,19 @@ namespace ManageMiniMart.View
                     Product_name = bill_Product.Product.product_name,
                     Price = Double.Parse(bill_Product.Product.price.ToString()).ToString("#,## VNĐ").Replace(',', '.'),
                     Quantity = bill_Product.quantity,
-                    Total = Double.Parse(TotalPayAfterDiscount.ToString()).ToString("#,## VNĐ").Replace(',', '.'),
+                    Total = Double.Parse(totalBeforeDiscount.ToString()).ToString("#,## VNĐ").Replace(',', '.'),
                 };
                 billDetails.Add(details);
 
             }
-            lblTotalMoney.Text = TotalPayAfterDiscount.ToString("#,## VNĐ").Replace(',', '.');
+            lblTotalMoney.Text = TotalMoneyBeforeDiscount.ToString("#,## VNĐ").Replace(',', '.');
+            dgvBillDetail.DataSource = billDetails;
+            
+            lblDiscount.Text = (TotalMoneyBeforeDiscount - TotalPayAfterDiscount).ToString("#,## VNĐ").Replace(',', '.');
             if (bill.used_points > 0)
             {
                 TotalPayAfterDiscount -= (int)bill.used_points * 1000;
             }
-            dgvBillDetail.DataSource = billDetails;
-            
-            lblDiscount.Text = (TotalMoneyBeforeDiscount - TotalPayAfterDiscount).ToString("#,## VNĐ").Replace(',', '.');
             if (TotalPayAfterDiscount == 0)
             {
                 lblTotalPay.Text = "0";

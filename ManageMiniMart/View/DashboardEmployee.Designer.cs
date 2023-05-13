@@ -41,7 +41,6 @@
             this.pictureBoxSuperMinimart = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblEmployeeId = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.lblEmployeeName = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -280,7 +279,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblEmployeeId);
             this.panel1.Controls.Add(this.lblRole);
             this.panel1.Controls.Add(this.lblEmployeeName);
             this.panel1.Controls.Add(this.pictureBox2);
@@ -289,44 +287,32 @@
             this.panel1.Size = new System.Drawing.Size(292, 67);
             this.panel1.TabIndex = 3;
             // 
-            // lblEmployeeId
-            // 
-            this.lblEmployeeId.AutoSize = true;
-            this.lblEmployeeId.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmployeeId.ForeColor = System.Drawing.Color.PowderBlue;
-            this.lblEmployeeId.Location = new System.Drawing.Point(182, 4);
-            this.lblEmployeeId.Name = "lblEmployeeId";
-            this.lblEmployeeId.Size = new System.Drawing.Size(104, 18);
-            this.lblEmployeeId.TabIndex = 1;
-            this.lblEmployeeId.Text = "044203000543";
-            this.lblEmployeeId.Visible = false;
-            // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRole.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRole.ForeColor = System.Drawing.Color.PowderBlue;
-            this.lblRole.Location = new System.Drawing.Point(76, 34);
+            this.lblRole.Location = new System.Drawing.Point(76, 32);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(117, 18);
+            this.lblRole.Size = new System.Drawing.Size(103, 16);
             this.lblRole.TabIndex = 1;
             this.lblRole.Text = "Role: Manager";
             // 
             // lblEmployeeName
             // 
             this.lblEmployeeName.AutoSize = true;
-            this.lblEmployeeName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeName.ForeColor = System.Drawing.Color.PowderBlue;
-            this.lblEmployeeName.Location = new System.Drawing.Point(77, 4);
+            this.lblEmployeeName.Location = new System.Drawing.Point(76, 12);
             this.lblEmployeeName.Name = "lblEmployeeName";
-            this.lblEmployeeName.Size = new System.Drawing.Size(99, 18);
+            this.lblEmployeeName.Size = new System.Drawing.Size(89, 16);
             this.lblEmployeeName.TabIndex = 1;
             this.lblEmployeeName.Text = "Hoàng Nhận";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, -3);
+            this.pictureBox2.Location = new System.Drawing.Point(18, -6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(71, 70);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -394,7 +380,7 @@
             this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblTitleChildForm.Location = new System.Drawing.Point(77, 29);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(56, 23);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(48, 20);
             this.lblTitleChildForm.TabIndex = 1;
             this.lblTitleChildForm.Text = "Home";
             // 
@@ -459,7 +445,6 @@
         private System.Windows.Forms.PictureBox pictureBoxSuperMinimart;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblEmployeeId;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Label lblEmployeeName;
         private System.Windows.Forms.PictureBox pictureBox2;

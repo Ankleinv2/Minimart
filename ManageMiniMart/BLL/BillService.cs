@@ -7,6 +7,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Configuration;
 
 namespace ManageMiniMart.BLL
 {
@@ -59,8 +60,16 @@ namespace ManageMiniMart.BLL
         }
         public List<BillView> getAllBillViewByCustomerName(string customerName)
         {
-            var bills = db.Bills.Where(b => b.Customer.customer_name.Contains(customerName)).ToList();
-            return convertToBillView(bills);
+            if (customerName == "")
+            {
+                var bills = db.Bills.ToList();
+                return convertToBillView(bills);
+            }
+            else
+            {
+                var bills = db.Bills.Where(b => b.Customer.customer_name.Contains(customerName)).ToList();
+                return convertToBillView(bills);
+            }
         }
         public double getTotalByBill(int billId)
         {

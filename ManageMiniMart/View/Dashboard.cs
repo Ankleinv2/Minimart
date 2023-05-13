@@ -67,7 +67,6 @@ namespace ManageMiniMart
         }
         private void setUser()
         {
-            lblUserID.Text = this.currentAccount.person_id.ToString();
             lblUserName.Text = this.currentAccount.Person.person_name;
             lblUserRole.Text = "Role : " + this.currentAccount.Role.role_name;
         }

@@ -128,8 +128,7 @@ namespace ManageMiniMart.View
             }
             if(amount > product.quantity)
             {
-                MyMessageBox messageBox = new MyMessageBox();
-                messageBox.show("Amount product in stock not enough for buy !","Nofitication");
+                throw new Exception("Amount product in stock not enough for buy !");
             }
             else
             {
@@ -139,9 +138,10 @@ namespace ManageMiniMart.View
                     int amountCurrent = productInBill.Amount;
                     if ((amountCurrent+amount) > product.quantity)
                     {
-                        MyMessageBox myMessage = new MyMessageBox();
-                        myMessage.show("Amount product in stock not enough for buy!", "Nofitication");
-                        return;
+                        //MyMessageBox myMessage = new MyMessageBox();
+                        //myMessage.show("Amount product in stock not enough for buy!", "Nofitication");
+                        //return;
+                        throw new Exception("Amount product in stock not enough for buy !");
                     }
                     else
                     {

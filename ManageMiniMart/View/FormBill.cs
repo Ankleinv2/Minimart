@@ -60,9 +60,12 @@ namespace ManageMiniMart
             if (dgvBill.Columns[e.ColumnIndex].Name == "ShowDetail")
             {
                 int bill_id = Convert.ToInt32(dgvBill.SelectedRows[0].Cells[0].Value.ToString());
-                Bill_Detail_Form f=new Bill_Detail_Form();
+                Bill_Detail_Form f = new Bill_Detail_Form();
                 f.setDatagridView(bill_id);
                 f.ShowDialog();
+                //Details_Bill_Print details= new Details_Bill_Print();
+                //details.setDatagridView(bill_id);
+                //details.Show();
             }
         }
     }

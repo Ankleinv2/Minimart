@@ -682,3 +682,4 @@ H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\Manage
 H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\ManageMiniMart\bin\Debug\LiveCharts.Wpf.pdb
 H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\ManageMiniMart\bin\Debug\LiveCharts.Wpf.xml
 H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.CopyComplete
+H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.Details_Bill_Print.resources

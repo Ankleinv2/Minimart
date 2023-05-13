@@ -69,7 +69,8 @@ namespace ManageMiniMart.BLL
             {
                 total += bill_Product.price * bill_Product.quantity;
             }
-
+            double usedPoint = Convert.ToDouble(bill.used_points * 1000);
+            total -= usedPoint;
             return total;
         }
         // Add

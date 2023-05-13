@@ -36,6 +36,8 @@ namespace ManageMiniMart.BLL
         // Get
         public List<CustomerView> getAllCustomerView()
         {
+            db = null;
+            db = new Manage_MinimartEntities();
             var c = db.Customers.ToList();
             List<CustomerView> customerViews = convertToCustomerView(c);
             return customerViews;

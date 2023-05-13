@@ -48,10 +48,11 @@
             this.checkUsePoint = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtProductId = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtCustomerId = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSearchCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvProduct = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.lblCustomerID = new System.Windows.Forms.Label();
             this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -216,12 +217,13 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lblCustomerID);
             this.panel3.Controls.Add(this.showPoint);
             this.panel3.Controls.Add(this.guna2HtmlLabel1);
             this.panel3.Controls.Add(this.checkUsePoint);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.txtProductId);
-            this.panel3.Controls.Add(this.txtCustomerId);
+            this.panel3.Controls.Add(this.txtCustomerName);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnSearchCustomer);
             this.panel3.Controls.Add(this.btnSearchProduct);
@@ -245,6 +247,7 @@
             this.showPoint.Name = "showPoint";
             this.showPoint.Size = new System.Drawing.Size(3, 2);
             this.showPoint.TabIndex = 17;
+            this.showPoint.Text = null;
             // 
             // guna2HtmlLabel1
             // 
@@ -312,30 +315,30 @@
             this.txtProductId.Size = new System.Drawing.Size(225, 38);
             this.txtProductId.TabIndex = 10;
             // 
-            // txtCustomerId
+            // txtCustomerName
             // 
-            this.txtCustomerId.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCustomerId.BorderColor = System.Drawing.Color.MediumSeaGreen;
-            this.txtCustomerId.BorderRadius = 10;
-            this.txtCustomerId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustomerId.DefaultText = "";
-            this.txtCustomerId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCustomerId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCustomerId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerId.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.txtCustomerId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerId.ForeColor = System.Drawing.Color.White;
-            this.txtCustomerId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerId.Location = new System.Drawing.Point(228, 230);
-            this.txtCustomerId.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtCustomerId.Name = "txtCustomerId";
-            this.txtCustomerId.PasswordChar = '\0';
-            this.txtCustomerId.PlaceholderText = "";
-            this.txtCustomerId.SelectedText = "";
-            this.txtCustomerId.Size = new System.Drawing.Size(225, 38);
-            this.txtCustomerId.TabIndex = 10;
+            this.txtCustomerName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCustomerName.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.txtCustomerName.BorderRadius = 10;
+            this.txtCustomerName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCustomerName.DefaultText = "";
+            this.txtCustomerName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCustomerName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCustomerName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomerName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomerName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.txtCustomerName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomerName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerName.ForeColor = System.Drawing.Color.White;
+            this.txtCustomerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomerName.Location = new System.Drawing.Point(228, 230);
+            this.txtCustomerName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.PasswordChar = '\0';
+            this.txtCustomerName.PlaceholderText = "";
+            this.txtCustomerName.SelectedText = "";
+            this.txtCustomerName.Size = new System.Drawing.Size(225, 38);
+            this.txtCustomerName.TabIndex = 10;
             // 
             // btnSearchCustomer
             // 
@@ -440,6 +443,16 @@
             this.dgvProduct.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProduct.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // lblCustomerID
+            // 
+            this.lblCustomerID.AutoSize = true;
+            this.lblCustomerID.Location = new System.Drawing.Point(409, 22);
+            this.lblCustomerID.Name = "lblCustomerID";
+            this.lblCustomerID.Size = new System.Drawing.Size(44, 16);
+            this.lblCustomerID.TabIndex = 18;
+            this.lblCustomerID.Text = "label4";
+            this.lblCustomerID.Visible = false;
+            // 
             // productIdDataGridViewTextBoxColumn
             // 
             this.productIdDataGridViewTextBoxColumn.DataPropertyName = "ProductId";
@@ -542,7 +555,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2DataGridView dgvProduct;
-        private Guna.UI2.WinForms.Guna2TextBox txtCustomerId;
+        private Guna.UI2.WinForms.Guna2TextBox txtCustomerName;
         private Guna.UI2.WinForms.Guna2TextBox txtProductId;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.BindingSource productInBillBindingSource;
@@ -559,5 +572,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2ToggleSwitch checkUsePoint;
         private Guna.UI2.WinForms.Guna2HtmlLabel showPoint;
+        private System.Windows.Forms.Label lblCustomerID;
     }
 }

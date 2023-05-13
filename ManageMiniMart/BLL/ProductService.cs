@@ -45,6 +45,8 @@ namespace ManageMiniMart.BLL
         // Get
         public List<ProductView> getAllProductView()
         {
+            db = null;
+            db = new Manage_MinimartEntities();
             List<ProductView> products = new List<ProductView>();
             var l = db.Products.ToList();
             products = convertToProductView(l);

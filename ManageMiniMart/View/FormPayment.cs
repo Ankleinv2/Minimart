@@ -87,12 +87,14 @@ namespace ManageMiniMart.View
 
         private void setCustomerId_Input(string customerId)
         {
-            txtCustomerId.Text = customerId;
-            if (customerService.getCustomerPoint(txtCustomerId.Text) != 0)
+            lblCustomerID.Text = customerId;
+            Customer customer = customerService.getCustomerById(customerId);
+            txtCustomerName.Text = customer.customer_name;
+            if (customer.point != 0)
             {
                 checkUsePoint.Visible = true;
                 guna2HtmlLabel1.Visible = true;
-                showPoint.Text = customerService.getCustomerPoint(txtCustomerId.Text).ToString() + " points";
+                showPoint.Text = customer.point + " points";
             }
             else
             {
@@ -103,7 +105,7 @@ namespace ManageMiniMart.View
         }
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
-            string customerName = txtCustomerId.Text;
+            string customerName = txtCustomerName.Text;
             SelectCustomerForm selectCustomerForm = new SelectCustomerForm(setCustomerId_Input);
             selectCustomerForm.setCustomer(customerName);
             selectCustomerForm.Show();
@@ -177,7 +179,7 @@ namespace ManageMiniMart.View
             DialogResult rs = myMessage.show("Are you complete ?", "Confirm", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.INFO);
             if(rs == DialogResult.Yes)
             {
-                string customerId = txtCustomerId.Text;
+                string customerId = lblCustomerID.Text;
                 Customer customer = customerService.getCustomerById(customerId);
                 if(customer == null)
                 {
@@ -189,11 +191,11 @@ namespace ManageMiniMart.View
                 double totalMoney = 0;
                 Bill bill = new Bill
                 {
-                    person_id= employeeId,
-                    customer_id= customerId,
+                    person_id = employeeId,
+                    customer_id = customerId,
                     created_time = currentTime,
                     payment_method = methodPayment,
-                    
+                    used_points = 0
                 };
                 billService.saveBill(bill);
                 int idBill = billService.IdBillAdded;
@@ -223,7 +225,8 @@ namespace ManageMiniMart.View
                 }
                 if(customer != null)
                 {                                                       // 20000 = 1 đ
-                    int oldPoint = (int)customer.point;                  // 1đ = 1000                    
+                    int oldPoint = (int)customer.point;                  // 1đ = 1000
+                    
                     if (checkUsePoint.Checked)
                     {
                         if (totalMoney < Convert.ToDouble(customer.point * 1000))
@@ -244,9 +247,12 @@ namespace ManageMiniMart.View
                     billService.saveBill(bill);
                     customerService.saveCustomer(customer);
                 }
-                
-                MyMessageBox myMessage1 = new MyMessageBox();
-                myMessage1.show("Total money = " + totalMoney);
+
+                //MyMessageBox myMessage1 = new MyMessageBox();
+                //myMessage1.show("Total money = " + totalMoney);
+                Details_Bill_Print details_Bill = new Details_Bill_Print();
+                details_Bill.setDatagridView(idBill);
+                details_Bill.ShowDialog();
             }
         }
 

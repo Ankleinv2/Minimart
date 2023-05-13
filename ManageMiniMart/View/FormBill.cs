@@ -20,15 +20,9 @@ namespace ManageMiniMart
         {
             InitializeComponent();
             billService= new BillService();
-            loadAllBill();
             setCBBSort1();
             setCBBSort2();
             dtpBillDate.Value = DateTime.Now;
-        }
-        public void loadAllBill()
-        {
-            dgvBill.DataSource = null;
-            dgvBill.DataSource = billService.getAllBillView();
         }
 
         public void setCBBSort1()

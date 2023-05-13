@@ -144,7 +144,7 @@ namespace ManageMiniMart
                 Product_Discount product_Discount1 = productDiscountService.getProduct_DiscountByProductIdAndDiscountId(product.product_id, discountBefore);
                 productDiscountService.deleteProduct_Discount(product_Discount1);
             }
-            else                           // ???
+            else                           // add khong co discount
             {
                 Product product = new Product
                 {

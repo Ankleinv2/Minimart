@@ -42,7 +42,7 @@ namespace Register_Login
             DateTime now = DateTime.Now;
             foreach(var discount in discountService.getAllDiscount())
             {
-                if(discount.end_time < now) {
+                if(discount.end_time < now || discount.start_time > now) {
                     List<Product_Discount> product_s = productDiscountService.getProduct_Discount_By_DiscountID(discount.discount_id);
                     foreach(var product in product_s)
                     {

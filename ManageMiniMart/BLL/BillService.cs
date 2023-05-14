@@ -111,11 +111,11 @@ namespace ManageMiniMart.BLL
             {
                 if (flag == 0)
                 {
-                    list = list.OrderBy(x => x.Total).ToList();
+                    list = list.OrderBy(x => x.Total.Length).ThenBy(x => x.Total).ToList();
                 }
                 else
                 {
-                    list = list.OrderByDescending(x => x.Total).ToList();
+                    list = list.OrderByDescending(x => x.Total.Length).ThenByDescending(x => x.Total).ToList();
                 }
             }
             

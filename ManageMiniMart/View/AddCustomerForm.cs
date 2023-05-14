@@ -76,7 +76,7 @@ namespace ManageMiniMart.View
                     birthdate = birthDate,
                     created_time = customerOld.created_time,
                     address = address,
-                    point = point,
+                    point = customerOld.point,
                     email = email,
                 };
                 customerService.saveCustomer(customer);

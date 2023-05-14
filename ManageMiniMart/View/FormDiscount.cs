@@ -27,6 +27,9 @@ namespace ManageMiniMart.View
         {
             dgvDiscount.DataSource = null;
             dgvDiscount.DataSource = discountService.getAllDiscountView();
+            dgvDiscount.Columns["StartTime"].HeaderText = "Start Time";
+            dgvDiscount.Columns["EndTime"].HeaderText = "End Time";
+            dgvDiscount.Columns["PercentSale"].HeaderText = "Percent Sale";
             dgvDiscount.Refresh();
         }
         // btnAdd

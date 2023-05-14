@@ -88,6 +88,7 @@ namespace ManageMiniMart.View
         private void setCustomerId_Input(string customerId)
         {
             txtCustomerName.Text = customerService.getCustomerById(customerId).customer_name;
+            txtCustomerID.Text = customerId;
             if (customerService.getCustomerPoint(customerId) != 0)
             {
                 checkUsePoint.Visible = true;
@@ -177,7 +178,7 @@ namespace ManageMiniMart.View
             DialogResult rs = myMessage.show("Are you complete ?", "Confirm", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.INFO);
             if(rs == DialogResult.Yes)
             {
-                string customerId = txtCustomerName.Text;
+                string customerId = txtCustomerID.Text;
                 Customer customer = customerService.getCustomerById(customerId);
                 if(customer == null)
                 {
@@ -243,6 +244,8 @@ namespace ManageMiniMart.View
                     customer.point += pointAdd;
                     billService.saveBill(bill);
                     customerService.saveCustomer(customer);
+                    checkUsePoint.Checked = false;
+                    showPoint.Text = customerService.getCustomerPoint(customerId).ToString() + " points";
                 }
 
                 //MyMessageBox myMessage1 = new MyMessageBox();

@@ -37,13 +37,7 @@ namespace ManageMiniMart.BLL
             var bills = db.Bills.Where(b => b.created_time.Year == year && b.created_time.Month == month).ToList();
             foreach (var b in bills)
             {
-                double totalMoneyInBill = 0;
-                var productsInBill = db.Bill_Product.Where(b1 => b1.bill_id == b.bill_id).ToList();
-                foreach (var bill in productsInBill)
-                {
-                    totalMoneyInBill += bill.price;
-                }
-                total += totalMoneyInBill;
+                total += billService.getTotalByBill(b.bill_id);
             }
 
             return new Revenue

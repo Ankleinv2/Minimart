@@ -42,7 +42,7 @@ namespace ManageMiniMart.View
             });
             chartRevenue.LegendLocation = LiveCharts.LegendLocation.Right;
             loadRevenue();
-            loadChartCustomer(2019);
+            cbbSelectCustomerByYear.Text = DateTime.Now.Year.ToString();
         }
         //private void loadRevenue()
         //{

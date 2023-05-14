@@ -191,15 +191,6 @@ namespace ManageMiniMart
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int Param);
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-         );
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();

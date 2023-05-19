@@ -73,12 +73,12 @@ namespace ManageMiniMart
             int cID = ((CBBItem)cbbCategory.SelectedItem).Value;
             if(cID == 0)
             {
-                dgvProduct.DataSource = productService.getListProductViewByProductName(txtProductName.Text);
+                dgvProduct.DataSource = productService.getListProductViewByProductName(txtProductName.Text.Trim());
             }
             else
             {
-                dgvProduct.DataSource = productService.getListProductViewByProductNameAndCategory(cID,txtProductName.Text);
-            }
+                dgvProduct.DataSource = productService.getListProductViewByProductNameAndCategory(cID,txtProductName.Text.Trim());
+            } 
             
         }
 

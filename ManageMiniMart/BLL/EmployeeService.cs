@@ -4,9 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Security.Principal;
 using System.Security.RightsManagement;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace ManageMiniMart.BLL
 {
@@ -55,6 +57,27 @@ namespace ManageMiniMart.BLL
         public List<Person> getListEmployeeByName(string name)
         {
             return db.People.Where(p => p.person_name.Contains(name)).ToList();
+        }
+        public List<PersonView> getListEmployeeByNamePersonView(string name)
+        {
+            List<PersonView> result = new List<PersonView>();
+            var peoples = db.People.Where(p => p.person_name.Contains(name)).ToList();
+            foreach(Person person in peoples)
+            {
+                result.Add(new PersonView
+                {
+                    person_id = person.person_id,
+                    person_name = person.person_name,
+                    birthdate = String.Format("{0:dd/MM/yyyy}", person.birthdate),
+                    address = person.address,
+                    phone_number = person.phone_number,
+                    salary = Double.Parse(person.salary.ToString()).ToString("#,## VNĐ").Replace(',', '.'),
+                    email = person.email,
+                    role = person.Account != null ? person.Account.Role.role_name : ""
+                });
+            }
+            return result;
+
         }
         // Check EmployeeID (dùng khi thêm mới Employee)
         public bool checkEmployeeID_Exist(string id)

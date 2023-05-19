@@ -65,7 +65,7 @@ namespace ManageMiniMart.View
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string name=txtSearch.Text.Trim();
-            dgvEmloyee.DataSource=employeeService.getListEmployeeByName(name);
+            dgvEmloyee.DataSource=employeeService.getListEmployeeByNamePersonView(name);
 
         }
     }

@@ -46,7 +46,7 @@ namespace ManageMiniMart.View
         // btnSearch
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string customerName = txtSearch.Text;
+            string customerName = txtSearch.Text.Trim();
             dgvCustomer.DataSource = customerService.getListCustomerViewByName(customerName);
         }
     }

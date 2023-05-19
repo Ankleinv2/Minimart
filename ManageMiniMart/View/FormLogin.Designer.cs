@@ -61,6 +61,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtUserRegister = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.checkHidePass = new Guna.UI2.WinForms.Guna2CheckBox();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -134,7 +135,7 @@
             this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(131)))));
             this.lblLogin.Location = new System.Drawing.Point(3, 21);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(96, 37);
+            this.lblLogin.Size = new System.Drawing.Size(77, 28);
             this.lblLogin.TabIndex = 5;
             this.lblLogin.Text = "Login";
             // 
@@ -169,7 +170,7 @@
             this.lblUserID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(131)))));
             this.lblUserID.Location = new System.Drawing.Point(-2, 109);
             this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(85, 25);
+            this.lblUserID.Size = new System.Drawing.Size(69, 21);
             this.lblUserID.TabIndex = 7;
             this.lblUserID.Text = "User ID";
             // 
@@ -180,7 +181,7 @@
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(131)))));
             this.lblPassword.Location = new System.Drawing.Point(0, 210);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(114, 25);
+            this.lblPassword.Size = new System.Drawing.Size(90, 21);
             this.lblPassword.TabIndex = 9;
             this.lblPassword.Text = "Password";
             // 
@@ -226,6 +227,7 @@
             this.pnlLogin.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pnlLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(255)))));
+            this.pnlLogin.Controls.Add(this.checkHidePass);
             this.pnlLogin.Controls.Add(this.guna2Button1);
             this.pnlLogin.Controls.Add(this.lblLogin);
             this.pnlLogin.Controls.Add(this.lblPassword);
@@ -284,7 +286,7 @@
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(131)))));
             this.label13.Location = new System.Drawing.Point(5, 254);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(164, 21);
+            this.label13.Size = new System.Drawing.Size(140, 20);
             this.label13.TabIndex = 27;
             this.label13.Text = "Confirm Password";
             // 
@@ -340,7 +342,7 @@
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(131)))));
             this.label12.Location = new System.Drawing.Point(10, 145);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(55, 21);
+            this.label12.Size = new System.Drawing.Size(46, 20);
             this.label12.TabIndex = 25;
             this.label12.Text = "Email";
             // 
@@ -351,7 +353,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(131)))));
             this.label7.Location = new System.Drawing.Point(7, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(123, 37);
+            this.label7.Size = new System.Drawing.Size(100, 28);
             this.label7.TabIndex = 15;
             this.label7.Text = "Sign up";
             // 
@@ -376,7 +378,7 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(131)))));
             this.label9.Location = new System.Drawing.Point(8, 200);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 21);
+            this.label9.Size = new System.Drawing.Size(79, 20);
             this.label9.TabIndex = 19;
             this.label9.Text = "Password";
             // 
@@ -440,9 +442,28 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(131)))));
             this.label11.Location = new System.Drawing.Point(4, 79);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 21);
+            this.label11.Size = new System.Drawing.Size(61, 20);
             this.label11.TabIndex = 17;
             this.label11.Text = "User ID";
+            // 
+            // checkHidePass
+            // 
+            this.checkHidePass.AutoSize = true;
+            this.checkHidePass.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkHidePass.CheckedState.BorderRadius = 0;
+            this.checkHidePass.CheckedState.BorderThickness = 0;
+            this.checkHidePass.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkHidePass.ForeColor = System.Drawing.Color.Black;
+            this.checkHidePass.Location = new System.Drawing.Point(8, 291);
+            this.checkHidePass.Name = "checkHidePass";
+            this.checkHidePass.Size = new System.Drawing.Size(149, 25);
+            this.checkHidePass.TabIndex = 14;
+            this.checkHidePass.Text = "Show password";
+            this.checkHidePass.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checkHidePass.UncheckedState.BorderRadius = 0;
+            this.checkHidePass.UncheckedState.BorderThickness = 0;
+            this.checkHidePass.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checkHidePass.CheckedChanged += new System.EventHandler(this.checkHidePass_CheckedChanged);
             // 
             // FormLogin
             // 
@@ -519,6 +540,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2CheckBox checkHidePass;
     }
 }
 

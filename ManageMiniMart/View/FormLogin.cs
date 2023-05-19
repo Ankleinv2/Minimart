@@ -18,14 +18,13 @@ namespace Register_Login
 {
     public delegate void ShowLogin();               // để mở lại FormLogin
     public partial class FormLogin : Form
-    {
-        private bool check;                             // bỏ bool check
+    {                           // bỏ bool check
         private UserService userService;
         private EmployeeService employeeService;
         private ShiftDetailService shiftDetailService;
         private DiscountService discountService;
         private ProductDiscountService productDiscountService;
-        public FormLogin(bool check = false)            // bỏ bool check
+        public FormLogin()            // bỏ bool check
         {
             InitializeComponent();
             userService = new UserService();
@@ -33,7 +32,6 @@ namespace Register_Login
             discountService= new DiscountService();
             productDiscountService= new ProductDiscountService();
             shiftDetailService = new ShiftDetailService();
-            this.check = check;
             autoDeleteDiscountWhenOutOfTime();
         }
 
@@ -86,7 +84,7 @@ namespace Register_Login
                 }
                 else
                 {
-                    Dashboard dashboard = new Dashboard(account,showAgain);                   // Manager    ,closeForm
+                    Dashboard dashboard = new Dashboard(account,showAgain);                   // Manager,closeForm
                     Hide();
                     dashboard.Show();
                     
@@ -116,6 +114,7 @@ namespace Register_Login
             Show();
             txtUserId.Text = "";
             txtPassword.Text = "";
+            checkHidePass.Checked = false;
             txtUserId.Focus();
         }
         private void closeForm()
@@ -137,5 +136,9 @@ namespace Register_Login
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void checkHidePass_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPassword.PasswordChar = checkHidePass.Checked ? '\0' : '*';
+        }
     }
 }

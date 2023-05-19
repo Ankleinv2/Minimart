@@ -79,7 +79,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\AccountService.cs" />
     <Compile Include="BLL\BillService.cs" />
     <Compile Include="BLL\Bill_ProductService.cs" />
     <Compile Include="BLL\CustomerService.cs" />

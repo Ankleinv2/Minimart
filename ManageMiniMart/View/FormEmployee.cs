@@ -68,5 +68,19 @@ namespace ManageMiniMart.View
             dgvEmloyee.DataSource=employeeService.getListEmployeeByNamePersonView(name);
 
         }
+
+        private void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            if (dgvEmloyee.SelectedRows.Count > 0)
+            {
+                foreach(DataGridViewRow row in dgvEmloyee.SelectedRows)
+                {
+                    userService.resetPassword(row.Cells[0].Value.ToString());
+                    //throw new Exception("Something wrong in reset password");
+                }
+            }
+            MyMessageBox myMessage = new MyMessageBox();
+            myMessage.show("Reset password successfully","Notification");
+        }
     }
 }

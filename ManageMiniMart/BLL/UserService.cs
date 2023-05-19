@@ -41,5 +41,12 @@ namespace ManageMiniMart.BLL
             db.Accounts.AddOrUpdate(account);
             db.SaveChanges();
         }
+        public void resetPassword(string personID)
+        {
+            Account account = getAccountByPersonId(personID);
+            account.password = account.person_id.ToString();
+            db.Accounts.AddOrUpdate(account);
+            db.SaveChanges();
+        }
     }
 }

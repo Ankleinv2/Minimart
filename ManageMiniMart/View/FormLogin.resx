@@ -8576,4 +8576,28 @@
         AAAAAAAAAAAAAAAAAAAAAKy2t/cHVnM3hTM4i7QAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="showPassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACUAAAAdCAYAAAAtt6XDAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAVpJREFUWEft1o1NwzAQBeCOwAiMwgawAWwAG8AIbAAbdARGYARGYAS4D/WQZcVO
+        0qZISH7SUxT7fp7vHDu7gYGBf4aL4E3wKfgSfCu4Dxo3z+7skEjirxVkfxvcHFfBj2Am+gxK9hy8C5pP
+        elepWjz/TcQpv3aUge+DS9vCjshyQdp9GTwKHDOYyjwETwF/cXJxq4WVgt4P71NQiccgG/aeKtlCGXeV
+        sFpQr1Xm2dU03oJ46bdIGIelguyVDGyDC15+EL1218J6eX4+eYY4t4LX4FRy78Zt6B7Ez1zXBlpYU6lM
+        3qpU7/NfVSkQfKmwDFzTeAu1oLmO/KIUNueoYpKw83RwthYizlGCEqWwLc4pR8VJ51SCY27oDGavzO6B
+        A9gRk4tDN8RS/y7qqwLdbVo1dfe5E81nZZC/+c0hYX3RzpG9o+bsUP78n9IOiZPOpz/9nxoYGNgGu903
+        4CqlPXGoRtwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="showPassword.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACUAAAAdCAYAAAAtt6XDAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAVpJREFUWEft1o1NwzAQBeCOwAiMwgawAWwAG8AIbAAbdARGYARGYAS4D/WQZcVO
+        0qZISH7SUxT7fp7vHDu7gYGBf4aL4E3wKfgSfCu4Dxo3z+7skEjirxVkfxvcHFfBj2Am+gxK9hy8C5pP
+        elepWjz/TcQpv3aUge+DS9vCjshyQdp9GTwKHDOYyjwETwF/cXJxq4WVgt4P71NQiccgG/aeKtlCGXeV
+        sFpQr1Xm2dU03oJ46bdIGIelguyVDGyDC15+EL1218J6eX4+eYY4t4LX4FRy78Zt6B7Ez1zXBlpYU6lM
+        3qpU7/NfVSkQfKmwDFzTeAu1oLmO/KIUNueoYpKw83RwthYizlGCEqWwLc4pR8VJ51SCY27oDGavzO6B
+        A9gRk4tDN8RS/y7qqwLdbVo1dfe5E81nZZC/+c0hYX3RzpG9o+bsUP78n9IOiZPOpz/9nxoYGNgGu903
+        4CqlPXGoRtwAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

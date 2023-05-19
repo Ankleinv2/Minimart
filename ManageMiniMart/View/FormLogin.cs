@@ -114,7 +114,6 @@ namespace Register_Login
             Show();
             txtUserId.Text = "";
             txtPassword.Text = "";
-            checkHidePass.Checked = false;
             txtUserId.Focus();
         }
         private void closeForm()
@@ -136,9 +135,14 @@ namespace Register_Login
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void checkHidePass_CheckedChanged(object sender, EventArgs e)
+        private void showPassword_MouseDown(object sender, MouseEventArgs e)
         {
-            txtPassword.PasswordChar = checkHidePass.Checked ? '\0' : '*';
+            if (e.Button == MouseButtons.Left) txtPassword.PasswordChar = '\0';
+        }
+
+        private void showPassword_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left) txtPassword.PasswordChar = '*';
         }
     }
 }

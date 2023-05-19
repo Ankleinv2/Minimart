@@ -61,7 +61,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtUserRegister = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.checkHidePass = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.showPassword = new System.Windows.Forms.PictureBox();
             this.pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -75,6 +75,7 @@
             this.txtRegisterPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -188,6 +189,7 @@
             // pnlPassword
             // 
             this.pnlPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.pnlPassword.Controls.Add(this.showPassword);
             this.pnlPassword.Controls.Add(this.txtPassword);
             this.pnlPassword.Location = new System.Drawing.Point(3, 240);
             this.pnlPassword.Name = "pnlPassword";
@@ -227,7 +229,6 @@
             this.pnlLogin.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pnlLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(255)))));
-            this.pnlLogin.Controls.Add(this.checkHidePass);
             this.pnlLogin.Controls.Add(this.guna2Button1);
             this.pnlLogin.Controls.Add(this.lblLogin);
             this.pnlLogin.Controls.Add(this.lblPassword);
@@ -446,24 +447,18 @@
             this.label11.TabIndex = 17;
             this.label11.Text = "User ID";
             // 
-            // checkHidePass
+            // showPassword
             // 
-            this.checkHidePass.AutoSize = true;
-            this.checkHidePass.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.checkHidePass.CheckedState.BorderRadius = 0;
-            this.checkHidePass.CheckedState.BorderThickness = 0;
-            this.checkHidePass.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.checkHidePass.ForeColor = System.Drawing.Color.Black;
-            this.checkHidePass.Location = new System.Drawing.Point(8, 291);
-            this.checkHidePass.Name = "checkHidePass";
-            this.checkHidePass.Size = new System.Drawing.Size(149, 25);
-            this.checkHidePass.TabIndex = 14;
-            this.checkHidePass.Text = "Show password";
-            this.checkHidePass.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.checkHidePass.UncheckedState.BorderRadius = 0;
-            this.checkHidePass.UncheckedState.BorderThickness = 0;
-            this.checkHidePass.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.checkHidePass.CheckedChanged += new System.EventHandler(this.checkHidePass_CheckedChanged);
+            this.showPassword.BackColor = System.Drawing.Color.White;
+            this.showPassword.Image = ((System.Drawing.Image)(resources.GetObject("showPassword.Image")));
+            this.showPassword.InitialImage = ((System.Drawing.Image)(resources.GetObject("showPassword.InitialImage")));
+            this.showPassword.Location = new System.Drawing.Point(263, -5);
+            this.showPassword.Name = "showPassword";
+            this.showPassword.Size = new System.Drawing.Size(37, 30);
+            this.showPassword.TabIndex = 15;
+            this.showPassword.TabStop = false;
+            this.showPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.showPassword_MouseDown);
+            this.showPassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.showPassword_MouseUp);
             // 
             // FormLogin
             // 
@@ -502,6 +497,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.showPassword)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -540,7 +536,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2CheckBox checkHidePass;
+        private System.Windows.Forms.PictureBox showPassword;
     }
 }
 

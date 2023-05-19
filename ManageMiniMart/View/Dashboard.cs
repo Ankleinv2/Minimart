@@ -165,7 +165,7 @@ namespace ManageMiniMart
         private void btnEmployee_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RBGColor.greenCustom);
-            OpenChildForm(new FormEmployee());
+            OpenChildForm(new FormEmployee(currentAccount));
         }
         private void btnShiftWork_Click(object sender, EventArgs e)
         {

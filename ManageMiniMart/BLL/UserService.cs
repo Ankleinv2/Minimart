@@ -41,9 +41,15 @@ namespace ManageMiniMart.BLL
             db.Accounts.AddOrUpdate(account);
             db.SaveChanges();
         }
-        public void resetPassword(string personID)
+        public void removeAccount(Account account)
         {
-            Account account = getAccountByPersonId(personID);
+            var shiftWork = db.Shift_work.Where(p => p.person_id == account.person_id).ToList();
+            db.Shift_work.RemoveRange(shiftWork);
+            db.Accounts.Remove(account);
+            db.SaveChanges();
+        }
+        public void resetPassword(Account account)   
+        {
             account.password = account.person_id.ToString();
             db.Accounts.AddOrUpdate(account);
             db.SaveChanges();

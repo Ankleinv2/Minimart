@@ -1,5 +1,6 @@
 ﻿using ManageMiniMart.BLL;
 using ManageMiniMart.Custom;
+using ManageMiniMart.DAL;
 using Register_Login;
 using System;
 using System.Collections.Generic;
@@ -18,9 +19,11 @@ namespace ManageMiniMart.View
     {
         private EmployeeService employeeService;
         private UserService userService;
-        public FormEmployee()
+        private Account currentAccount;
+        public FormEmployee(Account account)
         {
             InitializeComponent();
+            currentAccount = account;
             employeeService= new EmployeeService();
             userService= new UserService();
             loadAllEmployee();
@@ -71,16 +74,50 @@ namespace ManageMiniMart.View
 
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
+            bool isReset = false;
             if (dgvEmloyee.SelectedRows.Count > 0)
             {
                 foreach(DataGridViewRow row in dgvEmloyee.SelectedRows)
                 {
-                    userService.resetPassword(row.Cells[0].Value.ToString());
-                    //throw new Exception("Something wrong in reset password");
+                    Account account = userService.getAccountByPersonId(row.Cells[0].Value.ToString());
+                    if (account != null)
+                    {
+                        userService.resetPassword(account);
+                        isReset = true;
+                    }
                 }
             }
-            MyMessageBox myMessage = new MyMessageBox();
-            myMessage.show("Reset password successfully","Notification");
+            if (isReset)
+            {
+                loadAllEmployee();
+                MyMessageBox myMessage = new MyMessageBox();
+                myMessage.show("Reset password successfully", "Notification");
+            }
+            else throw new Exception("Nothing to reset");
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            bool isDeleted = false;
+            if(dgvEmloyee.SelectedRows.Count > 0)
+            {
+                foreach(DataGridViewRow row in dgvEmloyee.SelectedRows)
+                {
+                    Account account = userService.getAccountByPersonId(row.Cells[0].Value.ToString());
+                    if (account != null && account.person_id != currentAccount.person_id)
+                    {
+                        userService.removeAccount(account);
+                        isDeleted = true;
+                    }
+                }
+            }
+            if (isDeleted)
+            {
+                loadAllEmployee();
+                MyMessageBox myMessage = new MyMessageBox();
+                myMessage.show("Remove employee account successfully", "Notification");
+            }
+            else throw new Exception("Nothing to delete or you cannot delete yourself");            
         }
     }
 }

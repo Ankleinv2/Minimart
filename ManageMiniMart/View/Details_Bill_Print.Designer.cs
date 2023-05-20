@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Details_Bill_Print));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.lblBillDate = new System.Windows.Forms.Label();
@@ -41,6 +42,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblContent = new System.Windows.Forms.Label();
             this.billDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -192,6 +195,17 @@
             // 
             this.billDetailsBindingSource.DataSource = typeof(ManageMiniMart.DTO.BillDetailView);
             // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // Details_Bill_Print
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,5 +244,7 @@
         private System.Windows.Forms.BindingSource billDetailsBindingSource;
         private System.Windows.Forms.Label lblCustomer;
         private System.Windows.Forms.Label lblContent;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

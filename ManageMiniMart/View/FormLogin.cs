@@ -63,7 +63,7 @@ namespace Register_Login
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string userId = txtUserId.Text;
-            string password = txtPassword.Text;
+            string password = userService.encryption(txtPassword.Text);
             Account account = userService.getAccount(userId,password);
             if (account != null)
             {

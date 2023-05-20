@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -52,9 +53,22 @@ namespace ManageMiniMart.BLL
         }
         public void resetPassword(Account account)   
         {
-            account.password = account.person_id.ToString();
+            account.password = encryption(account.person_id.ToString());
             db.Accounts.AddOrUpdate(account);
             db.SaveChanges();
+        }
+        public string encryption(string password)
+        {
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            byte[] encrypt;
+            UTF8Encoding encode = new UTF8Encoding();
+            encrypt = md5.ComputeHash(encode.GetBytes(password));
+            StringBuilder encryptdata = new StringBuilder();
+            for (int i = 0; i < encrypt.Length; i++)
+            {
+                encryptdata.Append(encrypt[i].ToString());
+            }
+            return encryptdata.ToString();
         }
     }
 }

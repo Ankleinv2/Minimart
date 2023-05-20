@@ -4,6 +4,8 @@ using ManageMiniMart.DAL;
 using ManageMiniMart.DTO;
 using System;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
@@ -68,14 +70,13 @@ namespace ManageMiniMart.View
             {
                 Account account= new Account();
                 account.person_id = person_id;
-                account.password = password;
+                account.password = userService.encryption(password);
                 account.role_id = role_id;
                 userService.saveAccount(account);
                 MyMessageBox messageBox = new MyMessageBox();
                 messageBox.show("Successful", "Notification");
                 Dispose();
             }
-            
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

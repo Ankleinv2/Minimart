@@ -19,6 +19,8 @@ namespace ManageMiniMart.BLL
         // Get
         public Account getAccountByPersonId(string personId)
         {
+            db = null;
+            db = new Manage_MinimartEntities();
             return db.Accounts.Where(p => p.person_id == personId).FirstOrDefault();
         }
         public Account getAccount(string username, string password)

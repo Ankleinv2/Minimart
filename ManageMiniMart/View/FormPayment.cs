@@ -248,11 +248,8 @@ namespace ManageMiniMart.View
                     showPoint.Text = customerService.getCustomerPoint(customerId).ToString() + " points";
                 }
 
-                //MyMessageBox myMessage1 = new MyMessageBox();
-                //myMessage1.show("Total money = " + totalMoney);
-                Details_Bill_Print details_Bill = new Details_Bill_Print();
-                details_Bill.setDatagridView(idBill);
-                details_Bill.ShowDialog();
+                FormBillPrint formBillPrint = new FormBillPrint(idBill);
+                formBillPrint.ShowDialog();
             }
         }
 

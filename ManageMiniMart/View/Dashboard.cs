@@ -160,7 +160,7 @@ namespace ManageMiniMart
         private void btnAnalyst_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RBGColor.yellowCustom);
-            OpenChildForm(new FormAnalyst());
+            OpenChildForm(new FormStatistical());
         }
         private void btnEmployee_Click(object sender, EventArgs e)
         {

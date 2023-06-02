@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDiscountToProducts = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -69,6 +70,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnDiscountToProducts);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.btnDelete);
@@ -77,8 +79,30 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(997, 138);
+            this.panel2.Size = new System.Drawing.Size(1242, 138);
             this.panel2.TabIndex = 1;
+            // 
+            // btnDiscountToProducts
+            // 
+            this.btnDiscountToProducts.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDiscountToProducts.BorderRadius = 10;
+            this.btnDiscountToProducts.BorderThickness = 1;
+            this.btnDiscountToProducts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDiscountToProducts.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDiscountToProducts.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDiscountToProducts.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDiscountToProducts.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDiscountToProducts.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnDiscountToProducts.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscountToProducts.ForeColor = System.Drawing.Color.White;
+            this.btnDiscountToProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnDiscountToProducts.Image")));
+            this.btnDiscountToProducts.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnDiscountToProducts.Location = new System.Drawing.Point(577, 47);
+            this.btnDiscountToProducts.Name = "btnDiscountToProducts";
+            this.btnDiscountToProducts.Size = new System.Drawing.Size(235, 45);
+            this.btnDiscountToProducts.TabIndex = 6;
+            this.btnDiscountToProducts.Text = "Add discount to products";
+            this.btnDiscountToProducts.Click += new System.EventHandler(this.btnDiscountToProducts_Click);
             // 
             // btnSearch
             // 
@@ -97,7 +121,7 @@
             this.btnSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnSearch.Location = new System.Drawing.Point(910, 45);
+            this.btnSearch.Location = new System.Drawing.Point(1155, 45);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(66, 45);
             this.btnSearch.TabIndex = 5;
@@ -118,8 +142,8 @@
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(663, 47);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearch.Location = new System.Drawing.Point(908, 47);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
@@ -177,7 +201,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 138);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(997, 488);
+            this.panel1.Size = new System.Drawing.Size(1242, 531);
             this.panel1.TabIndex = 2;
             // 
             // dgvDiscount
@@ -216,7 +240,7 @@
             this.dgvDiscount.RowTemplate.Height = 50;
             this.dgvDiscount.RowTemplate.ReadOnly = true;
             this.dgvDiscount.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDiscount.Size = new System.Drawing.Size(997, 488);
+            this.dgvDiscount.Size = new System.Drawing.Size(1242, 531);
             this.dgvDiscount.TabIndex = 2;
             this.dgvDiscount.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDiscount.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -244,7 +268,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(997, 626);
+            this.ClientSize = new System.Drawing.Size(1242, 669);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -267,5 +291,6 @@
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btnDiscountToProducts;
     }
 }

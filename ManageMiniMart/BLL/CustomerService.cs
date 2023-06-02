@@ -28,7 +28,7 @@ namespace ManageMiniMart.BLL
                     Address = customer.address,
                     Email = customer.email,
                     Point = (int)customer.point,
-                    BirthDate = customer.birthdate.ToString()
+                    BirthDate = customer.birthdate.ToString("dd/MM/yyyy")
                 });
             }
             return result;

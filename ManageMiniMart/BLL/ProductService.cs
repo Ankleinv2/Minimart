@@ -38,7 +38,7 @@ namespace ManageMiniMart.BLL
                     Category_name = product.Category.category_name,
                     Brand = product.brand,
                     Sale = sale
-                }) ;
+                });
             }
             return products;
         }
@@ -61,7 +61,7 @@ namespace ManageMiniMart.BLL
         public List<ProductView> getListProductViewByProductName(string name)                    // tìm kiếm danh sách theo tên sản phẩm
         {
             List<ProductView> products = new List<ProductView>();
-            var s = db.Products.Where(p => p.product_name.Contains(name)).ToList();
+            var s = db.Products.Where(p => p.product_name.Contains(name) && p.quantity > 0).ToList();
             products = convertToProductView(s);
             return products;
         }

@@ -22,6 +22,7 @@ namespace ManageMiniMart
         private DiscountService discountService;
         private ProductService productService;
         private ProductDiscountService productDiscountService;
+        private ExceptionHandlingService exceptionHandlingService;
 
         private int discountBefore;
         public AddProductForm(ReloadFormProduct formProduct)
@@ -31,6 +32,7 @@ namespace ManageMiniMart
             discountService = new DiscountService();
             productService = new ProductService();
             productDiscountService = new ProductDiscountService();
+            exceptionHandlingService = new ExceptionHandlingService();
 
             cbbCategory.DataSource = categoryService.getCBBCategory(true);
             cbbCategory.SelectedIndex = -1;
@@ -40,6 +42,27 @@ namespace ManageMiniMart
 
             lblProductID.Visible = false;
             panelProductID.Visible = false;
+        }
+
+        void checkValidInformation()
+        {
+            if (txtProductName.Text == "") throw new Exception("Name product is not empty");
+            if (txtBrand.Text == "") throw new Exception("Brand is not empty");
+            try
+            {
+
+                Convert.ToInt32(txtPrice.Text);
+                Convert.ToInt32(txtQuantity.Text);
+
+            }
+            catch (FormatException)
+            {
+                throw new Exception("Price and Quantity must be a number");
+            }
+            if (Convert.ToInt32(txtPrice.Text) < 0) throw new Exception("Price can not be a negative number");
+            if (Convert.ToInt32(txtQuantity.Text) < 0) throw new Exception("Quantity can not be a negative number");
+            if (cbbCategory.SelectedItem == null) throw new Exception("Catogory is not selected");
+
         }
 
         public void editProduct(Product product)                    // Đưa product lên addproductForm                    
@@ -64,24 +87,9 @@ namespace ManageMiniMart
         // Add or Update
         private void btnSave_Click(object sender, EventArgs e)
         {
+            checkValidInformation();
             string productId = txtProductId.Text;
             int discount_id = ((CBBItem)cbbDiscount.SelectedItem).Value;
-            if (txtProductName.Text=="") throw new Exception("Name product is not empty");
-            if (txtBrand.Text == "") throw new Exception("Brand is not empty");
-            try
-            {
-
-                Convert.ToInt32(txtPrice.Text);
-                Convert.ToInt32(txtQuantity.Text);
-
-            }
-            catch (FormatException)
-            {
-                throw new Exception("Price and Quantity must be a number");
-            }
-            if (Convert.ToInt32(txtPrice.Text) < 0) throw new Exception("Price can not be a negative number");
-            if (Convert.ToInt32(txtQuantity.Text) < 0) throw new Exception("Quantity can not be a negative number");
-            if (cbbCategory.SelectedItem == null) throw new Exception("Catogory is not selected");
             if (discount_id > 0 && productId=="")                               // add, có discount
             {
                 Discount discount = discountService.getDiscountById(discount_id);
@@ -102,8 +110,6 @@ namespace ManageMiniMart
                     discount_id = discount_id,
                 }; 
                 productDiscountService.saveProduct_Discount(product_Discount);
-                
-                
             }
             else if(discount_id > 0 && productId != "")                     // edit , có discount
             {

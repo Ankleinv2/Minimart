@@ -139,9 +139,6 @@ namespace ManageMiniMart.View
                     int amountCurrent = productInBill.Amount;
                     if ((amountCurrent+amount) > product.quantity)
                     {
-                        //MyMessageBox myMessage = new MyMessageBox();
-                        //myMessage.show("Amount product in stock not enough for buy!", "Nofitication");
-                        //return;
                         throw new Exception("Amount product in stock not enough for buy !");
                     }
                     else
@@ -197,6 +194,7 @@ namespace ManageMiniMart.View
                     
                 };
                 billService.saveBill(bill);
+
                 int idBill = billService.IdBillAdded;
                 foreach(var product in listProductInBill)
                 {
@@ -245,7 +243,8 @@ namespace ManageMiniMart.View
                     billService.saveBill(bill);
                     customerService.saveCustomer(customer);
                     checkUsePoint.Checked = false;
-                    showPoint.Text = customerService.getCustomerPoint(customerId).ToString() + " points";
+
+                    setCustomerId_Input(customerId);
                 }
 
                 FormBillPrint formBillPrint = new FormBillPrint(idBill);

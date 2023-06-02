@@ -611,7 +611,6 @@ C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormEmployee.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddDiscountForm.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormCustomer.resources
-C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormAnalyst.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormDiscount.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.AddProductForm.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.FormBill.resources
@@ -733,3 +732,5 @@ C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\zh-CHS\Microsoft.Re
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormBillPrint.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\View\BillDetail.rdlc
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddDiscountProductsForm.resources
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormStatistical.resources

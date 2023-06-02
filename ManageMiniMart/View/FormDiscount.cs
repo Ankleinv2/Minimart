@@ -79,5 +79,11 @@ namespace ManageMiniMart.View
             string name = txtSearch.Text.Trim();
             dgvDiscount.DataSource=discountService.getListDiscountViewByName(name);
         }
+
+        private void btnDiscountToProducts_Click(object sender, EventArgs e)
+        {
+            AddDiscountProductsForm addDiscountProductsForm = new AddDiscountProductsForm();
+            addDiscountProductsForm.ShowDialog();
+        }
     }
 }

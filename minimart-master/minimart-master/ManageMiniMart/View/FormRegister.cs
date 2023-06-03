@@ -4,6 +4,8 @@ using ManageMiniMart.DAL;
 using ManageMiniMart.DTO;
 using System;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
@@ -54,10 +56,10 @@ namespace ManageMiniMart.View
                 role_id = currentAccount.role_id;
             }
             
-            if (password.Length < 4 || confirmPassword.Length < 4)
+            if (password.Length < 4)
             {
                 MyMessageBox messageBox = new MyMessageBox();
-                messageBox.show("Password and Confirm Password length must >= 4", "Notification");
+                messageBox.show("Password length must >= 4", "Notification");
             }
             else if (password != confirmPassword)
             {
@@ -68,14 +70,13 @@ namespace ManageMiniMart.View
             {
                 Account account= new Account();
                 account.person_id = person_id;
-                account.password = password;
+                account.password = userService.encryption(password);
                 account.role_id = role_id;
                 userService.saveAccount(account);
                 MyMessageBox messageBox = new MyMessageBox();
                 messageBox.show("Successful", "Notification");
                 Dispose();
             }
-            
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -87,15 +88,6 @@ namespace ManageMiniMart.View
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int Param);
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-         );
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();

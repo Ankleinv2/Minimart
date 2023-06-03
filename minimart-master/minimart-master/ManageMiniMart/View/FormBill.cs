@@ -56,9 +56,8 @@ namespace ManageMiniMart
             if (dgvBill.Columns[e.ColumnIndex].Name == "ShowDetail")
             {
                 int bill_id = Convert.ToInt32(dgvBill.SelectedRows[0].Cells[0].Value.ToString());
-                Details_Bill_Print details_Bill = new Details_Bill_Print();
-                details_Bill.setDatagridView(bill_id);
-                details_Bill.ShowDialog();
+                FormBillPrint formBillPrint = new FormBillPrint(bill_id);
+                formBillPrint.ShowDialog();
             }
         }
 

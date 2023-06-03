@@ -48,10 +48,8 @@ namespace ManageMiniMart
 
             dgvProduct.DataSource = null;
             dgvProduct.DataSource = productService.getAllProductView();
+            dgvProduct.Columns["Category_name"].HeaderText = "Category";
             dgvProduct.Refresh();
-
-
-
         }
 
         // cbbCategory
@@ -75,12 +73,12 @@ namespace ManageMiniMart
             int cID = ((CBBItem)cbbCategory.SelectedItem).Value;
             if(cID == 0)
             {
-                dgvProduct.DataSource = productService.getListProductViewByProductName(txtProductName.Text);
+                dgvProduct.DataSource = productService.getListProductViewByProductName(txtProductName.Text.Trim());
             }
             else
             {
-                dgvProduct.DataSource = productService.getListProductViewByProductNameAndCategory(cID,txtProductName.Text);
-            }
+                dgvProduct.DataSource = productService.getListProductViewByProductNameAndCategory(cID,txtProductName.Text.Trim());
+            } 
             
         }
 
@@ -102,11 +100,6 @@ namespace ManageMiniMart
             addproduct.editProduct(product);        // Đưa hết toàn bộ dữ liệu của product cho Form AddProduct
             addproduct.ShowDialog();
             loadAllProduct();
-
-        }
-        // btnDelete
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
 
         }
     }

@@ -16,7 +16,6 @@ namespace ManageMiniMart.Custom
         public CustomFormInput()
         {
             InitializeComponent();
-            txtInput.Focus();
         }
         public DialogResult dialog
         {
@@ -44,7 +43,6 @@ namespace ManageMiniMart.Custom
         {
             lblText.Text = message;
             lblTitle.Text = title;
-            txtInput.Focus();
             this.ShowDialog();
             return txtInput.Text;
         }
@@ -60,7 +58,6 @@ namespace ManageMiniMart.Custom
             {
                 btnOK.Visible = false;
             }
-            
             this.ShowDialog();
         }
         public DialogResult show(string message, string title, TypeMessage typeMessage, TypeIcon icon)
@@ -112,6 +109,15 @@ namespace ManageMiniMart.Custom
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int Param);
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
+         );
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();

@@ -370,18 +370,18 @@
             this.lblUserRole.ForeColor = System.Drawing.Color.PowderBlue;
             this.lblUserRole.Location = new System.Drawing.Point(77, 32);
             this.lblUserRole.Name = "lblUserRole";
-            this.lblUserRole.Size = new System.Drawing.Size(129, 19);
+            this.lblUserRole.Size = new System.Drawing.Size(103, 16);
             this.lblUserRole.TabIndex = 1;
             this.lblUserRole.Text = "Role: Manager";
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.ForeColor = System.Drawing.Color.PowderBlue;
             this.lblUserName.Location = new System.Drawing.Point(77, 12);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(113, 21);
+            this.lblUserName.Size = new System.Drawing.Size(89, 16);
             this.lblUserName.TabIndex = 1;
             this.lblUserName.Text = "Hoàng Nhận";
             // 
@@ -456,7 +456,7 @@
             this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblTitleChildForm.Location = new System.Drawing.Point(77, 29);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(56, 23);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(48, 20);
             this.lblTitleChildForm.TabIndex = 1;
             this.lblTitleChildForm.Text = "Home";
             // 

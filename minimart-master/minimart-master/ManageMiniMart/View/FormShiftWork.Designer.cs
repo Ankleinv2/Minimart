@@ -70,7 +70,7 @@
             this.dtpShiftDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpShiftDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpShiftDate.Name = "dtpShiftDate";
-            this.dtpShiftDate.Size = new System.Drawing.Size(221, 36);
+            this.dtpShiftDate.Size = new System.Drawing.Size(177, 36);
             this.dtpShiftDate.TabIndex = 35;
             this.dtpShiftDate.Value = new System.DateTime(2023, 4, 8, 22, 56, 26, 751);
             this.dtpShiftDate.ValueChanged += new System.EventHandler(this.dtpShiftDate_ValueChanged);

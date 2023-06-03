@@ -611,7 +611,6 @@ C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormEmployee.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddDiscountForm.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormCustomer.resources
-C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormAnalyst.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormDiscount.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.AddProductForm.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.FormBill.resources
@@ -679,53 +678,163 @@ H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\Manage
 H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\ManageMiniMart\bin\Debug\LiveCharts.Wpf.pdb
 H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\ManageMiniMart\bin\Debug\LiveCharts.Wpf.xml
 H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.CopyComplete
-C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.Details_Bill_Print.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.AssemblyReference.cache
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.SuggestedBindingRedirects.cache
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.Custom.CustomFormInput.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.Custom.MyMessageBox.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddCustomerForm.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddEmployeeForm.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddShiftWorkForm.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.DashboardEmployee.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.Details_Bill_Print.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormEmployee.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddDiscountForm.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormCustomer.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormAnalyst.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormDiscount.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.AddProductForm.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.FormBill.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\Register_Login.FormLogin.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormPayment.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.FormProduct.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormRegister.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormShiftWork.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.Dashboard.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.Properties.Resources.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.SelectCustomerForm.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.SelectEmployeeForm.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.SelectProductForm.resources
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.GenerateResource.cache
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.CoreCompileInputs.cache
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.exe
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.pdb
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ManageMiniMart.exe.config
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ManageMiniMart.exe
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ManageMiniMart.pdb
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\EntityFramework.dll
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\EntityFramework.SqlServer.dll
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\FontAwesome.Sharp.dll
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\Guna.UI2.dll
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.dll
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.WinForms.dll
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.Wpf.dll
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\EntityFramework.xml
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\EntityFramework.SqlServer.xml
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.pdb
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.xml
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.WinForms.pdb
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.WinForms.xml
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.Wpf.pdb
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.Wpf.xml
-H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.CopyComplete
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\EnvDTE.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\stdole.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormBillPrint.resources
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\View\BillDetail.rdlc
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddDiscountProductsForm.resources
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormStatistical.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\View\BillDetail.rdlc
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ManageMiniMart.exe.config
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ManageMiniMart.exe
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ManageMiniMart.pdb
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\EntityFramework.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\EntityFramework.SqlServer.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\FontAwesome.Sharp.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\Guna.UI2.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.WinForms.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.Wpf.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\Microsoft.ReportViewer.Common.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\Microsoft.ReportViewer.Design.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\Microsoft.SqlServer.Types.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\EnvDTE.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\stdole.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\EntityFramework.xml
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\EntityFramework.SqlServer.xml
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.pdb
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.xml
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.WinForms.pdb
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.WinForms.xml
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.Wpf.pdb
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\LiveCharts.Wpf.xml
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.AssemblyReference.cache
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.SuggestedBindingRedirects.cache
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.Custom.CustomFormInput.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.Custom.MyMessageBox.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddCustomerForm.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddDiscountProductsForm.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddEmployeeForm.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddShiftWorkForm.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.DashboardEmployee.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormBillPrint.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormEmployee.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddDiscountForm.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormCustomer.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormDiscount.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.AddProductForm.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.FormBill.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\Register_Login.FormLogin.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormPayment.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.FormProduct.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormRegister.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormShiftWork.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.Dashboard.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.Properties.Resources.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormStatistical.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.SelectCustomerForm.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.SelectEmployeeForm.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.SelectProductForm.resources
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.GenerateResource.cache
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.CoreCompileInputs.cache
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.csproj.CopyComplete
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.exe
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.pdb
+H:\OneDrive - The University of Technology\PBL3\PBL3_MiniMart\minimart-master\minimart-master\ManageMiniMart\obj\Debug\ManageMiniMart.View.SelectProductToDiscount.resources

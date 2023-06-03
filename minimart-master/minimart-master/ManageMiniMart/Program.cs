@@ -21,6 +21,7 @@ namespace ManageMiniMart
             Application.SetCompatibleTextRenderingDefault(false);
             ExceptionHandlingService.Initialize();
             Application.Run(new FormLogin());
+            //Application.Run(new FormBillPrint());
         }
     }
 }

@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmployee));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmployee));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnResetPassword = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
@@ -41,7 +42,8 @@
             this.btnAddEmployee = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvEmloyee = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDel = new Guna.UI2.WinForms.Guna2Button();
             this.personidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +51,7 @@
             this.phonenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmloyee)).BeginInit();
@@ -58,6 +60,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnDel);
+            this.panel1.Controls.Add(this.btnResetPassword);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.txtSearch);
@@ -66,8 +70,30 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(887, 142);
+            this.panel1.Size = new System.Drawing.Size(1211, 142);
             this.panel1.TabIndex = 1;
+            // 
+            // btnResetPassword
+            // 
+            this.btnResetPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnResetPassword.BorderColor = System.Drawing.Color.Tomato;
+            this.btnResetPassword.BorderRadius = 9;
+            this.btnResetPassword.BorderThickness = 1;
+            this.btnResetPassword.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnResetPassword.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnResetPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnResetPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnResetPassword.FillColor = System.Drawing.Color.Empty;
+            this.btnResetPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnResetPassword.ForeColor = System.Drawing.Color.White;
+            this.btnResetPassword.Image = ((System.Drawing.Image)(resources.GetObject("btnResetPassword.Image")));
+            this.btnResetPassword.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnResetPassword.Location = new System.Drawing.Point(568, 52);
+            this.btnResetPassword.Name = "btnResetPassword";
+            this.btnResetPassword.Size = new System.Drawing.Size(102, 48);
+            this.btnResetPassword.TabIndex = 13;
+            this.btnResetPassword.Text = "Reset";
+            this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
             // btnSearch
             // 
@@ -86,7 +112,7 @@
             this.btnSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnSearch.Location = new System.Drawing.Point(788, 57);
+            this.btnSearch.Location = new System.Drawing.Point(1112, 57);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(66, 42);
             this.btnSearch.TabIndex = 12;
@@ -106,9 +132,9 @@
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
             this.guna2Button1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button1.Location = new System.Drawing.Point(331, 52);
+            this.guna2Button1.Location = new System.Drawing.Point(275, 51);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(144, 48);
+            this.guna2Button1.Size = new System.Drawing.Size(137, 48);
             this.guna2Button1.TabIndex = 10;
             this.guna2Button1.Text = "Add account";
             this.guna2Button1.Click += new System.EventHandler(this.btnAddAccount_Click);
@@ -128,7 +154,7 @@
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(543, 60);
+            this.txtSearch.Location = new System.Drawing.Point(867, 60);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -151,7 +177,7 @@
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnEdit.Location = new System.Drawing.Point(185, 52);
+            this.btnEdit.Location = new System.Drawing.Point(153, 52);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(101, 48);
             this.btnEdit.TabIndex = 10;
@@ -185,7 +211,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 142);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(887, 413);
+            this.panel2.Size = new System.Drawing.Size(1211, 415);
             this.panel2.TabIndex = 2;
             // 
             // dgvEmloyee
@@ -236,7 +262,7 @@
             this.dgvEmloyee.RowTemplate.Height = 50;
             this.dgvEmloyee.RowTemplate.ReadOnly = true;
             this.dgvEmloyee.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmloyee.Size = new System.Drawing.Size(887, 413);
+            this.dgvEmloyee.Size = new System.Drawing.Size(1211, 415);
             this.dgvEmloyee.TabIndex = 3;
             this.dgvEmloyee.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvEmloyee.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -260,70 +286,92 @@
             this.dgvEmloyee.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvEmloyee.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // personBindingSource
-            // 
-            this.personBindingSource.DataSource = typeof(ManageMiniMart.DAL.Person);
-            // 
-            // personidDataGridViewTextBoxColumn
-            // 
-            this.personidDataGridViewTextBoxColumn.DataPropertyName = "person_id";
-            this.personidDataGridViewTextBoxColumn.HeaderText = "person_id";
-            this.personidDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.personidDataGridViewTextBoxColumn.Name = "personidDataGridViewTextBoxColumn";
-            // 
-            // personnameDataGridViewTextBoxColumn
-            // 
-            this.personnameDataGridViewTextBoxColumn.DataPropertyName = "person_name";
-            this.personnameDataGridViewTextBoxColumn.HeaderText = "person_name";
-            this.personnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.personnameDataGridViewTextBoxColumn.Name = "personnameDataGridViewTextBoxColumn";
-            // 
-            // birthdateDataGridViewTextBoxColumn
-            // 
-            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "birthdate";
-            this.birthdateDataGridViewTextBoxColumn.HeaderText = "birthdate";
-            this.birthdateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
-            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            // 
-            // phonenumberDataGridViewTextBoxColumn
-            // 
-            this.phonenumberDataGridViewTextBoxColumn.DataPropertyName = "phone_number";
-            this.phonenumberDataGridViewTextBoxColumn.HeaderText = "phone_number";
-            this.phonenumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.phonenumberDataGridViewTextBoxColumn.Name = "phonenumberDataGridViewTextBoxColumn";
-            // 
-            // salaryDataGridViewTextBoxColumn
-            // 
-            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "salary";
-            this.salaryDataGridViewTextBoxColumn.HeaderText = "salary";
-            this.salaryDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
             // Role
             // 
             this.Role.DataPropertyName = "role";
             this.Role.HeaderText = "Role";
             this.Role.Name = "Role";
             // 
+            // btnDel
+            // 
+            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDel.BorderColor = System.Drawing.Color.Tomato;
+            this.btnDel.BorderRadius = 9;
+            this.btnDel.BorderThickness = 1;
+            this.btnDel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDel.FillColor = System.Drawing.Color.Empty;
+            this.btnDel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDel.ForeColor = System.Drawing.Color.White;
+            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
+            this.btnDel.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnDel.Location = new System.Drawing.Point(689, 52);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(160, 48);
+            this.btnDel.TabIndex = 14;
+            this.btnDel.Text = "Remove Account";
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // personidDataGridViewTextBoxColumn
+            // 
+            this.personidDataGridViewTextBoxColumn.DataPropertyName = "person_id";
+            this.personidDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.personidDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.personidDataGridViewTextBoxColumn.Name = "personidDataGridViewTextBoxColumn";
+            // 
+            // personnameDataGridViewTextBoxColumn
+            // 
+            this.personnameDataGridViewTextBoxColumn.DataPropertyName = "person_name";
+            this.personnameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.personnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.personnameDataGridViewTextBoxColumn.Name = "personnameDataGridViewTextBoxColumn";
+            // 
+            // birthdateDataGridViewTextBoxColumn
+            // 
+            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "birthdate";
+            this.birthdateDataGridViewTextBoxColumn.HeaderText = "Birthdate";
+            this.birthdateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            // 
+            // phonenumberDataGridViewTextBoxColumn
+            // 
+            this.phonenumberDataGridViewTextBoxColumn.DataPropertyName = "phone_number";
+            this.phonenumberDataGridViewTextBoxColumn.HeaderText = "Phone number";
+            this.phonenumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.phonenumberDataGridViewTextBoxColumn.Name = "phonenumberDataGridViewTextBoxColumn";
+            // 
+            // salaryDataGridViewTextBoxColumn
+            // 
+            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "salary";
+            this.salaryDataGridViewTextBoxColumn.HeaderText = "Salary";
+            this.salaryDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // personBindingSource
+            // 
+            this.personBindingSource.DataSource = typeof(ManageMiniMart.DAL.Person);
+            // 
             // FormEmployee
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(887, 555);
+            this.ClientSize = new System.Drawing.Size(1211, 557);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -357,5 +405,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn salaryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Role;
+        private Guna.UI2.WinForms.Guna2Button btnResetPassword;
+        private Guna.UI2.WinForms.Guna2Button btnDel;
     }
 }

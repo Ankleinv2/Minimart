@@ -12,12 +12,12 @@ namespace ManageMiniMart.DTO
         private string _CustomerName;
         private string _EmployeeName;
         private string _CreatedTime;
-        private double _Total;
+        private string _Total;
 
         public int Id { get => _Id; set => _Id = value; }
         public string CustomerName { get => _CustomerName; set => _CustomerName = value; }
         public string EmployeeName { get => _EmployeeName; set => _EmployeeName = value; }
         public string CreatedTime { get => _CreatedTime; set => _CreatedTime = value; }
-        public double Total { get => _Total; set => _Total = value; }
+        public string Total { get => _Total; set => _Total = value; }
     }
 }

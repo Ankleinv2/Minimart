@@ -54,6 +54,24 @@
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -79,7 +97,6 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\AccountService.cs" />
     <Compile Include="BLL\BillService.cs" />
     <Compile Include="BLL\Bill_ProductService.cs" />
     <Compile Include="BLL\CustomerService.cs" />
@@ -158,6 +175,8 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\BillDetailView.cs" />
+    <Compile Include="DTO\ObjectDTO.cs" />
+    <Compile Include="DTO\ProductInBillPrint.cs" />
     <Compile Include="DTO\BillView.cs" />
     <Compile Include="DTO\CBBItem.cs" />
     <Compile Include="DTO\CBBPerson.cs" />
@@ -168,11 +187,18 @@
     <Compile Include="DTO\ProductInBill.cs" />
     <Compile Include="DTO\Revenue.cs" />
     <Compile Include="DTO\ShiftDetailView.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="View\AddCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\AddCustomerForm.Designer.cs">
       <DependentUpon>AddCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddDiscountProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddDiscountProductsForm.Designer.cs">
+      <DependentUpon>AddDiscountProductsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AddEmployeeForm.cs">
       <SubType>Form</SubType>
@@ -192,11 +218,11 @@
     <Compile Include="View\DashboardEmployee.Designer.cs">
       <DependentUpon>DashboardEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Details_Bill_Print.cs">
+    <Compile Include="View\FormBillPrint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Details_Bill_Print.Designer.cs">
-      <DependentUpon>Details_Bill_Print.cs</DependentUpon>
+    <Compile Include="View\FormBillPrint.Designer.cs">
+      <DependentUpon>FormBillPrint.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormEmployee.cs">
       <SubType>Form</SubType>
@@ -215,12 +241,6 @@
     </Compile>
     <Compile Include="View\FormCustomer.Designer.cs">
       <DependentUpon>FormCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormAnalyst.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormAnalyst.Designer.cs">
-      <DependentUpon>FormAnalyst.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormDiscount.cs">
       <SubType>Form</SubType>
@@ -278,6 +298,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\FormStatistical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormStatistical.Designer.cs">
+      <DependentUpon>FormStatistical.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SelectCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +322,12 @@
     <Compile Include="View\SelectProductForm.Designer.cs">
       <DependentUpon>SelectProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SelectProductToDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SelectProductToDiscount.Designer.cs">
+      <DependentUpon>SelectProductToDiscount.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Custom\CustomFormInput.resx">
       <DependentUpon>CustomFormInput.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,17 +337,23 @@
     <EmbeddedResource Include="View\AddCustomerForm.resx">
       <DependentUpon>AddCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\AddDiscountProductsForm.resx">
+      <DependentUpon>AddDiscountProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddShiftWorkForm.resx">
       <DependentUpon>AddShiftWorkForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\BillDetail.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\DashboardEmployee.resx">
       <DependentUpon>DashboardEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Details_Bill_Print.resx">
-      <DependentUpon>Details_Bill_Print.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormBillPrint.resx">
+      <DependentUpon>FormBillPrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormEmployee.resx">
       <DependentUpon>FormEmployee.cs</DependentUpon>
@@ -325,9 +363,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormCustomer.resx">
       <DependentUpon>FormCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormAnalyst.resx">
-      <DependentUpon>FormAnalyst.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormDiscount.resx">
       <DependentUpon>FormDiscount.cs</DependentUpon>
@@ -365,6 +400,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FormStatistical.resx">
+      <DependentUpon>FormStatistical.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SelectCustomerForm.resx">
       <DependentUpon>SelectCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -373,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SelectProductForm.resx">
       <DependentUpon>SelectProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SelectProductToDiscount.resx">
+      <DependentUpon>SelectProductToDiscount.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DAL\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -385,8 +426,10 @@
     <None Include="Properties\DataSources\ManageMiniMart.DAL.Person.datasource" />
     <None Include="Properties\DataSources\ManageMiniMart.DTO.BillView.datasource" />
     <None Include="Properties\DataSources\ManageMiniMart.DTO.CustomerView.datasource" />
+    <None Include="Properties\DataSources\ManageMiniMart.DTO.DiscountView.datasource" />
     <None Include="Properties\DataSources\ManageMiniMart.DTO.ProductDTO.datasource" />
     <None Include="Properties\DataSources\ManageMiniMart.DTO.ProductInBill.datasource" />
+    <None Include="Properties\DataSources\ManageMiniMart.DTO.ProductInBillPrint.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -417,6 +460,19 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

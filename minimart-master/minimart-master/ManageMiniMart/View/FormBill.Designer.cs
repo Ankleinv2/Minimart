@@ -42,15 +42,15 @@
             this.btnSortBy = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvBill = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ShowDetail = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.billViewBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.billViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.billViewBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ShowDetail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -82,13 +82,12 @@
             this.dtpBillDate.Checked = true;
             this.dtpBillDate.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.dtpBillDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpBillDate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtpBillDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpBillDate.Location = new System.Drawing.Point(130, 25);
+            this.dtpBillDate.Location = new System.Drawing.Point(173, 25);
             this.dtpBillDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpBillDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpBillDate.Name = "dtpBillDate";
-            this.dtpBillDate.Size = new System.Drawing.Size(220, 36);
+            this.dtpBillDate.Size = new System.Drawing.Size(177, 36);
             this.dtpBillDate.TabIndex = 36;
             this.dtpBillDate.Value = new System.DateTime(2023, 4, 8, 22, 56, 26, 751);
             this.dtpBillDate.ValueChanged += new System.EventHandler(this.dtpBillDate_ValueChanged);
@@ -286,49 +285,6 @@
             this.dgvBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBill_CellContentClick);
             // 
-            // CreatedTime
-            // 
-            this.CreatedTime.DataPropertyName = "CreatedTime";
-            this.CreatedTime.HeaderText = "CreatedTime";
-            this.CreatedTime.MinimumWidth = 6;
-            this.CreatedTime.Name = "CreatedTime";
-            // 
-            // ShowDetail
-            // 
-            this.ShowDetail.HeaderText = "";
-            this.ShowDetail.MinimumWidth = 6;
-            this.ShowDetail.Name = "ShowDetail";
-            this.ShowDetail.Text = "Show Detail";
-            this.ShowDetail.UseColumnTextForButtonValue = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // customerNameDataGridViewTextBoxColumn
-            // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            // 
-            // employeeNameDataGridViewTextBoxColumn
-            // 
-            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
-            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "EmployeeName";
-            this.employeeNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            // 
             // billViewBindingSource2
             // 
             this.billViewBindingSource2.DataSource = typeof(ManageMiniMart.DTO.BillView);
@@ -340,6 +296,49 @@
             // billViewBindingSource1
             // 
             this.billViewBindingSource1.DataSource = typeof(ManageMiniMart.DTO.BillView);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // CreatedTime
+            // 
+            this.CreatedTime.DataPropertyName = "CreatedTime";
+            this.CreatedTime.HeaderText = "Create Time";
+            this.CreatedTime.MinimumWidth = 6;
+            this.CreatedTime.Name = "CreatedTime";
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer Name";
+            this.customerNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            // 
+            // employeeNameDataGridViewTextBoxColumn
+            // 
+            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
+            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "Employee Name";
+            this.employeeNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            // 
+            // ShowDetail
+            // 
+            this.ShowDetail.HeaderText = "";
+            this.ShowDetail.MinimumWidth = 6;
+            this.ShowDetail.Name = "ShowDetail";
+            this.ShowDetail.Text = "Show Detail";
+            this.ShowDetail.UseColumnTextForButtonValue = true;
             // 
             // FormBill
             // 
@@ -379,12 +378,12 @@
         private System.Windows.Forms.BindingSource billViewBindingSource2;
         private Guna.UI2.WinForms.Guna2ComboBox cbbSort1;
         private Guna.UI2.WinForms.Guna2ComboBox cbbSort2;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpBillDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn ShowDetail;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpBillDate;
     }
 }

@@ -43,7 +43,7 @@ namespace ManageMiniMart.BLL
                     CustomerName = bill.Customer != null ? bill.Customer.customer_name :"Unknow",
                     EmployeeName = bill.Person.person_name,
                     CreatedTime = bill.created_time.ToString(),
-                    Total= total,
+                    Total= total != 0 ? total.ToString("#,## VNĐ").Replace(',', '.') : "0 VNĐ",
                 });
             }
             return result;
@@ -111,11 +111,11 @@ namespace ManageMiniMart.BLL
             {
                 if (flag == 0)
                 {
-                    list = list.OrderBy(x => x.Total).ToList();
+                    list = list.OrderBy(x => x.Total.Length).ThenBy(x => x.Total).ToList();
                 }
                 else
                 {
-                    list = list.OrderByDescending(x => x.Total).ToList();
+                    list = list.OrderByDescending(x => x.Total.Length).ThenByDescending(x => x.Total).ToList();
                 }
             }
             

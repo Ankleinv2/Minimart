@@ -27,6 +27,9 @@ namespace ManageMiniMart.View
         {
             dgvDiscount.DataSource = null;
             dgvDiscount.DataSource = discountService.getAllDiscountView();
+            //dgvDiscount.Columns["StartTime"].HeaderText = "Start Time";
+            //dgvDiscount.Columns["EndTime"].HeaderText = "End Time";
+            //dgvDiscount.Columns["PercentSale"].HeaderText = "Percent Sale";
             dgvDiscount.Refresh();
         }
         // btnAdd
@@ -75,6 +78,31 @@ namespace ManageMiniMart.View
         {
             string name = txtSearch.Text.Trim();
             dgvDiscount.DataSource=discountService.getListDiscountViewByName(name);
+        }
+
+        private void btnDiscountToProducts_Click(object sender, EventArgs e)
+        {
+            AddDiscountProductsForm addDiscountProductsForm = new AddDiscountProductsForm();
+            addDiscountProductsForm.ShowDialog();
+        }
+
+        private void dgvDiscount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDiscount.Columns[e.ColumnIndex].Name == "ADD")
+            {
+                int discountId = Convert.ToInt32(dgvDiscount.SelectedRows[0].Cells[0].Value.ToString());
+                if(discountService.checkDiscountIsExpired(discountId))
+                {
+
+                }
+                else
+                {
+                    SelectProductToDiscount selectProductToDiscount = new SelectProductToDiscount(discountId);
+                    selectProductToDiscount.ShowDialog();
+                    loadAllDiscountView();
+                }
+                
+            }
         }
     }
 }

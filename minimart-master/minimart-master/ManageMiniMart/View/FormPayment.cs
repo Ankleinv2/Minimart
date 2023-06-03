@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ManageMiniMart.View
 {
-    public delegate void ProductDelegate(int productId, int amount);
+    public delegate void ProductDelegate(int productId,int amount);
     public delegate void CustomerDelegate(string customerId);
     public partial class FormPayment : Form
     {
@@ -65,7 +65,7 @@ namespace ManageMiniMart.View
         }
         private void updateProduct(ProductInBill product)
         {
-            for (int i = 0; i < listProductInBill.Count; i++)
+            for(int i = 0; i < listProductInBill.Count; i++)
             {
                 if (listProductInBill[i].ProductId == product.ProductId)
                 {
@@ -75,9 +75,9 @@ namespace ManageMiniMart.View
         }
         private ProductInBill getProductInBillById(int productId)
         {
-            foreach (var product in listProductInBill)
+            foreach( var product in listProductInBill)
             {
-                if (product.ProductId == productId)
+                if(product.ProductId == productId)
                 {
                     return product;
                 }
@@ -87,14 +87,13 @@ namespace ManageMiniMart.View
 
         private void setCustomerId_Input(string customerId)
         {
-            lblCustomerID.Text = customerId;
-            Customer customer = customerService.getCustomerById(customerId);
-            txtCustomerName.Text = customer.customer_name;
-            if (customer.point != 0)
+            txtCustomerName.Text = customerService.getCustomerById(customerId).customer_name;
+            txtCustomerID.Text = customerId;
+            if (customerService.getCustomerPoint(customerId) != 0)
             {
                 checkUsePoint.Visible = true;
                 guna2HtmlLabel1.Visible = true;
-                showPoint.Text = customer.point + " points";
+                showPoint.Text = customerService.getCustomerPoint(customerId).ToString() + " points";
             }
             else
             {
@@ -118,7 +117,7 @@ namespace ManageMiniMart.View
             selectProductForm.loadAllProducts(productName);
             selectProductForm.ShowDialog();
         }
-        private void AddProductInBill(int productId, int amount)
+        private void AddProductInBill(int productId,int amount)
         {
             Product product = productService.getProductById(productId);
             string sale = "";
@@ -128,10 +127,9 @@ namespace ManageMiniMart.View
                 sale += discount.Discount.discount_name;
                 discountId = discount.Discount.discount_id;
             }
-            if (amount > product.quantity)
+            if(amount > product.quantity)
             {
-                MyMessageBox messageBox = new MyMessageBox();
-                messageBox.show("Amount product in stock not enough for buy !", "Nofitication");
+                throw new Exception("Amount product in stock not enough for buy !");
             }
             else
             {
@@ -139,18 +137,16 @@ namespace ManageMiniMart.View
                 {
                     ProductInBill productInBill = getProductInBillById(productId);
                     int amountCurrent = productInBill.Amount;
-                    if ((amountCurrent + amount) > product.quantity)
+                    if ((amountCurrent+amount) > product.quantity)
                     {
-                        MyMessageBox myMessage = new MyMessageBox();
-                        myMessage.show("Amount product in stock not enough for buy!", "Nofitication");
-                        return;
+                        throw new Exception("Amount product in stock not enough for buy !");
                     }
                     else
                     {
                         productInBill.Amount += amount;
                         updateProduct(productInBill);
                     }
-
+                    
                 }
                 else
                 {
@@ -168,20 +164,20 @@ namespace ManageMiniMart.View
                     });
                 }
             }
-
+            
             loadProductInBill();
         }
 
-
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (listProductInBill.Count == 0) throw new Exception("Chua co san pham trong gio hang");
             MyMessageBox myMessage = new MyMessageBox();
             DialogResult rs = myMessage.show("Are you complete ?", "Confirm", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.INFO);
-            if (rs == DialogResult.Yes)
+            if(rs == DialogResult.Yes)
             {
-                string customerId = lblCustomerID.Text;
+                string customerId = txtCustomerID.Text;
                 Customer customer = customerService.getCustomerById(customerId);
-                if (customer == null)
+                if(customer == null)
                 {
                     customerId = null;
                 }
@@ -191,24 +187,25 @@ namespace ManageMiniMart.View
                 double totalMoney = 0;
                 Bill bill = new Bill
                 {
-                    person_id = employeeId,
-                    customer_id = customerId,
+                    person_id= employeeId,
+                    customer_id= customerId,
                     created_time = currentTime,
                     payment_method = methodPayment,
-                    used_points = 0
+                    
                 };
                 billService.saveBill(bill);
+
                 int idBill = billService.IdBillAdded;
-                foreach (var product in listProductInBill)
+                foreach(var product in listProductInBill)
                 {
                     Product product1 = productService.getProductById(product.ProductId);
                     Discount discount = discountService.getDiscountById(product.DiscountId);
-                    int percentOff = 0;
-                    if (discount != null)
+                    int percentOff =  0;
+                    if(discount != null)
                     {
                         percentOff = (int)discount.sale;
                     }
-                    totalMoney += (product.Price * (100 - percentOff) / 100) * product.Amount;
+                    totalMoney += (product.Price * (100-percentOff)/100)*product.Amount;
 
                     Bill_Product bill_Product = new Bill_Product
                     {
@@ -221,17 +218,17 @@ namespace ManageMiniMart.View
                     product1.quantity = product1.quantity - product.Amount;
                     productService.saveProduct(product1);
                     bill_ProductService.saveBill_Product(bill_Product);
-
+                    
                 }
-                if (customer != null)
+                if(customer != null)
                 {                                                       // 20000 = 1 đ
                     int oldPoint = (int)customer.point;                  // 1đ = 1000
-
+                    int pointAdd = (int)(totalMoney / 20000);
                     if (checkUsePoint.Checked)
                     {
                         if (totalMoney < Convert.ToDouble(customer.point * 1000))
                         {
-                            customer.point = (customer.point * 1000 - (int)totalMoney) / 1000;
+                            customer.point = (customer.point * 1000 - (int)totalMoney)/1000;
                             totalMoney = 0;
                             bill.used_points = oldPoint - customer.point;
                         }
@@ -242,20 +239,16 @@ namespace ManageMiniMart.View
                             bill.used_points = oldPoint;
                         }
                     }
-                    int pointAdd = (int)(totalMoney / 20000);
                     customer.point += pointAdd;
                     billService.saveBill(bill);
                     customerService.saveCustomer(customer);
+                    checkUsePoint.Checked = false;
+
+                    setCustomerId_Input(customerId);
                 }
 
-                //MyMessageBox myMessage1 = new MyMessageBox();
-                //myMessage1.show("Total money = " + totalMoney);
-                Details_Bill_Print details_Bill = new Details_Bill_Print();
-                details_Bill.setDatagridView(idBill);
-                details_Bill.ShowDialog();
-                Customer customer1 = customerService.getCustomerById(lblCustomerID.Text);
-                showPoint.Text = customer1.point.ToString() + " points";
-               
+                FormBillPrint formBillPrint = new FormBillPrint(idBill);
+                formBillPrint.ShowDialog();
             }
         }
 

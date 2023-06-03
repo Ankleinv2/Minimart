@@ -43,6 +43,7 @@ namespace ManageMiniMart.View
             string customerId = txtCustomerId.Text;
             if (txtCustomerName.Text == "") throw new Exception("Customer name cannot be empty");
             if (DateTime.Compare(dtpBirthdate.Value, DateTime.Now) > 0) throw new Exception("Birthdate shoule be Smaller Than or Equal to current date");
+
             string customerName = txtCustomerName.Text;
             DateTime birthDate  = dtpBirthdate.Value;
             DateTime createTime = DateTime.Now;

@@ -18,14 +18,13 @@ namespace Register_Login
 {
     public delegate void ShowLogin();               // để mở lại FormLogin
     public partial class FormLogin : Form
-    {
-        private bool check;                             // bỏ bool check
+    {                           // bỏ bool check
         private UserService userService;
         private EmployeeService employeeService;
         private ShiftDetailService shiftDetailService;
         private DiscountService discountService;
         private ProductDiscountService productDiscountService;
-        public FormLogin(bool check = false)            // bỏ bool check
+        public FormLogin()            // bỏ bool check
         {
             InitializeComponent();
             userService = new UserService();
@@ -33,7 +32,6 @@ namespace Register_Login
             discountService= new DiscountService();
             productDiscountService= new ProductDiscountService();
             shiftDetailService = new ShiftDetailService();
-            this.check = check;
             autoDeleteDiscountWhenOutOfTime();
         }
 
@@ -65,7 +63,7 @@ namespace Register_Login
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string userId = txtUserId.Text;
-            string password = txtPassword.Text;
+            string password = userService.encryption(txtPassword.Text);
             Account account = userService.getAccount(userId,password);
             if (account != null)
             {
@@ -86,7 +84,7 @@ namespace Register_Login
                 }
                 else
                 {
-                    Dashboard dashboard = new Dashboard(account,showAgain);                   // Manager    ,closeForm
+                    Dashboard dashboard = new Dashboard(account,showAgain);                   // Manager,closeForm
                     Hide();
                     dashboard.Show();
                     
@@ -131,20 +129,20 @@ namespace Register_Login
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int Param);
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-         );
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void showPassword_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left) txtPassword.PasswordChar = '\0';
+        }
+
+        private void showPassword_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left) txtPassword.PasswordChar = '*';
+        }
     }
 }

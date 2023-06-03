@@ -39,6 +39,11 @@ namespace ManageMiniMart.View
             dgvShift.DataSource = null;
             var s = shiftDetailService.getListShiftViewByShiftDate(dtpShiftDate.Value.Date);
             dgvShift.DataSource = s.ToList();
+            dgvShift.Columns["ShiftId"].HeaderText = "ID";
+            dgvShift.Columns["ShiftName"].HeaderText = "Shift Name";
+            dgvShift.Columns["ShiftDate"].HeaderText = "Shift Date";
+            dgvShift.Columns["StartTime"].HeaderText = "Start Time";
+            dgvShift.Columns["EndTime"].HeaderText = "End Time";
         }
         // btnAdd
         private void btnAdd_Click(object sender, EventArgs e)

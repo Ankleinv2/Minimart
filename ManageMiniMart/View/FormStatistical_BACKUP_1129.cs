@@ -20,7 +20,11 @@ namespace ManageMiniMart.View
             InitializeComponent();
             statisticService = new StatisticalService();
             setCBBBy();
+<<<<<<< HEAD
             chartBill.Titles.Add("Total bill");
+=======
+            chartBill.Titles.Add( "Total bill");
+>>>>>>> origin/NhanNH
         }
         private void setCBBBy()
         {
@@ -146,16 +150,22 @@ namespace ManageMiniMart.View
                         chartRevenue.Series[0].Points.AddXY(x.Text, x.Value);
                         chartRevenue.Series[0].Points[i].Label = x.Value.ToString("#,##");
                         chartRevenue.Series[0].Points[i].LegendText = x.Text.ToString();
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/NhanNH
                         i++;
                     }
                 }
             }
         }
+<<<<<<< HEAD
+=======
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
 
         }
+>>>>>>> origin/NhanNH
     }
 }

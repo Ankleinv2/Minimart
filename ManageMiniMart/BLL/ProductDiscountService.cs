@@ -1,4 +1,5 @@
-﻿using ManageMiniMart.DAL;
+﻿using ManageMiniMart.Custom;
+using ManageMiniMart.DAL;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,8 @@ namespace ManageMiniMart.BLL
         {
             db.Product_Discount.Add(product_Discount);
             db.SaveChanges();
+            MyMessageBox myMessage = new MyMessageBox();
+            myMessage.show("Save product_discount success");
         }
         // Delete
         public void deleteProduct_Discount(Product_Discount product_Discount)

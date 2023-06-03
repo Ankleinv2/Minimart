@@ -6,7 +6,7 @@
     </Key>
     <Property Name="person_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="role_id" Type="Int32" Nullable="false" />
-    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Person" Relationship="Self.FK__Account__person___36B12243" FromRole="Account" ToRole="Person" />
     <NavigationProperty Name="Role" Relationship="Self.FK__Account__role_id__37A5467C" FromRole="Account" ToRole="Role" />
     <NavigationProperty Name="Shift_work" Relationship="Self.FK__Shift_wor__perso__3B75D760" FromRole="Account" ToRole="Shift_work" />

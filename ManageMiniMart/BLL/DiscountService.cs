@@ -1,4 +1,5 @@
-﻿using ManageMiniMart.DAL;
+﻿using ManageMiniMart.Custom;
+using ManageMiniMart.DAL;
 using ManageMiniMart.DTO;
 using System;
 using System.Collections.Generic;
@@ -106,6 +107,25 @@ namespace ManageMiniMart.BLL
         {
             db.Discounts.RemoveRange(listDiscount);
             db.SaveChanges();
+        }
+        public bool checkDiscountIsExpired(int discountId)
+        {
+            Discount discount = db.Discounts.Find(discountId);
+            if(discount != null)
+            {
+                if(discount.end_time < DateTime.Now)
+                {
+                    MyMessageBox messageBox = new MyMessageBox();
+                    messageBox.show("Discount is expired!!!");
+                    return true;
+                }
+                return false;
+            }
+            else
+            {
+                throw new Exception("Not found discount!");
+            }
+            return false;
         }
 
 

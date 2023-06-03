@@ -322,6 +322,12 @@
     <Compile Include="View\SelectProductForm.Designer.cs">
       <DependentUpon>SelectProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SelectProductToDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SelectProductToDiscount.Designer.cs">
+      <DependentUpon>SelectProductToDiscount.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Custom\CustomFormInput.resx">
       <DependentUpon>CustomFormInput.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,10 +412,14 @@
     <EmbeddedResource Include="View\SelectProductForm.resx">
       <DependentUpon>SelectProductForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SelectProductToDiscount.resx">
+      <DependentUpon>SelectProductToDiscount.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="DAL\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.Config" />
     <None Include="DAL\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -417,6 +427,7 @@
     <None Include="Properties\DataSources\ManageMiniMart.DAL.Person.datasource" />
     <None Include="Properties\DataSources\ManageMiniMart.DTO.BillView.datasource" />
     <None Include="Properties\DataSources\ManageMiniMart.DTO.CustomerView.datasource" />
+    <None Include="Properties\DataSources\ManageMiniMart.DTO.DiscountView.datasource" />
     <None Include="Properties\DataSources\ManageMiniMart.DTO.ProductDTO.datasource" />
     <None Include="Properties\DataSources\ManageMiniMart.DTO.ProductInBill.datasource" />
     <None Include="Properties\DataSources\ManageMiniMart.DTO.ProductInBillPrint.datasource" />
@@ -429,9 +440,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -734,3 +734,4 @@ C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\View\BillDetail.rdlc
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddDiscountProductsForm.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormStatistical.resources
+C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.SelectProductToDiscount.resources

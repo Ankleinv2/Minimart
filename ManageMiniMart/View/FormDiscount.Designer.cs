@@ -28,22 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDiscount));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnDiscountToProducts = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvDiscount = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.percentSaleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADD = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.discountViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.discountViewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -70,7 +79,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnDiscountToProducts);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.btnDelete);
@@ -81,28 +89,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1242, 138);
             this.panel2.TabIndex = 1;
-            // 
-            // btnDiscountToProducts
-            // 
-            this.btnDiscountToProducts.BorderColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDiscountToProducts.BorderRadius = 10;
-            this.btnDiscountToProducts.BorderThickness = 1;
-            this.btnDiscountToProducts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDiscountToProducts.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDiscountToProducts.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDiscountToProducts.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDiscountToProducts.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDiscountToProducts.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnDiscountToProducts.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiscountToProducts.ForeColor = System.Drawing.Color.White;
-            this.btnDiscountToProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnDiscountToProducts.Image")));
-            this.btnDiscountToProducts.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDiscountToProducts.Location = new System.Drawing.Point(577, 47);
-            this.btnDiscountToProducts.Name = "btnDiscountToProducts";
-            this.btnDiscountToProducts.Size = new System.Drawing.Size(235, 45);
-            this.btnDiscountToProducts.TabIndex = 6;
-            this.btnDiscountToProducts.Text = "Add discount to products";
-            this.btnDiscountToProducts.Click += new System.EventHandler(this.btnDiscountToProducts_Click);
             // 
             // btnSearch
             // 
@@ -211,6 +197,7 @@
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
             this.dgvDiscount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDiscount.AutoGenerateColumns = false;
             this.dgvDiscount.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -222,6 +209,15 @@
             this.dgvDiscount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDiscount.ColumnHeadersHeight = 50;
             this.dgvDiscount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvDiscount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.startTimeDataGridViewTextBoxColumn,
+            this.endTimeDataGridViewTextBoxColumn,
+            this.percentSaleDataGridViewTextBoxColumn,
+            this.productsDataGridViewTextBoxColumn,
+            this.ADD});
+            this.dgvDiscount.DataSource = this.discountViewBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -263,6 +259,61 @@
             this.dgvDiscount.ThemeStyle.RowsStyle.Height = 50;
             this.dgvDiscount.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDiscount.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvDiscount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiscount_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // startTimeDataGridViewTextBoxColumn
+            // 
+            this.startTimeDataGridViewTextBoxColumn.DataPropertyName = "StartTime";
+            this.startTimeDataGridViewTextBoxColumn.HeaderText = "StartTime";
+            this.startTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.startTimeDataGridViewTextBoxColumn.Name = "startTimeDataGridViewTextBoxColumn";
+            // 
+            // endTimeDataGridViewTextBoxColumn
+            // 
+            this.endTimeDataGridViewTextBoxColumn.DataPropertyName = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn.HeaderText = "EndTime";
+            this.endTimeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.endTimeDataGridViewTextBoxColumn.Name = "endTimeDataGridViewTextBoxColumn";
+            // 
+            // percentSaleDataGridViewTextBoxColumn
+            // 
+            this.percentSaleDataGridViewTextBoxColumn.DataPropertyName = "PercentSale";
+            this.percentSaleDataGridViewTextBoxColumn.HeaderText = "PercentSale";
+            this.percentSaleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.percentSaleDataGridViewTextBoxColumn.Name = "percentSaleDataGridViewTextBoxColumn";
+            // 
+            // productsDataGridViewTextBoxColumn
+            // 
+            this.productsDataGridViewTextBoxColumn.DataPropertyName = "Products";
+            this.productsDataGridViewTextBoxColumn.HeaderText = "Products";
+            this.productsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productsDataGridViewTextBoxColumn.Name = "productsDataGridViewTextBoxColumn";
+            // 
+            // ADD
+            // 
+            this.ADD.HeaderText = "";
+            this.ADD.MinimumWidth = 6;
+            this.ADD.Name = "ADD";
+            this.ADD.Text = "Add product";
+            this.ADD.UseColumnTextForButtonValue = true;
+            // 
+            // discountViewBindingSource
+            // 
+            this.discountViewBindingSource.DataSource = typeof(ManageMiniMart.DTO.DiscountView);
             // 
             // FormDiscount
             // 
@@ -278,6 +329,7 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.discountViewBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,6 +343,13 @@
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
-        private Guna.UI2.WinForms.Guna2Button btnDiscountToProducts;
+        private System.Windows.Forms.BindingSource discountViewBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn startTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn percentSaleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn ADD;
     }
 }

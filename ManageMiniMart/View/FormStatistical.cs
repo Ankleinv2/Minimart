@@ -146,11 +146,15 @@ namespace ManageMiniMart.View
                         chartRevenue.Series[0].Points.AddXY(x.Text, x.Value);
                         chartRevenue.Series[0].Points[i].Label = x.Value.ToString("#,##");
                         chartRevenue.Series[0].Points[i].LegendText = x.Text.ToString();
-
                         i++;
                     }
                 }
             }
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

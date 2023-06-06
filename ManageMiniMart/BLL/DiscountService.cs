@@ -63,9 +63,9 @@ namespace ManageMiniMart.BLL
                 {
                     Id = discount.discount_id,
                     Name = discount.discount_name,
-                    StartTime = String.Format("{0:MM/dd/yyyy}", discount.start_time),
-                    EndTime = String.Format("{0:MM/dd/yyyy}", discount.end_time),
-                    PercentSale = (int)discount.sale,
+                    StartTime = discount.start_time.ToString("dd/MM/yyyy"),
+                    EndTime = discount.end_time.ToString("dd/MM/yyyy"),
+                    PercentSale = (int)discount.sale,   
                     Products = products
 
                 });

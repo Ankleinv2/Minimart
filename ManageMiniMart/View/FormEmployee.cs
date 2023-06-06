@@ -25,8 +25,8 @@ namespace ManageMiniMart.View
         {
             InitializeComponent();
             currentAccount = account;
-            employeeService= new EmployeeService();
-            userService= new UserService();
+            employeeService = new EmployeeService();
+            userService = new UserService();
             loadAllEmployee();
         }
         public void loadAllEmployee()
@@ -55,21 +55,21 @@ namespace ManageMiniMart.View
             if (userService.checkUserExits(personId))
             {
                 MyMessageBox myMessage = new MyMessageBox();
-                myMessage.show("Employee already have account","Notification");
+                myMessage.show("Employee already have account", "Notification");
             }
             else
             {
                 FormRegister formRegister = new FormRegister();
-                formRegister.setInfoRegister(true,personId);
-                formRegister.ShowDialog();  
+                formRegister.setInfoRegister(true, personId);
+                formRegister.ShowDialog();
             }
             loadAllEmployee();
         }
         // Search employee name
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string name=txtSearch.Text.Trim();
-            dgvEmloyee.DataSource=employeeService.getListEmployeeByNamePersonView(name);
+            string name = txtSearch.Text.Trim();
+            dgvEmloyee.DataSource = employeeService.getListEmployeeByNamePersonView(name);
 
         }
 
@@ -95,19 +95,16 @@ namespace ManageMiniMart.View
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            List<Account> accounts = new List<Account>();
+            //List<Account> accounts = new List<Account>();
+            List<string> listId = new List<string>();
             if (dgvEmloyee.SelectedRows.Count > 0)
             {
                 foreach (DataGridViewRow row in dgvEmloyee.SelectedRows)
                 {
-                    Account account = userService.getAccountByPersonId(row.Cells[0].Value.ToString());
-                    if (account != null)
-                    {
-                        accounts.Add(account);
-                    }
+                    listId.Add(row.Cells[0].Value.ToString());
                 }
             }
-            userService.removeAccount(accounts, currentAccount);
+            userService.removeAccount(listId, currentAccount);
             loadAllEmployee();
             MyMessageBox myMessage = new MyMessageBox();
             myMessage.show("Remove employee account successfully", "Notification");

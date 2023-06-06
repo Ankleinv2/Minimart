@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,7 +54,7 @@ namespace ManageMiniMart.BLL
                     Id = bill.bill_id,
                     CustomerName = bill.Customer != null ? bill.Customer.customer_name : "Unknow",
                     EmployeeName = bill.Person.person_name,
-                    CreatedTime = bill.created_time.ToString(),
+                    CreatedTime = bill.created_time.ToString("dd/MM/yyyy hh:mm:ss"),
                     Total = total != 0 ? total.ToString("#,## VNĐ").Replace(',', '.') : "0 VNĐ",
                 });
             }
@@ -254,15 +255,16 @@ namespace ManageMiniMart.BLL
         public List<BillView> getAllBillViewSortBy(string s, int flag)
         {
             var list = getAllBillView();
+            string format = "dd/MM/yyyy HH:mm:ss";
             if (s == "CreatedTime")
             {
                 if (flag == 0)
                 {
-                    list = list.Select(x => x).ToList();
+                    list = list.OrderBy(x => DateTime.ParseExact(x.CreatedTime, format, CultureInfo.InvariantCulture)).ToList();
                 }
                 else
                 {
-                    list = list.OrderByDescending(x => x.CreatedTime).ToList();
+                    list = list.OrderByDescending(x => DateTime.ParseExact(x.CreatedTime, format, CultureInfo.InvariantCulture)).ToList();
                 }
             }
             else if (s == "Total Money")
@@ -276,7 +278,6 @@ namespace ManageMiniMart.BLL
                     list = list.OrderByDescending(x => x.Total.Length).ThenByDescending(x => x.Total).ToList();
                 }
             }
-
             return list;
         }
         public List<BillView> getAllBillViewByBillDate(DateTime bill_date)

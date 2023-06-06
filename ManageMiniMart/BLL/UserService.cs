@@ -44,17 +44,32 @@ namespace ManageMiniMart.BLL
             db.Accounts.AddOrUpdate(account);
             db.SaveChanges();
         }
-        public void removeAccount(Account account)
+        public void removeAccount(List<Account> accounts, Account current)
         {
-            var shiftWork = db.Shift_work.Where(p => p.person_id == account.person_id).ToList();
-            db.Shift_work.RemoveRange(shiftWork);
-            db.Accounts.Remove(account);
+            bool isRemove = false;
+            List<Account> accountsToRemove = new List<Account>();
+            foreach (Account account in accounts)
+            {
+                if (account.person_id != current.person_id)
+                {
+                    var shiftWork = db.Shift_work.Where(p => p.person_id == account.person_id).ToList();
+                    db.Shift_work.RemoveRange(shiftWork);
+                    accountsToRemove.Add(account);
+                    isRemove = true;
+                }
+            }
+            db.Accounts.RemoveRange(accountsToRemove);
             db.SaveChanges();
+            if (!isRemove) throw new Exception("Nothing to remove or you cannot remove your own account");
         }
-        public void resetPassword(Account account)   
+        public void resetPassword(List<Account> accounts)   
         {
-            account.password = encryption(account.person_id.ToString());
-            db.Accounts.AddOrUpdate(account);
+            if (accounts.Count == 0) throw new Exception("Nothing to reset");
+            foreach (Account account in accounts)
+            {
+                account.password = encryption(account.person_id.ToString());
+                db.Accounts.AddOrUpdate(account);
+            }
             db.SaveChanges();
         }
         public string encryption(string password)

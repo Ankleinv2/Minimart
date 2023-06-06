@@ -22,8 +22,8 @@ namespace ManageMiniMart.View
         public AddDiscountForm()
         {
             InitializeComponent();
-            discountService= new DiscountService();
-            productDiscountService= new ProductDiscountService();
+            discountService = new DiscountService();
+            productDiscountService = new ProductDiscountService();
         }
         public void setDiscount(int discountId)
         {
@@ -36,60 +36,12 @@ namespace ManageMiniMart.View
         }
         private void btnSave_Click(object sender, EventArgs e)          // -> OK
         {
-            if (txtDiscountName.Text == "") throw new Exception("Discount name cannot be empty");
-            if(DateTime.Compare(dtpStartTime.Value,dtpEndTime.Value) > 0) throw new Exception("End Time should be Greater Than or Equal to Start Time");
-            try
-            {
-                Convert.ToInt32(txtSale.Text);
-            }
-            catch(Exception)
-            {
-                throw new Exception("Sale must be a number");
-            }
-            if (Convert.ToInt32(txtSale.Text) < 0) throw new Exception("Sale can not be a negative number");
-            string discountName = txtDiscountName.Text;
-            DateTime startTime = dtpStartTime.Value;                    // Bỏ ToUniversalTime() đi
-            DateTime endTime = dtpEndTime.Value;
-            int sale = Convert.ToInt32(txtSale.Text);
-            
-            if (txtDiscountId.Text!="")                     // Edit                     
-            {
-                int discountId = Convert.ToInt32(txtDiscountId.Text);
-                Discount discount = new Discount
-                {
-                    discount_id = discountId,
-                    discount_name = discountName,
-                    start_time = startTime,
-                    end_time = endTime,
-                    sale = sale
-                };
-                discountService.saveDiscount(discount);
-            }
-            else                                        // Add
-            {
-                Discount discount = new Discount
-                {
-                    discount_name = discountName,
-                    start_time = startTime,
-                    end_time = endTime,
-                    sale = sale
-                };
-                discountService.saveDiscount(discount);
-            }
-            foreach (var discount in discountService.getAllDiscount())
-            {
-                if (discount.end_time.Date < DateTime.Now.Date || discount.start_time.Date > DateTime.Now.Date)
-                {
-                    List<Product_Discount> product_s = productDiscountService.getProduct_Discount_By_DiscountID(discount.discount_id);
-                    foreach (var product in product_s)
-                    {
-                        productDiscountService.deleteProduct_Discount(product);
-                    }
-                }
-            }
+            discountService.AddDiscountForm_Save(txtDiscountId.Text, txtDiscountName.Text, dtpStartTime.Value, dtpEndTime.Value, txtSale.Text);
+
             MyMessageBox messageBox = new MyMessageBox();
-            messageBox.show("Save discount successful!!","Notification");
+            messageBox.show("Save discount successful!!", "Notification");
             Dispose();
+
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

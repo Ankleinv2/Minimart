@@ -33,12 +33,6 @@ namespace ManageMiniMart.BLL
             foreach (var person in db.People.ToList())
             {
                 Account account = userService.getAccountByPersonId(person.person_id);
-                //Role s = new Role();
-                //if (account != null)
-                //{
-                //    //s = db.Roles.FirstOrDefault(x => x.role_id == account.role_id);
-                //    s = roleService.getRole(account);
-                //}
                 list.Add(new PersonView
                 {
                     person_id = person.person_id,
@@ -59,7 +53,7 @@ namespace ManageMiniMart.BLL
         }
         public List<Person> getListEmployeeByName(string name)
         {
-            return db.People.Where(p => p.person_name.Contains(name)).ToList();
+            return db.People.Where(p => p.person_name.Contains(name) && p.Account != null).ToList();
         }
         public List<PersonView> getListEmployeeByNamePersonView(string name)
         {
@@ -97,11 +91,48 @@ namespace ManageMiniMart.BLL
             return check;
         }
         // Add or Update
-        public void saveEmployee(Person person)
+        public void saveEmployee2(Person person)
         {
             db.People.AddOrUpdate(person);
             db.SaveChanges();
         }
+        public void saveEmployee(bool IdState, string Id, string Name, DateTime Birthdate, string Address, string Email, string Salary, string PhoneNumber)
+        {
+            //validate value 
+            if (IdState == true && Id == "") throw new Exception("Employee ID cannot be empty");
+            if (IdState == true && checkEmployeeID_Exist(Id) == true) throw new Exception("Employee ID cannot be the same as the existing Employee ID");
+            if (Name == "") throw new Exception("Employee name cannot be empty");
+            if (DateTime.Compare(Birthdate, DateTime.Now) > 0) throw new Exception("Start Time shoule be Smaller Than or Equal to current date");
+            if (PhoneNumber != "" && PhoneNumber.Length != 10) throw new Exception("Phone number length must be equal to 10");
+            try
+            {
+                Convert.ToDouble(Salary);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Salary must be a interger number");
+            }
+            if (Convert.ToDouble(Salary) < 0) throw new Exception("Salary can not be a negative number");
 
+            string employeeId = Id;
+            string employeeName = Name;
+            DateTime dateTimeConverter = Birthdate;
+            string address = Address;
+            string email = Email;
+            string phoneNumber = PhoneNumber;
+            double salary = Convert.ToDouble(Salary);
+            Person person = new Person
+            {
+                person_id = employeeId,
+                person_name = employeeName,
+                phone_number = phoneNumber,
+                birthdate = dateTimeConverter,
+                email = email,
+                salary = salary,
+                address = address
+            };
+            db.People.AddOrUpdate(person);
+            db.SaveChanges();
+        }
     }
 }

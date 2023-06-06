@@ -75,50 +75,42 @@ namespace ManageMiniMart.View
 
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
-            bool isReset = false;
+            List<Account> accounts = new List<Account>();
             if (dgvEmloyee.SelectedRows.Count > 0)
             {
-                foreach(DataGridViewRow row in dgvEmloyee.SelectedRows)
+                foreach (DataGridViewRow row in dgvEmloyee.SelectedRows)
                 {
                     Account account = userService.getAccountByPersonId(row.Cells[0].Value.ToString());
                     if (account != null)
                     {
-                        userService.resetPassword(account);
-                        isReset = true;
+                        accounts.Add(account);
                     }
                 }
             }
-            if (isReset)
-            {
-                loadAllEmployee();
-                MyMessageBox myMessage = new MyMessageBox();
-                myMessage.show("Reset password successfully", "Notification");
-            }
-            else throw new Exception("Nothing to reset");
+            userService.resetPassword(accounts);
+            loadAllEmployee();
+            MyMessageBox myMessage = new MyMessageBox();
+            myMessage.show("Reset password successfully", "Notification");
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            bool isDeleted = false;
-            if(dgvEmloyee.SelectedRows.Count > 0)
+            List<Account> accounts = new List<Account>();
+            if (dgvEmloyee.SelectedRows.Count > 0)
             {
-                foreach(DataGridViewRow row in dgvEmloyee.SelectedRows)
+                foreach (DataGridViewRow row in dgvEmloyee.SelectedRows)
                 {
                     Account account = userService.getAccountByPersonId(row.Cells[0].Value.ToString());
-                    if (account != null && account.person_id != currentAccount.person_id)
+                    if (account != null)
                     {
-                        userService.removeAccount(account);
-                        isDeleted = true;
+                        accounts.Add(account);
                     }
                 }
             }
-            if (isDeleted)
-            {
-                loadAllEmployee();
-                MyMessageBox myMessage = new MyMessageBox();
-                myMessage.show("Remove employee account successfully", "Notification");
-            }
-            else throw new Exception("Nothing to delete or you cannot delete yourself");            
+            userService.removeAccount(accounts, currentAccount);
+            loadAllEmployee();
+            MyMessageBox myMessage = new MyMessageBox();
+            myMessage.show("Remove employee account successfully", "Notification");
         }
     }
 }

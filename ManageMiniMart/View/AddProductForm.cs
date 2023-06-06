@@ -43,28 +43,6 @@ namespace ManageMiniMart
             lblProductID.Visible = false;
             panelProductID.Visible = false;
         }
-
-        void checkValidInformation()
-        {
-            if (txtProductName.Text == "") throw new Exception("Name product is not empty");
-            if (txtBrand.Text == "") throw new Exception("Brand is not empty");
-            try
-            {
-
-                Convert.ToInt32(txtPrice.Text);
-                Convert.ToInt32(txtQuantity.Text);
-
-            }
-            catch (FormatException)
-            {
-                throw new Exception("Price and Quantity must be a number");
-            }
-            if (Convert.ToInt32(txtPrice.Text) < 0) throw new Exception("Price can not be a negative number");
-            if (Convert.ToInt32(txtQuantity.Text) < 0) throw new Exception("Quantity can not be a negative number");
-            if (cbbCategory.SelectedItem == null) throw new Exception("Catogory is not selected");
-
-        }
-
         public void editProduct(Product product)                    // Đưa product lên addproductForm                    
         {
             lblProductID.Visible = true;
@@ -87,84 +65,8 @@ namespace ManageMiniMart
         // Add or Update
         private void btnSave_Click(object sender, EventArgs e)
         {
-            checkValidInformation();
-            string productId = txtProductId.Text;
-            int discount_id = ((CBBItem)cbbDiscount.SelectedItem).Value;
-            if (discount_id > 0 && productId=="")                               // add, có discount
-            {
-                Discount discount = discountService.getDiscountById(discount_id);
-                List<Discount> discounts = new List<Discount>();
-                discounts.Add(discount);
-                Product product1 = new Product
-                {
-                    product_name = txtProductName.Text,
-                    category_id = ((CBBItem)cbbCategory.SelectedItem).Value,
-                    brand = txtBrand.Text,
-                    price = Convert.ToDouble(txtPrice.Text),
-                    quantity = Convert.ToInt16(txtQuantity.Text),            
-                };
-                productService.saveProduct(product1);
-                Product_Discount product_Discount = new Product_Discount
-                {
-                    product_id = product1.product_id,
-                    discount_id = discount_id,
-                }; 
-                productDiscountService.saveProduct_Discount(product_Discount);
-            }
-            else if(discount_id > 0 && productId != "")                     // edit , có discount
-            {
-                Product product2 = new Product
-                {
-                    product_id = Convert.ToInt32(productId),
-                    product_name = txtProductName.Text,
-                    price = Convert.ToDouble(txtPrice.Text),
-                    brand = txtBrand.Text,
-                    quantity = Convert.ToInt16(txtQuantity.Text),
-                    category_id = ((CBBItem)cbbCategory.SelectedItem).Value,
-                };
-                productService.saveProduct(product2);
-                // xoá discount cũ
-                Product_Discount product_Discount1 = productDiscountService.getProduct_DiscountByProductIdAndDiscountId(product2.product_id, discountBefore);
-                productDiscountService.deleteProduct_Discount(product_Discount1);
-                // thêm discount mới
-                Product_Discount product_Discount = new Product_Discount
-                {
-                    product_id = product2.product_id,
-                    discount_id = discount_id,
-                };
-                productDiscountService.saveProduct_Discount(product_Discount);
-            }
-            else if(discount_id == 0 && productId != "")                // edit, không có discount
-            {
-                Product product = new Product
-                {
-                    product_id = Convert.ToInt32(productId),
-                    product_name = txtProductName.Text,
-                    price = Convert.ToDouble(txtPrice.Text),
-                    brand = txtBrand.Text,
-                    quantity = Convert.ToInt16(txtQuantity.Text),
-                    category_id = ((CBBItem)cbbCategory.SelectedItem).Value,
-
-                };
-                //
-                productService.saveProduct(product);
-                //
-                Product_Discount product_Discount1 = productDiscountService.getProduct_DiscountByProductIdAndDiscountId(product.product_id, discountBefore);
-                productDiscountService.deleteProduct_Discount(product_Discount1);
-            }
-            else                           // add khong co discount
-            {
-                Product product = new Product
-                {
-                    product_name = txtProductName.Text,
-                    price = Convert.ToDouble(txtPrice.Text),
-                    brand = txtBrand.Text,
-                    quantity = Convert.ToInt16(txtQuantity.Text),
-                    category_id = ((CBBItem)cbbCategory.SelectedItem).Value
-                };
-
-                productService.saveProduct(product);
-            }
+            int discount_id = cbbCategory.SelectedItem == null ? 0 : ((CBBItem)cbbCategory.SelectedItem).Value;
+            productService.saveProduct(txtProductId.Text, txtProductName.Text, txtBrand.Text, txtPrice.Text, txtQuantity.Text, discountBefore, ((CBBItem)cbbDiscount.SelectedItem).Value, discount_id);
             MyMessageBox messageBox = new MyMessageBox();
             messageBox.show("Successful","Notification");
             this.formProduct();

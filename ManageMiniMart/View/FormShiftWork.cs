@@ -31,7 +31,7 @@ namespace ManageMiniMart.View
                 btnEdit.Visible = false;
                 btnDelete.Visible = false;
             }
-            dtpShiftDate.Value=DateTime.Now;
+            dtpShiftDate.Value = DateTime.Now;
         }
         // Load
         public void loadShiftView()
@@ -56,7 +56,7 @@ namespace ManageMiniMart.View
         private void btnEdit_Click(object sender, EventArgs e)
         {
             int shift_id = Convert.ToInt32(dgvShift.SelectedRows[0].Cells[0].Value.ToString());
-            AddShiftWorkForm shiftWork= new AddShiftWorkForm();
+            AddShiftWorkForm shiftWork = new AddShiftWorkForm();
             shiftWork.setFormAddShift(shift_id);
             shiftWork.ShowDialog();
             loadShiftView();
@@ -64,12 +64,11 @@ namespace ManageMiniMart.View
         // btnDelete
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            List<int> listShiftID=new List<int>();
-            for(int i = 0; i < dgvShift.SelectedRows.Count; i++)
+            List<int> listShiftID = new List<int>();
+            for (int i = 0; i < dgvShift.SelectedRows.Count; i++)
             {
                 int shift_id = Convert.ToInt32(dgvShift.SelectedRows[i].Cells[0].Value);
                 listShiftID.Add(shift_id);
-                //shiftDetailService.deleteShiftDetailbyID(shift_id);
             }
             MyMessageBox messageBox = new MyMessageBox();
             DialogResult rs = messageBox.show("Are you sure delete?", "Confirm delete", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.QUESTION);
@@ -82,7 +81,7 @@ namespace ManageMiniMart.View
         // datetimepicker value changed
         private void dtpShiftDate_ValueChanged(object sender, EventArgs e)
         {
-            var s=shiftDetailService.getListShiftViewByShiftDate(dtpShiftDate.Value.Date);
+            var s = shiftDetailService.getListShiftViewByShiftDate(dtpShiftDate.Value.Date);
             dgvShift.DataSource = s.ToList();
         }
     }

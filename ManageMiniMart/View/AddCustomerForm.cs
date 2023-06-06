@@ -38,53 +38,7 @@ namespace ManageMiniMart.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtCustomerId.Enabled == true && txtCustomerId.Text=="") throw new Exception("CustomerID cannot be empty");
-            if (txtCustomerId.Enabled == true && customerService.checkCustomerID_Exist(txtCustomerId.Text)==true) throw new Exception("Customer ID cannot be the same as the existing Customer ID");
-            string customerId = txtCustomerId.Text;
-            if (txtCustomerName.Text == "") throw new Exception("Customer name cannot be empty");
-            if (DateTime.Compare(dtpBirthdate.Value, DateTime.Now) > 0) throw new Exception("Birthdate shoule be Smaller Than or Equal to current date");
-
-            string customerName = txtCustomerName.Text;
-            DateTime birthDate  = dtpBirthdate.Value;
-            DateTime createTime = DateTime.Now;
-            int point = 0;
-            string address = txtAddress.Text;
-            string email = txtEmail.Text;
-            Customer customerOld = customerService.getCustomerById(customerId);             // lấy Customer    -> Để đưa createTime vào
-            if (customerOld == null)                                                // Add Customer
-            {
-                Customer customer = new Customer
-                {
-                    customer_id = customerId,
-                    customer_name = customerName,
-                    birthdate = birthDate,
-                    created_time = createTime,
-                    address = address,
-                    point = point,
-                    email = email,
-                };
-                customerService.saveCustomer(customer);
-                MyMessageBox myMessage = new MyMessageBox();
-                myMessage.show("Add customer successful !", "Nofitication", MyMessageBox.TypeMessage.CONFIRM, MyMessageBox.TypeIcon.INFO);
-
-            }
-            else                                                                  // Edit Customer
-            {   
-                Customer customer = new Customer
-                {
-                    customer_id = customerId,
-                    customer_name = customerName,
-                    birthdate = birthDate,
-                    created_time = customerOld.created_time,
-                    address = address,
-                    point = customerOld.point,
-                    email = email,
-                };
-                customerService.saveCustomer(customer);
-                MyMessageBox myMessage = new MyMessageBox();
-                myMessage.show("Edit customer successful !", "Nofitication", MyMessageBox.TypeMessage.CONFIRM, MyMessageBox.TypeIcon.INFO);
-            }
-
+            customerService.saveCustomer(txtCustomerId.Enabled, txtCustomerId.Text, txtCustomerName.Text, dtpBirthdate.Value, txtAddress.Text, txtEmail.Text);
             Close();
         }
         private void btnCancel_Click(object sender, EventArgs e)

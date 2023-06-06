@@ -30,10 +30,12 @@ namespace ManageMiniMart.View
             shiftDetailService = new ShiftDetailService();
             shiftWorkService = new ShiftWorkService();
             employeeList = new List<Person>();
+
+
             lblShiftId.Text = "";
             dtpShiftDate.Value = DateTime.Now;
-            dtpStartTime.Value =DateTime.Parse( DateTime.Now.ToShortTimeString());
-            dtpEndTime.Value= DateTime.Parse(DateTime.Now.ToShortTimeString());
+            dtpStartTime.Value = DateTime.Parse(DateTime.Now.ToShortTimeString());
+            dtpEndTime.Value = DateTime.Parse(DateTime.Now.ToShortTimeString());
         }
 
         public void reloadDgvEmployee()                             // Đưa employeeList vào dgvEmployee
@@ -87,74 +89,7 @@ namespace ManageMiniMart.View
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtShiftName.Text == "") throw new Exception("Shift name is not empty");
-            if (TimeSpan.Compare(dtpStartTime.Value.TimeOfDay, dtpEndTime.Value.TimeOfDay) >= 0) throw new Exception("End time must be Greater than Start Time");
-
-            if (lblShiftId.Text == "")                          // Add
-            { 
-                bool checkShiftDetailExit = shiftDetailService.checkShiftDetailExist(dtpShiftDate.Value.Date,dtpStartTime.Value.TimeOfDay, dtpEndTime.Value.TimeOfDay);
-                if (checkShiftDetailExit == true) throw new Exception("The time of this shift must be different from the time of the existing shift");
-                string shiftName = txtShiftName.Text;
-                DateTime shiftDate=dtpShiftDate.Value.Date;
-                TimeSpan startTime = dtpStartTime.Value.TimeOfDay;
-                TimeSpan endTime = dtpEndTime.Value.TimeOfDay;
-                
-                
-                Shift_detail shift_Detail = new Shift_detail
-                {
-                    shift_name = shiftName,
-                    shift_date = shiftDate,
-                    start_time = startTime,
-                    end_time = endTime,
-                };
-                shiftDetailService.saveShift_detail(shift_Detail);
-
-                int shiftId = shiftDetailService.shiftIdAdded;                  // shiftIdAdded bên shiftDetailService
-                foreach (Person person in employeeList)
-                {
-                    string personId = person.person_id;
-                    Shift_work shift_Work = new Shift_work
-                    {
-                        shift_id = shiftId,
-                        person_id = personId,
-                    };
-                    shiftWorkService.saveShift_work(shift_Work);
-                }
-                MyMessageBox myMessageBox = new MyMessageBox();
-                myMessageBox.show("Add shift work successful!", "Notification");
-            }
-            else                                             // Edit Shift_detail
-            {
-                int shiftId = Convert.ToInt32(lblShiftId.Text);
-                string shiftName = txtShiftName.Text;
-                DateTime shiftDate = dtpShiftDate.Value.Date;
-                TimeSpan startTime = dtpStartTime.Value.TimeOfDay;
-                TimeSpan endTime = dtpEndTime.Value.TimeOfDay;
-                Shift_detail shift_Detail = new Shift_detail
-                {
-                    shift_id = shiftId,
-                    shift_name = shiftName,
-                    shift_date = shiftDate,
-                    start_time = startTime,
-                    end_time = endTime,
-                };
-                shiftDetailService.saveShift_detail(shift_Detail);
-                //                                      Edit Shift_Work
-                shiftWorkService.deleteShiftworkByShiftWorkId(shiftId);          // Delete ShiftWork
-                foreach (Person person in employeeList)
-                {
-                    string personId = person.person_id;
-                    Shift_work shift_Work = new Shift_work
-                    {
-                        shift_id = shiftId,
-                        person_id = personId,
-                    };
-                    shiftWorkService.saveShift_work(shift_Work);
-
-                }
-                MyMessageBox myMessageBox = new MyMessageBox();
-                myMessageBox.show("Edit shift work successful!", "Notification");
-            }
+            shiftDetailService.AddShiftWorkForm_Save(lblShiftId.Text, txtShiftName.Text, dtpShiftDate.Value.Date, dtpStartTime.Value.TimeOfDay, dtpEndTime.Value.TimeOfDay, employeeList);
 
             Dispose();
         }

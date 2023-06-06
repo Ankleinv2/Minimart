@@ -1,5 +1,7 @@
-﻿using ManageMiniMart.DAL;
+﻿using ManageMiniMart.Custom;
+using ManageMiniMart.DAL;
 using ManageMiniMart.DTO;
+using ManageMiniMart.View;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Configuration;
+using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace ManageMiniMart.BLL
 {
@@ -15,23 +19,29 @@ namespace ManageMiniMart.BLL
     {
         private Manage_MinimartEntities db;
         private Bill_ProductService bill_ProductService;
+        private CustomerService customerService;
+        private ProductService productService;
+        private DiscountService discountService;
         public int IdBillAdded;
-        
+
         public BillService()
         {
-            db= new Manage_MinimartEntities();
-            bill_ProductService= new Bill_ProductService();
+            db = new Manage_MinimartEntities();
+            bill_ProductService = new Bill_ProductService();
+            customerService = new CustomerService();
+            productService = new ProductService();
+            discountService = new DiscountService();
         }
         public List<BillView> convertToBillView(List<Bill> bills)
         {
             List<BillView> result = new List<BillView>();
-            foreach(Bill bill in bills)
+            foreach (Bill bill in bills)
             {
-                var productInBill = db.Bill_Product.Where( b => b.bill_id == bill.bill_id ).ToList();
+                var productInBill = db.Bill_Product.Where(b => b.bill_id == bill.bill_id).ToList();
                 double total = 0;
-                foreach( var product in productInBill)
+                foreach (var product in productInBill)
                 {
-                    total += product.price*product.quantity;
+                    total += product.price * product.quantity;
                 }
                 if (bill.used_points > 0)
                 {
@@ -39,11 +49,11 @@ namespace ManageMiniMart.BLL
                 }
                 result.Add(new BillView
                 {
-                    Id= bill.bill_id,
-                    CustomerName = bill.Customer != null ? bill.Customer.customer_name :"Unknow",
+                    Id = bill.bill_id,
+                    CustomerName = bill.Customer != null ? bill.Customer.customer_name : "Unknow",
                     EmployeeName = bill.Person.person_name,
                     CreatedTime = bill.created_time.ToString(),
-                    Total= total != 0 ? total.ToString("#,## VNĐ").Replace(',', '.') : "0 VNĐ",
+                    Total = total != 0 ? total.ToString("#,## VNĐ").Replace(',', '.') : "0 VNĐ",
                 });
             }
             return result;
@@ -92,22 +102,168 @@ namespace ManageMiniMart.BLL
             db.SaveChanges();
             this.IdBillAdded = bill.bill_id;
         }
-        // Sort
-        public List<BillView> getAllBillViewSortBy(string s,int flag)
+        public bool saveBill(int QuantityinBill, string Id, string employeeId, string Payment, DateTime CurrentTime, List<ProductInBill> ProductsInBill, bool checkUsePoint)
         {
-            var list=getAllBillView();
-            if (s == "CreatedTime")
+            bool haveCustomer = false;
+            if (QuantityinBill == 0) throw new Exception("Chua co san pham trong gio hang");
+            string customerId = Id;
+            Customer customer = customerService.getCustomerById(Id);
+            if (customer == null)
             {
-                if(flag == 0)
+                customerId = null;
+            }
+            double totalMoney = 0;
+            Bill bill = new Bill
+            {
+                person_id = employeeId,
+                customer_id = customerId,
+                created_time = CurrentTime,
+                payment_method = Payment,
+
+            };
+            saveBill(bill);
+
+            foreach (var product in ProductsInBill)
+            {
+                Product product1 = productService.getProductById(product.ProductId);
+                Discount discount = discountService.getDiscountById(product.DiscountId);
+                int percentOff = 0;
+                if (discount != null)
                 {
-                    list=list.OrderBy(x => x.CreatedTime).ToList();
+                    percentOff = (int)discount.sale;
+                }
+                totalMoney += (product.Price * (100 - percentOff) / 100) * product.Amount;
+
+                Bill_Product bill_Product = new Bill_Product
+                {
+                    bill_id = IdBillAdded,
+                    product_id = product.ProductId,
+                    quantity = product.Amount,
+                    price = product.Price * (100 - percentOff) / 100 // Lưu giá ở đây là giá sau khi đã áp dụng giảm giá
+                };
+                // sau khi thêm sản phẩm vào bill thì giảm số lượng hàng hóa có trong kho
+                product1.quantity = product1.quantity - product.Amount;
+                productService.saveProduct(product1);
+                bill_ProductService.saveBill_Product(bill_Product);
+
+            }
+            if (customer != null)
+            {                                                       // 20000 = 1 đ
+                int oldPoint = (int)customer.point;                  // 1đ = 1000
+                int pointAdd = (int)(totalMoney / 20000);
+                if (checkUsePoint)
+                {
+                    if (totalMoney < Convert.ToDouble(customer.point * 1000))
+                    {
+                        customer.point = (customer.point * 1000 - (int)totalMoney) / 1000;
+                        totalMoney = 0;
+                        bill.used_points = oldPoint - customer.point;
+                    }
+                    else
+                    {
+                        totalMoney -= Convert.ToDouble(customer.point * 1000);
+                        customer.point = 0;
+                        bill.used_points = oldPoint;
+                    }
+                }
+                customer.point += pointAdd;
+                saveBill(bill);
+                customerService.saveCustomer(customer);
+                haveCustomer = true;
+            }
+
+            FormBillPrint formBillPrint = new FormBillPrint(IdBillAdded);
+            formBillPrint.ShowDialog();
+            return haveCustomer;
+        }
+        private bool checkProduct_ExistIn_listProductInBill(List<ProductInBill> listProductInBill, int productId)                // kiểm tra xem đã add trước đó chưa
+        {
+            bool check = false;
+            foreach (var product in listProductInBill)
+            {
+                if (product.ProductId == productId)
+                {
+                    check = true;
+                    break;
+                }
+            }
+            return check;
+        }
+        private ProductInBill getProductInBillById(List<ProductInBill> listProductInBill, int productId)
+        {
+            foreach (var product in listProductInBill)
+            {
+                if (product.ProductId == productId)
+                {
+                    return product;
+                }
+            }
+            return null;
+        }
+        public void addProductInBill(List<ProductInBill> listProductInBill, int productId, int amount)
+        {
+            Product product = productService.getProductById(productId);
+            string sale = "";
+            int discountId = 0;
+            foreach (var discount in product.Product_Discount)
+            {
+                sale += discount.Discount.discount_name;
+                discountId = discount.Discount.discount_id;
+            }
+            if (amount > product.quantity)
+            {
+                throw new Exception("Amount product in stock not enough for buy !");
+            }
+            else
+            {
+                if (checkProduct_ExistIn_listProductInBill(listProductInBill, productId))      // Nếu đã add trước đó rồi
+                {
+                    ProductInBill productInBill = getProductInBillById(listProductInBill, productId);
+                    int amountCurrent = productInBill.Amount;
+                    if ((amountCurrent + amount) > product.quantity)
+                    {
+                        throw new Exception("Amount product in stock not enough for buy !");
+                    }
+                    else
+                    {
+                        productInBill.Amount += amount;
+
+                    }
+
                 }
                 else
                 {
-                    list= list.OrderByDescending(x => x.CreatedTime).ToList();
+                    listProductInBill.Add(new ProductInBill
+                    {
+                        ProductId = productId,
+                        Name = product.product_name,
+                        Brand = product.brand,
+                        Price = product.price,
+                        Quantity = product.quantity,
+                        Amount = amount,
+                        Category_name = product.Category.category_name,
+                        Sale = sale,
+                        DiscountId = discountId
+                    });
                 }
             }
-            else if(s== "Total Money")
+        }
+        // Sort
+        public List<BillView> getAllBillViewSortBy(string s, int flag)
+        {
+            var list = getAllBillView();
+            if (s == "CreatedTime")
+            {
+                if (flag == 0)
+                {
+                    list = list.Select(x => x).ToList();
+                }
+                else
+                {
+                    list = list.OrderByDescending(x => x.CreatedTime).ToList();
+                }
+            }
+            else if (s == "Total Money")
             {
                 if (flag == 0)
                 {
@@ -118,7 +274,7 @@ namespace ManageMiniMart.BLL
                     list = list.OrderByDescending(x => x.Total.Length).ThenByDescending(x => x.Total).ToList();
                 }
             }
-            
+
             return list;
         }
         public List<BillView> getAllBillViewByBillDate(DateTime bill_date)
@@ -126,5 +282,6 @@ namespace ManageMiniMart.BLL
             var bills = db.Bills.Where(b => DbFunctions.TruncateTime(b.created_time) == bill_date).ToList(); //stackoverflow.com/questions/14601676/the-specified-type-member-date-is-not-supported-in-linq-to-entities-only-init
             return convertToBillView(bills);
         }
+
     }
 }

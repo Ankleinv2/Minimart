@@ -78,7 +78,7 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label8.Location = new System.Drawing.Point(174, 21);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(207, 40);
+            this.label8.Size = new System.Drawing.Size(164, 32);
             this.label8.TabIndex = 30;
             this.label8.Text = "Discount form";
             // 
@@ -132,7 +132,7 @@
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label1.Location = new System.Drawing.Point(70, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 23);
+            this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 28;
             this.label1.Text = "DiscountId";
             // 
@@ -179,7 +179,7 @@
             this.dtpEndTime.Name = "dtpEndTime";
             this.dtpEndTime.Size = new System.Drawing.Size(212, 36);
             this.dtpEndTime.TabIndex = 3;
-            this.dtpEndTime.Value = new System.DateTime(2023, 4, 13, 0, 0, 0, 0);
+            this.dtpEndTime.Value = new System.DateTime(2023, 6, 6, 0, 0, 0, 0);
             // 
             // dtpStartTime
             // 
@@ -199,7 +199,7 @@
             this.dtpStartTime.Name = "dtpStartTime";
             this.dtpStartTime.Size = new System.Drawing.Size(212, 36);
             this.dtpStartTime.TabIndex = 2;
-            this.dtpStartTime.Value = new System.DateTime(2023, 4, 13, 0, 0, 0, 0);
+            this.dtpStartTime.Value = new System.DateTime(2023, 6, 6, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -210,7 +210,7 @@
             this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label4.Location = new System.Drawing.Point(263, -25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 23);
+            this.label4.Size = new System.Drawing.Size(75, 20);
             this.label4.TabIndex = 25;
             this.label4.Text = "ProductId";
             // 
@@ -291,7 +291,7 @@
             this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label3.Location = new System.Drawing.Point(66, 227);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 23);
+            this.label3.Size = new System.Drawing.Size(69, 20);
             this.label3.TabIndex = 19;
             this.label3.Text = "End time";
             // 
@@ -305,7 +305,7 @@
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label2.Location = new System.Drawing.Point(66, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 23);
+            this.label2.Size = new System.Drawing.Size(111, 20);
             this.label2.TabIndex = 14;
             this.label2.Text = "Name discount";
             // 
@@ -319,7 +319,7 @@
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label5.Location = new System.Drawing.Point(70, 158);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 23);
+            this.label5.Size = new System.Drawing.Size(74, 20);
             this.label5.TabIndex = 15;
             this.label5.Text = "Start time";
             // 
@@ -333,7 +333,7 @@
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label6.Location = new System.Drawing.Point(66, 278);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 23);
+            this.label6.Size = new System.Drawing.Size(60, 20);
             this.label6.TabIndex = 16;
             this.label6.Text = "Sale % :";
             // 

@@ -20,7 +20,7 @@ namespace ManageMiniMart.View
         public FormDiscount()
         {
             InitializeComponent();
-            discountService= new DiscountService();
+            discountService = new DiscountService();
             loadAllDiscountView();
         }
         public void loadAllDiscountView()
@@ -52,24 +52,19 @@ namespace ManageMiniMart.View
         // btnDelete
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            List<Discount> list = new List<Discount>();
             string strings = "";
+            List<string> list = new List<string>();
+
             for (int i = 0; i < dgvDiscount.SelectedRows.Count; i++)
             {
                 strings += dgvDiscount.SelectedRows[i].Cells[1].Value.ToString() + ", ";
+                list.Add(dgvDiscount.SelectedRows[i].Cells[0].Value.ToString());
             }
             MyMessageBox messageBox = new MyMessageBox();
             DialogResult rs = messageBox.show("Are you sure delete " + strings, "Confirm delete", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.QUESTION);
-            if(rs== DialogResult.Yes)
+            if (rs == DialogResult.Yes)
             {
-
-                for (int i = 0; i < dgvDiscount.SelectedRows.Count; i++)
-                {
-                    int id = Convert.ToInt32(dgvDiscount.SelectedRows[i].Cells[0].Value.ToString());
-                    Discount discount = discountService.getDiscountById(id);
-                    discountService.deleteDiscount(discount);
-                    
-                }
+                discountService.FormDiscount_Delete(list);
             }
             loadAllDiscountView();
         }
@@ -77,7 +72,7 @@ namespace ManageMiniMart.View
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string name = txtSearch.Text.Trim();
-            dgvDiscount.DataSource=discountService.getListDiscountViewByName(name);
+            dgvDiscount.DataSource = discountService.getListDiscountViewByName(name);
         }
 
         private void dgvDiscount_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -85,12 +80,8 @@ namespace ManageMiniMart.View
             if (dgvDiscount.Columns[e.ColumnIndex].Name == "ADD")
             {
                 int discountId = Convert.ToInt32(dgvDiscount.SelectedRows[0].Cells[0].Value.ToString());
-                if (!discountService.checkDiscountIsExpired(discountId))
-                {
-                    SelectProductToDiscount selectProductToDiscount = new SelectProductToDiscount(discountId);
-                    selectProductToDiscount.ShowDialog();
-                    loadAllDiscountView();
-                }
+                discountService.FormDiscount_CellContentClick(discountId);
+                loadAllDiscountView();
             }
         }
     }

@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ManageMiniMart.View
 {
     public partial class SelectProductToDiscount : Form
@@ -20,19 +21,19 @@ namespace ManageMiniMart.View
         private ProductService productService;
         private ProductDiscountService productDiscountService;
         private int discountId;
-        public SelectProductToDiscount(int discountId =0)
+        public SelectProductToDiscount(int discountId)
         {
             InitializeComponent();
             productService = new ProductService();
             productDiscountService = new ProductDiscountService();
-            loadAllProducts("");
             this.discountId = discountId;
+            loadAllProducts("");
         }
 
-      
+
         public void loadAllProducts(string name)
         {
-            dgvProduct.DataSource = productService.getListProductViewByProductName(name);
+            dgvProduct.DataSource = productService.getListProductViewByProductName2(name);
         }
         private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -45,12 +46,16 @@ namespace ManageMiniMart.View
                     product_id = productId
                 };
                 productDiscountService.saveProduct_Discount(product_Discount);
-            }
+                loadAllProducts("");
+                MyMessageBox myMessage = new MyMessageBox();
+                myMessage.show("Save discount for product success");
+            }
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
+
 
         private void btnMaximize_Click(object sender, EventArgs e)
         {
@@ -78,6 +83,6 @@ namespace ManageMiniMart.View
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-       
+
     }
 }

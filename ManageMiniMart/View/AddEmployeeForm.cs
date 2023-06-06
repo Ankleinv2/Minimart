@@ -81,45 +81,13 @@ namespace ManageMiniMart.View
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtEmployeeId.Enabled == true && txtEmployeeId.Text == "") throw new Exception("Employee ID cannot be empty");
-            if (txtEmployeeId.Enabled == true && employeeService.checkEmployeeID_Exist(txtEmployeeId.Text) == true) throw new Exception("Employee ID cannot be the same as the existing Employee ID");
-            if (txtEmployeeName.Text == "") throw new Exception("Employee name cannot be empty");
-            if (DateTime.Compare(dtpBirthdate.Value, DateTime.Now) > 0) throw new Exception("Start Time shoule be Smaller Than or Equal to current date");
-            if (txtPhoneNumber.Text != "" && txtPhoneNumber.Text.Length != 10) throw new Exception("Phone number length must be equal to 10");
-            try
-            {
-                Convert.ToDouble(txtSalary.Text);
-            }
-            catch (Exception)
-            {
-                throw new Exception("Salary must be a interger number");
-            }
-            if (Convert.ToDouble(txtSalary.Text) < 0) throw new Exception("Salary can not be a negative number");
-            string employeeId = txtEmployeeId.Text;
-            string employeeName = txtEmployeeName.Text;
-            DateTime dateTimeConverter = dtpBirthdate.Value;
-            string address = txtAddress.Text;
-            string email = txtEmail.Text;
-            string phoneNumber = txtPhoneNumber.Text;
-            double salary = Convert.ToDouble(txtSalary.Text);
-            Person person = new Person
-            {
-                person_id = employeeId,
-                person_name = employeeName,
-                phone_number = phoneNumber,
-                birthdate = dateTimeConverter,
-                email = email,
-                salary = salary,
-                address = address
-            };
-            employeeService.saveEmployee(person);
-            
+            employeeService.saveEmployee(txtEmployeeId.Enabled, txtEmployeeId.Text, txtEmployeeName.Text, dtpBirthdate.Value, txtAddress.Text, txtEmail.Text, txtSalary.Text, txtPhoneNumber.Text);
             MyMessageBox myMessage = new MyMessageBox();
             myMessage.show("Successful!");
             if (enable_edit_info == true)
             {
                 this.Refresh();
-                setEditInfo(employeeId);
+                setEditInfo(txtEmployeeId.Text);
             }
             else
             {

@@ -66,7 +66,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>5.01324cm</Top>
-            <Left>4.69318cm</Left>
+            <Left>4.72642cm</Left>
             <Height>0.77681cm</Height>
             <Width>4.98708cm</Width>
             <Style>
@@ -417,7 +417,7 @@
             </TablixRowHierarchy>
             <DataSetName>ProductInBill</DataSetName>
             <Top>7.6956cm</Top>
-            <Left>0.69764cm</Left>
+            <Left>0.73088cm</Left>
             <Height>1.9673cm</Height>
             <Width>13.44022cm</Width>
             <ZIndex>1</ZIndex>
@@ -457,7 +457,7 @@
               </Paragraph>
             </Paragraphs>
             <Top>6.74283cm</Top>
-            <Left>0.73088cm</Left>
+            <Left>0.76412cm</Left>
             <Height>0.6cm</Height>
             <Width>7.26251cm</Width>
             <ZIndex>2</ZIndex>
@@ -501,7 +501,7 @@
               </Paragraph>
             </Paragraphs>
             <Top>6.74283cm</Top>
-            <Left>8.35702cm</Left>
+            <Left>8.39026cm</Left>
             <Height>0.6cm</Height>
             <Width>5.78084cm</Width>
             <ZIndex>3</ZIndex>
@@ -545,7 +545,7 @@
               </Paragraph>
             </Paragraphs>
             <Top>5.96644cm</Top>
-            <Left>0.73088cm</Left>
+            <Left>0.76412cm</Left>
             <Height>0.6cm</Height>
             <Width>5.78084cm</Width>
             <ZIndex>4</ZIndex>
@@ -561,7 +561,7 @@
           </Textbox>
           <Line Name="Line1">
             <Top>7.51922cm</Top>
-            <Left>0cm</Left>
+            <Left>0.03324cm</Left>
             <Height>0cm</Height>
             <Width>14.38277cm</Width>
             <ZIndex>5</ZIndex>
@@ -593,7 +593,7 @@
           </Line>
           <Line Name="Line2">
             <Top>9.76874cm</Top>
-            <Left>0cm</Left>
+            <Left>0.03324cm</Left>
             <Height>0cm</Height>
             <Width>14.38277cm</Width>
             <ZIndex>6</ZIndex>
@@ -641,7 +641,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox22</rd:DefaultName>
-            <Top>11.88594cm</Top>
+            <Top>11.92122cm</Top>
             <Left>0.73089cm</Left>
             <Height>0.70583cm</Height>
             <Width>3.74896cm</Width>
@@ -656,41 +656,6 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="BillTotal">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!TotalMoney.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Right</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <Top>9.94513cm</Top>
-            <Left>9.19205cm</Left>
-            <Height>0.70583cm</Height>
-            <Width>4.94581cm</Width>
-            <ZIndex>8</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="Textbox23">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -698,7 +663,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Tổng tiền đã giảm:   </Value>
+                    <Value>TỔNG TIỀN ĐÃ GIẢM:   </Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -713,7 +678,7 @@
             <Left>0.73088cm</Left>
             <Height>0.70583cm</Height>
             <Width>8.0827cm</Width>
-            <ZIndex>9</ZIndex>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -747,7 +712,7 @@
             <Left>9.19205cm</Left>
             <Height>0.70583cm</Height>
             <Width>4.94581cm</Width>
-            <ZIndex>10</ZIndex>
+            <ZIndex>9</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -760,11 +725,11 @@
             </Style>
           </Textbox>
           <Line Name="Line3">
-            <Top>11.70956cm</Top>
-            <Left>0cm</Left>
+            <Top>11.74484cm</Top>
+            <Left>0.03325cm</Left>
             <Height>0cm</Height>
             <Width>14.38277cm</Width>
-            <ZIndex>11</ZIndex>
+            <ZIndex>10</ZIndex>
             <Style>
               <Border>
                 <Style>Dotted</Style>
@@ -791,39 +756,6 @@
               </RightBorder>
             </Style>
           </Line>
-          <Textbox Name="Textbox24">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>TỔNG TIỀN PHẢI THANH TOÁN :  </Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox22</rd:DefaultName>
-            <Top>9.94513cm</Top>
-            <Left>0.73088cm</Left>
-            <Height>0.70583cm</Height>
-            <Width>8.0827cm</Width>
-            <ZIndex>12</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="CustomerID">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -843,11 +775,11 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>11.88595cm</Top>
+            <Top>11.92123cm</Top>
             <Left>9.2253cm</Left>
             <Height>0.70583cm</Height>
             <Width>4.94581cm</Width>
-            <ZIndex>13</ZIndex>
+            <ZIndex>11</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -876,11 +808,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox22</rd:DefaultName>
-            <Top>12.73289cm</Top>
+            <Top>12.76817cm</Top>
             <Left>0.73089cm</Left>
             <Height>0.70583cm</Height>
             <Width>3.74896cm</Width>
-            <ZIndex>14</ZIndex>
+            <ZIndex>12</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -910,11 +842,11 @@
                 </Style>
               </Paragraph>
             </Paragraphs>
-            <Top>12.73289cm</Top>
+            <Top>12.76817cm</Top>
             <Left>9.22529cm</Left>
             <Height>0.70583cm</Height>
             <Width>4.94581cm</Width>
-            <ZIndex>15</ZIndex>
+            <ZIndex>13</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -926,11 +858,11 @@
             </Style>
           </Textbox>
           <Line Name="Line4">
-            <Top>13.65038cm</Top>
+            <Top>13.68566cm</Top>
             <Left>0.00001cm</Left>
             <Height>0cm</Height>
             <Width>14.38277cm</Width>
-            <ZIndex>16</ZIndex>
+            <ZIndex>14</ZIndex>
             <Style>
               <Border>
                 <Style>Dotted</Style>
@@ -977,11 +909,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox10</rd:DefaultName>
-            <Top>14.1214cm</Top>
+            <Top>14.15668cm</Top>
             <Left>2.96805cm</Left>
             <Height>0.89104cm</Height>
             <Width>8.90262cm</Width>
-            <ZIndex>17</ZIndex>
+            <ZIndex>15</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -997,10 +929,10 @@
             <Value>SuperMiniMart_LOGO_version_1</Value>
             <Sizing>FitProportional</Sizing>
             <Top>0.40314cm</Top>
-            <Left>0.69764cm</Left>
+            <Left>0.73088cm</Left>
             <Height>4.05447cm</Height>
             <Width>4.2452cm</Width>
-            <ZIndex>18</ZIndex>
+            <ZIndex>16</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1028,10 +960,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>0.40314cm</Top>
-            <Left>5.43401cm</Left>
+            <Left>5.46725cm</Left>
             <Height>1.01493cm</Height>
             <Width>7.39479cm</Width>
-            <ZIndex>19</ZIndex>
+            <ZIndex>17</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1068,10 +1000,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.77057cm</Top>
-            <Left>5.46047cm</Left>
+            <Left>5.49371cm</Left>
             <Height>0.6cm</Height>
             <Width>8.71064cm</Width>
-            <ZIndex>20</ZIndex>
+            <ZIndex>18</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1107,10 +1039,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>2.54696cm</Top>
-            <Left>5.46047cm</Left>
+            <Left>5.49371cm</Left>
             <Height>0.6cm</Height>
             <Width>4.21979cm</Width>
-            <ZIndex>21</ZIndex>
+            <ZIndex>19</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1146,10 +1078,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>3.32335cm</Top>
-            <Left>5.46047cm</Left>
+            <Left>5.49371cm</Left>
             <Height>0.6cm</Height>
             <Width>7.41561cm</Width>
-            <ZIndex>22</ZIndex>
+            <ZIndex>20</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1162,9 +1094,10 @@
           </Textbox>
           <Line Name="Line5">
             <Top>4.83685cm</Top>
+            <Left>0.03324cm</Left>
             <Height>0cm</Height>
             <Width>14.38277cm</Width>
-            <ZIndex>23</ZIndex>
+            <ZIndex>21</ZIndex>
             <Style>
               <Border>
                 <Style>Dotted</Style>
@@ -1191,15 +1124,83 @@
               </RightBorder>
             </Style>
           </Line>
+          <Textbox Name="BillTotal2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!TotalMoney.Value</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>9.94513cm</Top>
+            <Left>9.19205cm</Left>
+            <Height>0.70583cm</Height>
+            <Width>4.94581cm</Width>
+            <ZIndex>22</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox26">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>TỔNG TIỀN PHẢI THANH TOÁN :  </Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox22</rd:DefaultName>
+            <Top>9.94513cm</Top>
+            <Left>0.73088cm</Left>
+            <Height>0.70583cm</Height>
+            <Width>8.0827cm</Width>
+            <ZIndex>23</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>6.13938in</Height>
+        <Height>6.35312in</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>5.66251in</Width>
+      <Width>5.6756in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

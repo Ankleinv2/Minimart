@@ -107,6 +107,7 @@
     <Compile Include="BLL\ShiftWorkService.cs" />
     <Compile Include="BLL\StatisticalService.cs" />
     <Compile Include="BLL\UserService.cs" />
+    <Compile Include="BLL\Validate.cs" />
     <Compile Include="Custom\CustomFormInput.cs">
       <SubType>Form</SubType>
     </Compile>

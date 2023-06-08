@@ -83,9 +83,9 @@ namespace ManageMiniMart.BLL
             //validate value 
             if (IdState == true && Id == "") throw new Exception("CustomerID cannot be empty");
             if (IdState == true && checkCustomerID_Exist(Id) == true) throw new Exception("Customer ID cannot be the same as the existing Customer ID");
-            if (Name == "") throw new Exception("Customer name cannot be empty");
+            if (Name == "" || !Validate.ValidateVietnameseName(Name)) throw new Exception("Customer name cannot be empty or contain special character");
             if (DateTime.Compare(Birthdate, DateTime.Now) > 0) throw new Exception("Birthdate shoule be Smaller Than or Equal to current date");
-
+            if (!Validate.ValidateEmail(Email)) throw new Exception("Email is not valid");
             Customer customerOld = getCustomerById(Id);             // lấy Customer    -> Để đưa createTime vào
             if (customerOld == null)                                                // Add Customer
             {

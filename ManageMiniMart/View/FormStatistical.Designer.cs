@@ -85,6 +85,7 @@
             legend1.Name = "Legend1";
             this.chartBill.Legends.Add(legend1);
             this.chartBill.Location = new System.Drawing.Point(0, 0);
+            this.chartBill.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chartBill.Name = "chartBill";
             this.chartBill.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
             series1.ChartArea = "ChartArea1";
@@ -93,7 +94,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Total bill";
             this.chartBill.Series.Add(series1);
-            this.chartBill.Size = new System.Drawing.Size(591, 314);
+            this.chartBill.Size = new System.Drawing.Size(788, 386);
             this.chartBill.TabIndex = 0;
             this.chartBill.Text = "chart1";
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,7 +116,8 @@
             legend2.IsTextAutoFit = false;
             legend2.Name = "Legend1";
             this.chartRevenue.Legends.Add(legend2);
-            this.chartRevenue.Location = new System.Drawing.Point(0, 26);
+            this.chartRevenue.Location = new System.Drawing.Point(0, 32);
+            this.chartRevenue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chartRevenue.Name = "chartRevenue";
             this.chartRevenue.PaletteCustomColors = new System.Drawing.Color[] {
         System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))))};
@@ -128,7 +130,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Revenue";
             this.chartRevenue.Series.Add(series2);
-            this.chartRevenue.Size = new System.Drawing.Size(997, 208);
+            this.chartRevenue.Size = new System.Drawing.Size(1329, 257);
             this.chartRevenue.TabIndex = 1;
             this.chartRevenue.Text = "chart2";
             title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -156,7 +158,8 @@
             legend3.IsTextAutoFit = false;
             legend3.Name = "Legend1";
             this.chartProduct.Legends.Add(legend3);
-            this.chartProduct.Location = new System.Drawing.Point(591, 0);
+            this.chartProduct.Location = new System.Drawing.Point(788, 0);
+            this.chartProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chartProduct.Name = "chartProduct";
             series3.BorderColor = System.Drawing.Color.AntiqueWhite;
             series3.BorderWidth = 6;
@@ -172,7 +175,7 @@
             series3.MarkerSize = 10;
             series3.Name = "Products";
             this.chartProduct.Series.Add(series3);
-            this.chartProduct.Size = new System.Drawing.Size(406, 314);
+            this.chartProduct.Size = new System.Drawing.Size(541, 386);
             this.chartProduct.TabIndex = 2;
             this.chartProduct.Text = "chart3";
             title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -187,11 +190,12 @@
             this.dtpStartDate.Checked = true;
             this.dtpStartDate.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpStartDate.Location = new System.Drawing.Point(113, 17);
+            this.dtpStartDate.Location = new System.Drawing.Point(151, 21);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpStartDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpStartDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(185, 28);
+            this.dtpStartDate.Size = new System.Drawing.Size(247, 34);
             this.dtpStartDate.TabIndex = 3;
             this.dtpStartDate.Value = new System.DateTime(2023, 6, 2, 20, 48, 39, 350);
             // 
@@ -202,11 +206,12 @@
             this.dtpEndDate.Checked = true;
             this.dtpEndDate.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpEndDate.Location = new System.Drawing.Point(364, 15);
+            this.dtpEndDate.Location = new System.Drawing.Point(485, 21);
+            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpEndDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpEndDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(184, 28);
+            this.dtpEndDate.Size = new System.Drawing.Size(245, 34);
             this.dtpEndDate.TabIndex = 4;
             this.dtpEndDate.Value = new System.DateTime(2023, 6, 2, 20, 48, 39, 350);
             // 
@@ -222,9 +227,10 @@
             this.btnStatistical.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatistical.ForeColor = System.Drawing.Color.White;
             this.btnStatistical.Image = ((System.Drawing.Image)(resources.GetObject("btnStatistical.Image")));
-            this.btnStatistical.Location = new System.Drawing.Point(694, 10);
+            this.btnStatistical.Location = new System.Drawing.Point(943, 15);
+            this.btnStatistical.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStatistical.Name = "btnStatistical";
-            this.btnStatistical.Size = new System.Drawing.Size(178, 36);
+            this.btnStatistical.Size = new System.Drawing.Size(237, 44);
             this.btnStatistical.TabIndex = 5;
             this.btnStatistical.Text = "Statistical";
             this.btnStatistical.Click += new System.EventHandler(this.btnStatistical_Click);
@@ -242,9 +248,10 @@
             this.cbbBy.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cbbBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbBy.ItemHeight = 30;
-            this.cbbBy.Location = new System.Drawing.Point(554, 9);
+            this.cbbBy.Location = new System.Drawing.Point(740, 19);
+            this.cbbBy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbbBy.Name = "cbbBy";
-            this.cbbBy.Size = new System.Drawing.Size(134, 36);
+            this.cbbBy.Size = new System.Drawing.Size(177, 36);
             this.cbbBy.TabIndex = 6;
             // 
             // label1
@@ -253,9 +260,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(313, 15);
+            this.label1.Location = new System.Drawing.Point(417, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 29);
+            this.label1.Size = new System.Drawing.Size(42, 36);
             this.label1.TabIndex = 7;
             this.label1.Text = "to";
             // 
@@ -265,9 +273,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(38, 20);
+            this.label2.Location = new System.Drawing.Point(51, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 26);
+            this.label2.Size = new System.Drawing.Size(83, 32);
             this.label2.TabIndex = 8;
             this.label2.Text = "From";
             // 
@@ -278,9 +287,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(997, 610);
+            this.panel1.Size = new System.Drawing.Size(1329, 751);
             this.panel1.TabIndex = 9;
             // 
             // panel4
@@ -288,19 +297,19 @@
             this.panel4.Controls.Add(this.chartRevenue);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 376);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Location = new System.Drawing.Point(0, 462);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(997, 234);
+            this.panel4.Size = new System.Drawing.Size(1329, 289);
             this.panel4.TabIndex = 11;
             // 
             // panel6
             // 
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(997, 26);
+            this.panel6.Size = new System.Drawing.Size(1329, 32);
             this.panel6.TabIndex = 2;
             // 
             // panel3
@@ -311,37 +320,37 @@
             this.panel3.Controls.Add(this.chartBill);
             this.panel3.Controls.Add(this.chartProduct);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 62);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(0, 76);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(997, 314);
+            this.panel3.Size = new System.Drawing.Size(1329, 386);
             this.panel3.TabIndex = 10;
             // 
             // panel8
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel8.Location = new System.Drawing.Point(987, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2);
+            this.panel8.Location = new System.Drawing.Point(1316, 0);
+            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 314);
+            this.panel8.Size = new System.Drawing.Size(13, 386);
             this.panel8.TabIndex = 4;
             // 
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(10, 314);
+            this.panel7.Size = new System.Drawing.Size(13, 386);
             this.panel7.TabIndex = 4;
             // 
             // panel5
             // 
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(581, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Location = new System.Drawing.Point(775, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 314);
+            this.panel5.Size = new System.Drawing.Size(13, 386);
             this.panel5.TabIndex = 3;
             // 
             // panel2
@@ -354,19 +363,20 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(997, 62);
+            this.panel2.Size = new System.Drawing.Size(1329, 76);
             this.panel2.TabIndex = 9;
             // 
             // FormStatistical
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(997, 610);
+            this.ClientSize = new System.Drawing.Size(1329, 751);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormStatistical";
             this.Text = "FormStatistical";
             ((System.ComponentModel.ISupportInitialize)(this.chartBill)).EndInit();

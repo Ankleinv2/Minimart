@@ -121,7 +121,7 @@
   <data name="btnDel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEVlSURBVHhe7Z0J
+        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEVlSURBVHhe7Z0J
         mCRFmbBb8dr1RN1V1/3/XXf5V1dcFuypzBlmdq3JzO5xkOGSRlgOuUFFQEVGQWA4HS4VURTBA0RRUUEQ
         kVMFQQQEBbnkGC5hmGGuzsyq6q6uyj+i82MTsmNgZvrKzHjf53nF6arKisiM+L6vqjIjewCg2CS9vS+P
         +2b/Q9RX2zzy3P4wqO0UB+7+kecsVP/+fBg4X4sC5/vq7z+LfPfq0HduUv++LQ6cByLfWaL+/8rn6TvD
@@ -424,7 +424,7 @@
   <data name="btnResetPassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        0wAADdMBvdUcagAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEykSURBVHhe7d1p
+        0gAADdIBb5L+jgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEykSURBVHhe7d1p
         vGVnWeb/TiUhZKpMJJCEgGBUVGYwqQpJBFuGBqRFGkVoHIFPI/gXmVtsURCMQ0BQ/IAiKKAIAgbsBgIE
         AhEQQRCRSCABTKgYCGSek6r6X0+ds+o8e+1r7/vZ66y99tpr/158X3C/SOp5zln81l05w3/5xCc+AQAA
         VowdAgCAYbNDAAAwbHYIAACGzQ4BAMCw2SEAABg2OwQAAMNmhwAAYNjsEAAADJsdAgCAYbNDAAAwbHYI

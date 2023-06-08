@@ -42,15 +42,15 @@
             this.btnSortBy = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvBill = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.billViewBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.billViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.billViewBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ShowDetail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ShowDetail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.billViewBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.billViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.billViewBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -87,7 +87,7 @@
             this.dtpBillDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpBillDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpBillDate.Name = "dtpBillDate";
-            this.dtpBillDate.Size = new System.Drawing.Size(177, 36);
+            this.dtpBillDate.Size = new System.Drawing.Size(208, 36);
             this.dtpBillDate.TabIndex = 36;
             this.dtpBillDate.Value = new System.DateTime(2023, 4, 8, 22, 56, 26, 751);
             this.dtpBillDate.ValueChanged += new System.EventHandler(this.dtpBillDate_ValueChanged);
@@ -285,17 +285,20 @@
             this.dgvBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBill_CellContentClick);
             // 
-            // billViewBindingSource2
+            // CreatedTime
             // 
-            this.billViewBindingSource2.DataSource = typeof(ManageMiniMart.DTO.BillView);
+            this.CreatedTime.DataPropertyName = "CreatedTime";
+            this.CreatedTime.HeaderText = "Create Time";
+            this.CreatedTime.MinimumWidth = 6;
+            this.CreatedTime.Name = "CreatedTime";
             // 
-            // billViewBindingSource
+            // ShowDetail
             // 
-            this.billViewBindingSource.DataSource = typeof(ManageMiniMart.DTO.BillView);
-            // 
-            // billViewBindingSource1
-            // 
-            this.billViewBindingSource1.DataSource = typeof(ManageMiniMart.DTO.BillView);
+            this.ShowDetail.HeaderText = "";
+            this.ShowDetail.MinimumWidth = 6;
+            this.ShowDetail.Name = "ShowDetail";
+            this.ShowDetail.Text = "Show Detail";
+            this.ShowDetail.UseColumnTextForButtonValue = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -303,13 +306,6 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // CreatedTime
-            // 
-            this.CreatedTime.DataPropertyName = "CreatedTime";
-            this.CreatedTime.HeaderText = "Create Time";
-            this.CreatedTime.MinimumWidth = 6;
-            this.CreatedTime.Name = "CreatedTime";
             // 
             // customerNameDataGridViewTextBoxColumn
             // 
@@ -332,13 +328,17 @@
             this.totalDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             // 
-            // ShowDetail
+            // billViewBindingSource2
             // 
-            this.ShowDetail.HeaderText = "";
-            this.ShowDetail.MinimumWidth = 6;
-            this.ShowDetail.Name = "ShowDetail";
-            this.ShowDetail.Text = "Show Detail";
-            this.ShowDetail.UseColumnTextForButtonValue = true;
+            this.billViewBindingSource2.DataSource = typeof(ManageMiniMart.DTO.BillView);
+            // 
+            // billViewBindingSource
+            // 
+            this.billViewBindingSource.DataSource = typeof(ManageMiniMart.DTO.BillView);
+            // 
+            // billViewBindingSource1
+            // 
+            this.billViewBindingSource1.DataSource = typeof(ManageMiniMart.DTO.BillView);
             // 
             // FormBill
             // 

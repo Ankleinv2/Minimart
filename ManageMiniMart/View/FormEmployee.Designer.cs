@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmployee));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmployee));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDel = new Guna.UI2.WinForms.Guna2Button();
             this.btnResetPassword = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -42,8 +43,6 @@
             this.btnAddEmployee = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvEmloyee = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDel = new Guna.UI2.WinForms.Guna2Button();
             this.personidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +50,7 @@
             this.phonenumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,6 +73,28 @@
             this.panel1.Size = new System.Drawing.Size(1211, 142);
             this.panel1.TabIndex = 1;
             // 
+            // btnDel
+            // 
+            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDel.BorderColor = System.Drawing.Color.Tomato;
+            this.btnDel.BorderRadius = 9;
+            this.btnDel.BorderThickness = 1;
+            this.btnDel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDel.FillColor = System.Drawing.Color.Empty;
+            this.btnDel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDel.ForeColor = System.Drawing.Color.White;
+            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
+            this.btnDel.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnDel.Location = new System.Drawing.Point(663, 52);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(186, 48);
+            this.btnDel.TabIndex = 14;
+            this.btnDel.Text = "Remove Account";
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // btnResetPassword
             // 
             this.btnResetPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -88,7 +110,7 @@
             this.btnResetPassword.ForeColor = System.Drawing.Color.White;
             this.btnResetPassword.Image = ((System.Drawing.Image)(resources.GetObject("btnResetPassword.Image")));
             this.btnResetPassword.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnResetPassword.Location = new System.Drawing.Point(568, 52);
+            this.btnResetPassword.Location = new System.Drawing.Point(545, 52);
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(102, 48);
             this.btnResetPassword.TabIndex = 13;
@@ -134,7 +156,7 @@
             this.guna2Button1.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2Button1.Location = new System.Drawing.Point(275, 51);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(137, 48);
+            this.guna2Button1.Size = new System.Drawing.Size(146, 48);
             this.guna2Button1.TabIndex = 10;
             this.guna2Button1.Text = "Add account";
             this.guna2Button1.Click += new System.EventHandler(this.btnAddAccount_Click);
@@ -155,7 +177,7 @@
             this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Location = new System.Drawing.Point(867, 60);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
@@ -286,34 +308,6 @@
             this.dgvEmloyee.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvEmloyee.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // Role
-            // 
-            this.Role.DataPropertyName = "role";
-            this.Role.HeaderText = "Role";
-            this.Role.Name = "Role";
-            // 
-            // btnDel
-            // 
-            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.BorderColor = System.Drawing.Color.Tomato;
-            this.btnDel.BorderRadius = 9;
-            this.btnDel.BorderThickness = 1;
-            this.btnDel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDel.FillColor = System.Drawing.Color.Empty;
-            this.btnDel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnDel.ForeColor = System.Drawing.Color.White;
-            this.btnDel.Image = ((System.Drawing.Image)(resources.GetObject("btnDel.Image")));
-            this.btnDel.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnDel.Location = new System.Drawing.Point(689, 52);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(160, 48);
-            this.btnDel.TabIndex = 14;
-            this.btnDel.Text = "Remove Account";
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
             // personidDataGridViewTextBoxColumn
             // 
             this.personidDataGridViewTextBoxColumn.DataPropertyName = "person_id";
@@ -362,6 +356,13 @@
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // Role
+            // 
+            this.Role.DataPropertyName = "role";
+            this.Role.HeaderText = "Role";
+            this.Role.MinimumWidth = 6;
+            this.Role.Name = "Role";
             // 
             // personBindingSource
             // 

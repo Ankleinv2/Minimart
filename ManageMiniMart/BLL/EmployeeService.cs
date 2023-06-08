@@ -96,9 +96,10 @@ namespace ManageMiniMart.BLL
             //validate value 
             if (IdState == true && Id == "") throw new Exception("Employee ID cannot be empty");
             if (IdState == true && checkEmployeeID_Exist(Id) == true) throw new Exception("Employee ID cannot be the same as the existing Employee ID");
-            if (Name == "") throw new Exception("Employee name cannot be empty");
+            if (Name == "" || !Validate.ValidateVietnameseName(Name)) throw new Exception("Employee name cannot be empty or contain special character");
             if (DateTime.Compare(Birthdate, DateTime.Now) > 0) throw new Exception("Start Time shoule be Smaller Than or Equal to current date");
-            if (PhoneNumber != "" && PhoneNumber.Length != 10) throw new Exception("Phone number length must be equal to 10");
+            if (!Validate.ValidatePhoneNumber(PhoneNumber)) throw new Exception("Phone number is not valid");
+            if (!Validate.ValidateEmail(Email)) throw new Exception("Email is not valid!");
             try
             {
                 Convert.ToDouble(Salary);

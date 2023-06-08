@@ -1,4 +1,5 @@
-﻿using ManageMiniMart.DAL;
+﻿using ManageMiniMart.Custom;
+using ManageMiniMart.DAL;
 using ManageMiniMart.DTO;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ManageMiniMart.BLL
 {
@@ -47,23 +49,28 @@ namespace ManageMiniMart.BLL
         }
         public void removeAccount(List<string> listId, Account current)
         {
-            bool isRemove = false;
-            foreach(string Id in listId)
+            MyMessageBox messageBox = new MyMessageBox();
+            DialogResult rs = messageBox.show("Are you sure remove account?", "Confirm delete", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.QUESTION);
+            if (rs == DialogResult.Yes)
             {
-                Account account = getAccountByPersonId(Id);
-                if (account != null)
+                bool isRemove = false;
+                foreach (string Id in listId)
                 {
-                    if (account.person_id != current.person_id)
+                    Account account = getAccountByPersonId(Id);
+                    if (account != null)
                     {
-                        var shiftWork = db.Shift_work.Where(p => p.person_id == account.person_id).ToList();
-                        db.Shift_work.RemoveRange(shiftWork);
-                        db.Accounts.Remove(account);
-                        db.SaveChanges();
-                        isRemove = true;
+                        if (account.person_id != current.person_id)
+                        {
+                            var shiftWork = db.Shift_work.Where(p => p.person_id == account.person_id).ToList();
+                            db.Shift_work.RemoveRange(shiftWork);
+                            db.Accounts.Remove(account);
+                            db.SaveChanges();
+                            isRemove = true;
+                        }
                     }
                 }
-            }
-            if (!isRemove) throw new Exception("Nothing to remove or you cannot remove your own account");
+                if (!isRemove) throw new Exception("Nothing to remove or you cannot remove your own account");
+            }  
         }
         public void resetPassword(List<Account> accounts)   
         {

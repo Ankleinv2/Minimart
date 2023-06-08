@@ -1,0 +1,801 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Manage_MinimartModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="person_id" />
+          </Key>
+          <Property Name="person_id" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="role_id" Type="int" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="bill_id" />
+          </Key>
+          <Property Name="bill_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="person_id" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="customer_id" Type="varchar" MaxLength="12" />
+          <Property Name="created_time" Type="datetime" Nullable="false" />
+          <Property Name="payment_method" Type="nvarchar" MaxLength="50" />
+          <Property Name="used_points" Type="int" />
+        </EntityType>
+        <EntityType Name="Bill_Product">
+          <Key>
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="bill_id" />
+          </Key>
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="bill_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="customer_name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="birthdate" Type="date" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="200" />
+          <Property Name="point" Type="int" />
+          <Property Name="created_time" Type="datetime" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="discount_id" />
+          </Key>
+          <Property Name="discount_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="discount_name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="start_time" Type="date" Nullable="false" />
+          <Property Name="end_time" Type="date" Nullable="false" />
+          <Property Name="sale" Type="int" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="person_id" />
+          </Key>
+          <Property Name="person_id" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="person_name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="birthdate" Type="date" />
+          <Property Name="address" Type="nvarchar" MaxLength="200" />
+          <Property Name="phone_number" Type="varchar" MaxLength="15" />
+          <Property Name="salary" Type="float" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="category_id" Type="int" Nullable="false" />
+          <Property Name="brand" Type="nvarchar" MaxLength="150" />
+          <Property Name="price" Type="float" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product_Discount">
+          <Key>
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="discount_id" />
+          </Key>
+          <Property Name="product_discount_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="discount_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="role_id" Type="int" Nullable="false" />
+          <Property Name="role_name" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Shift_detail">
+          <Key>
+            <PropertyRef Name="shift_id" />
+          </Key>
+          <Property Name="shift_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="shift_name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="shift_date" Type="date" Nullable="false" />
+          <Property Name="start_time" Type="time" Precision="7" Nullable="false" />
+          <Property Name="end_time" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shift_work">
+          <Key>
+            <PropertyRef Name="person_id" />
+            <PropertyRef Name="shift_id" />
+          </Key>
+          <Property Name="shift_work_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="person_id" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="shift_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Account__person___36B12243">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="person_id" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="person_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Account__role_id__37A5467C">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="role_id" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill__customer_i__4D94879B">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill__person_id__4E88ABD4">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="person_id" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="person_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill_Prod__bill___4F7CD00D">
+          <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+          <End Role="Bill_Product" Type="Self.Bill_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bill">
+              <PropertyRef Name="bill_id" />
+            </Principal>
+            <Dependent Role="Bill_Product">
+              <PropertyRef Name="bill_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill_Prod__produ__5070F446">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Bill_Product" Type="Self.Bill_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="Bill_Product">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__categor__5165187F">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product_D__disco__52593CB8">
+          <End Role="Discount" Type="Self.Discount" Multiplicity="1" />
+          <End Role="Product_Discount" Type="Self.Product_Discount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discount">
+              <PropertyRef Name="discount_id" />
+            </Principal>
+            <Dependent Role="Product_Discount">
+              <PropertyRef Name="discount_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product_D__produ__534D60F1">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product_Discount" Type="Self.Product_Discount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="Product_Discount">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shift_wor__perso__3B75D760">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="Shift_work" Type="Self.Shift_work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="person_id" />
+            </Principal>
+            <Dependent Role="Shift_work">
+              <PropertyRef Name="person_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shift_wor__shift__440B1D61">
+          <End Role="Shift_detail" Type="Self.Shift_detail" Multiplicity="1" />
+          <End Role="Shift_work" Type="Self.Shift_work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shift_detail">
+              <PropertyRef Name="shift_id" />
+            </Principal>
+            <Dependent Role="Shift_work">
+              <PropertyRef Name="shift_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Manage_MinimartModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bill_Product" EntityType="Self.Bill_Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Discount" EntityType="Self.Discount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product_Discount" EntityType="Self.Product_Discount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shift_detail" EntityType="Self.Shift_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shift_work" EntityType="Self.Shift_work" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Account__person___36B12243" Association="Self.FK__Account__person___36B12243">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Account__role_id__37A5467C" Association="Self.FK__Account__role_id__37A5467C">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill__customer_i__4D94879B" Association="Self.FK__Bill__customer_i__4D94879B">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Bill" EntitySet="Bill" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill__person_id__4E88ABD4" Association="Self.FK__Bill__person_id__4E88ABD4">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Bill" EntitySet="Bill" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill_Prod__bill___4F7CD00D" Association="Self.FK__Bill_Prod__bill___4F7CD00D">
+            <End Role="Bill" EntitySet="Bill" />
+            <End Role="Bill_Product" EntitySet="Bill_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill_Prod__produ__5070F446" Association="Self.FK__Bill_Prod__produ__5070F446">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Bill_Product" EntitySet="Bill_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__categor__5165187F" Association="Self.FK__Product__categor__5165187F">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product_D__disco__52593CB8" Association="Self.FK__Product_D__disco__52593CB8">
+            <End Role="Discount" EntitySet="Discount" />
+            <End Role="Product_Discount" EntitySet="Product_Discount" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product_D__produ__534D60F1" Association="Self.FK__Product_D__produ__534D60F1">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Product_Discount" EntitySet="Product_Discount" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_wor__perso__3B75D760" Association="Self.FK__Shift_wor__perso__3B75D760">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Shift_work" EntitySet="Shift_work" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_wor__shift__440B1D61" Association="Self.FK__Shift_wor__shift__440B1D61">
+            <End Role="Shift_detail" EntitySet="Shift_detail" />
+            <End Role="Shift_work" EntitySet="Shift_work" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Manage_MinimartModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="person_id" />
+          </Key>
+          <Property Name="person_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="role_id" Type="Int32" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="Self.FK__Account__person___36B12243" FromRole="Account" ToRole="Person" />
+          <NavigationProperty Name="Role" Relationship="Self.FK__Account__role_id__37A5467C" FromRole="Account" ToRole="Role" />
+          <NavigationProperty Name="Shift_work" Relationship="Self.FK__Shift_wor__perso__3B75D760" FromRole="Account" ToRole="Shift_work" />
+        </EntityType>
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="bill_id" />
+          </Key>
+          <Property Name="bill_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="person_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="customer_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="created_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="payment_method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="used_points" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Bill__customer_i__4D94879B" FromRole="Bill" ToRole="Customer" />
+          <NavigationProperty Name="Person" Relationship="Self.FK__Bill__person_id__4E88ABD4" FromRole="Bill" ToRole="Person" />
+          <NavigationProperty Name="Bill_Product" Relationship="Self.FK__Bill_Prod__bill___4F7CD00D" FromRole="Bill" ToRole="Bill_Product" />
+        </EntityType>
+        <EntityType Name="Bill_Product">
+          <Key>
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="bill_id" />
+          </Key>
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <Property Name="bill_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Bill" Relationship="Self.FK__Bill_Prod__bill___4F7CD00D" FromRole="Bill_Product" ToRole="Bill" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Bill_Prod__produ__5070F446" FromRole="Bill_Product" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__Product__categor__5165187F" FromRole="Category" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="customer_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="birthdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="point" Type="Int32" />
+          <Property Name="created_time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__customer_i__4D94879B" FromRole="Customer" ToRole="Bill" />
+        </EntityType>
+        <EntityType Name="Discount">
+          <Key>
+            <PropertyRef Name="discount_id" />
+          </Key>
+          <Property Name="discount_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="discount_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_time" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="end_time" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="sale" Type="Int32" />
+          <NavigationProperty Name="Product_Discount" Relationship="Self.FK__Product_D__disco__52593CB8" FromRole="Discount" ToRole="Product_Discount" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="person_id" />
+          </Key>
+          <Property Name="person_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="person_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="birthdate" Type="DateTime" Precision="0" />
+          <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="phone_number" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="salary" Type="Double" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__Account__person___36B12243" FromRole="Person" ToRole="Account" />
+          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__person_id__4E88ABD4" FromRole="Person" ToRole="Bill" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="category_id" Type="Int32" Nullable="false" />
+          <Property Name="brand" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Double" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bill_Product" Relationship="Self.FK__Bill_Prod__produ__5070F446" FromRole="Product" ToRole="Bill_Product" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__Product__categor__5165187F" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="Product_Discount" Relationship="Self.FK__Product_D__produ__534D60F1" FromRole="Product" ToRole="Product_Discount" />
+        </EntityType>
+        <EntityType Name="Product_Discount">
+          <Key>
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="discount_id" />
+          </Key>
+          <Property Name="product_discount_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="Int32" Nullable="false" />
+          <Property Name="discount_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Discount" Relationship="Self.FK__Product_D__disco__52593CB8" FromRole="Product_Discount" ToRole="Discount" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Product_D__produ__534D60F1" FromRole="Product_Discount" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="role_id" Type="Int32" Nullable="false" />
+          <Property Name="role_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK__Account__role_id__37A5467C" FromRole="Role" ToRole="Account" />
+        </EntityType>
+        <EntityType Name="Shift_detail">
+          <Key>
+            <PropertyRef Name="shift_id" />
+          </Key>
+          <Property Name="shift_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="shift_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="shift_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="start_time" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="end_time" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Shift_work" Relationship="Self.FK__Shift_wor__shift__440B1D61" FromRole="Shift_detail" ToRole="Shift_work" />
+        </EntityType>
+        <EntityType Name="Shift_work">
+          <Key>
+            <PropertyRef Name="person_id" />
+            <PropertyRef Name="shift_id" />
+          </Key>
+          <Property Name="shift_work_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="person_id" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="shift_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="Self.FK__Shift_wor__perso__3B75D760" FromRole="Shift_work" ToRole="Account" />
+          <NavigationProperty Name="Shift_detail" Relationship="Self.FK__Shift_wor__shift__440B1D61" FromRole="Shift_work" ToRole="Shift_detail" />
+        </EntityType>
+        <Association Name="FK__Account__person___36B12243">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="person_id" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="person_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Account__role_id__37A5467C">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="role_id" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shift_wor__perso__3B75D760">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="Shift_work" Type="Self.Shift_work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="person_id" />
+            </Principal>
+            <Dependent Role="Shift_work">
+              <PropertyRef Name="person_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill__customer_i__4D94879B">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="customer_id" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill__person_id__4E88ABD4">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="person_id" />
+            </Principal>
+            <Dependent Role="Bill">
+              <PropertyRef Name="person_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill_Prod__bill___4F7CD00D">
+          <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
+          <End Role="Bill_Product" Type="Self.Bill_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bill">
+              <PropertyRef Name="bill_id" />
+            </Principal>
+            <Dependent Role="Bill_Product">
+              <PropertyRef Name="bill_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Bill_Prod__produ__5070F446">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Bill_Product" Type="Self.Bill_Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="Bill_Product">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__categor__5165187F">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product_D__disco__52593CB8">
+          <End Role="Discount" Type="Self.Discount" Multiplicity="1" />
+          <End Role="Product_Discount" Type="Self.Product_Discount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discount">
+              <PropertyRef Name="discount_id" />
+            </Principal>
+            <Dependent Role="Product_Discount">
+              <PropertyRef Name="discount_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product_D__produ__534D60F1">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Product_Discount" Type="Self.Product_Discount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="Product_Discount">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shift_wor__shift__440B1D61">
+          <End Role="Shift_detail" Type="Self.Shift_detail" Multiplicity="1" />
+          <End Role="Shift_work" Type="Self.Shift_work" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shift_detail">
+              <PropertyRef Name="shift_id" />
+            </Principal>
+            <Dependent Role="Shift_work">
+              <PropertyRef Name="shift_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Manage_MinimartEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="Self.Account" />
+          <EntitySet Name="Bills" EntityType="Self.Bill" />
+          <EntitySet Name="Bill_Product" EntityType="Self.Bill_Product" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Discounts" EntityType="Self.Discount" />
+          <EntitySet Name="People" EntityType="Self.Person" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Product_Discount" EntityType="Self.Product_Discount" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="Shift_detail" EntityType="Self.Shift_detail" />
+          <EntitySet Name="Shift_work" EntityType="Self.Shift_work" />
+          <AssociationSet Name="FK__Account__person___36B12243" Association="Self.FK__Account__person___36B12243">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Account__role_id__37A5467C" Association="Self.FK__Account__role_id__37A5467C">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_wor__perso__3B75D760" Association="Self.FK__Shift_wor__perso__3B75D760">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Shift_work" EntitySet="Shift_work" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill__customer_i__4D94879B" Association="Self.FK__Bill__customer_i__4D94879B">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Bill" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill__person_id__4E88ABD4" Association="Self.FK__Bill__person_id__4E88ABD4">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Bill" EntitySet="Bills" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill_Prod__bill___4F7CD00D" Association="Self.FK__Bill_Prod__bill___4F7CD00D">
+            <End Role="Bill" EntitySet="Bills" />
+            <End Role="Bill_Product" EntitySet="Bill_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Bill_Prod__produ__5070F446" Association="Self.FK__Bill_Prod__produ__5070F446">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Bill_Product" EntitySet="Bill_Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__categor__5165187F" Association="Self.FK__Product__categor__5165187F">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product_D__disco__52593CB8" Association="Self.FK__Product_D__disco__52593CB8">
+            <End Role="Discount" EntitySet="Discounts" />
+            <End Role="Product_Discount" EntitySet="Product_Discount" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product_D__produ__534D60F1" Association="Self.FK__Product_D__produ__534D60F1">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Product_Discount" EntitySet="Product_Discount" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_wor__shift__440B1D61" Association="Self.FK__Shift_wor__shift__440B1D61">
+            <End Role="Shift_detail" EntitySet="Shift_detail" />
+            <End Role="Shift_work" EntitySet="Shift_work" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Manage_MinimartModelStoreContainer" CdmEntityContainer="Manage_MinimartEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="Manage_MinimartModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="person_id" ColumnName="person_id" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bills">
+            <EntityTypeMapping TypeName="Manage_MinimartModel.Bill">
+              <MappingFragment StoreEntitySet="Bill">
+                <ScalarProperty Name="bill_id" ColumnName="bill_id" />
+                <ScalarProperty Name="person_id" ColumnName="person_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="created_time" ColumnName="created_time" />
+                <ScalarProperty Name="payment_method" ColumnName="payment_method" />
+                <ScalarProperty Name="used_points" ColumnName="used_points" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bill_Product">
+            <EntityTypeMapping TypeName="Manage_MinimartModel.Bill_Product">
+              <MappingFragment StoreEntitySet="Bill_Product">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="bill_id" ColumnName="bill_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="Manage_MinimartModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="Manage_MinimartModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="point" ColumnName="point" />
+                <ScalarProperty Name="created_time" ColumnName="created_time" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Discounts">
+            <EntityTypeMapping TypeName="Manage_MinimartModel.Discount">
+              <MappingFragment StoreEntitySet="Discount">
+                <ScalarProperty Name="discount_id" ColumnName="discount_id" />
+                <ScalarProperty Name="discount_name" ColumnName="discount_name" />
+                <ScalarProperty Name="start_time" ColumnName="start_time" />
+                <ScalarProperty Name="end_time" ColumnName="end_time" />
+                <ScalarProperty Name="sale" ColumnName="sale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="Manage_MinimartModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="person_id" ColumnName="person_id" />
+                <ScalarProperty Name="person_name" ColumnName="person_name" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="Manage_MinimartModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product_Discount">
+            <EntityTypeMapping TypeName="Manage_MinimartModel.Product_Discount">
+              <MappingFragment StoreEntitySet="Product_Discount">
+                <ScalarProperty Name="product_discount_id" ColumnName="product_discount_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="discount_id" ColumnName="discount_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="Manage_MinimartModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="role_name" ColumnName="role_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shift_detail">
+            <EntityTypeMapping TypeName="Manage_MinimartModel.Shift_detail">
+              <MappingFragment StoreEntitySet="Shift_detail">
+                <ScalarProperty Name="shift_id" ColumnName="shift_id" />
+                <ScalarProperty Name="shift_name" ColumnName="shift_name" />
+                <ScalarProperty Name="shift_date" ColumnName="shift_date" />
+                <ScalarProperty Name="start_time" ColumnName="start_time" />
+                <ScalarProperty Name="end_time" ColumnName="end_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shift_work">
+            <EntityTypeMapping TypeName="Manage_MinimartModel.Shift_work">
+              <MappingFragment StoreEntitySet="Shift_work">
+                <ScalarProperty Name="shift_work_id" ColumnName="shift_work_id" />
+                <ScalarProperty Name="person_id" ColumnName="person_id" />
+                <ScalarProperty Name="shift_id" ColumnName="shift_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -91,11 +91,6 @@ namespace ManageMiniMart.BLL
             return check;
         }
         // Add or Update
-        public void saveEmployee2(Person person)
-        {
-            db.People.AddOrUpdate(person);
-            db.SaveChanges();
-        }
         public void saveEmployee(bool IdState, string Id, string Name, DateTime Birthdate, string Address, string Email, string Salary, string PhoneNumber)
         {
             //validate value 

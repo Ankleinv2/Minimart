@@ -121,41 +121,6 @@ namespace ManageMiniMart.BLL
 
         }
 
-        //Product
-        public List<ObjectDTO> getListProductByStartDateAndEndDate(DateTime startDate, DateTime endDate)
-        {
-            List<ObjectDTO> list = new List<ObjectDTO>();
-            var bills = db.Bills.Where(b => DbFunctions.TruncateTime(b.created_time) >= startDate.Date && DbFunctions.TruncateTime(b.created_time) <= endDate.Date).ToList();
-            if (bills != null)
-            {
-                foreach (var x in bills)
-                {
-                    List<Bill_Product> bill_Product = bill_ProductService.getBill_ProductByBillId(x.bill_id);
-                    foreach (var b in bill_Product)
-                    {
-                        string productName = productService.getProductById(b.product_id).product_name;
-                        int quantity = b.quantity;
-
-                        ObjectDTO p = getElementExist(list, productName);
-                        if (p == null)
-                        {
-                            list.Add(new ObjectDTO
-                            {
-                                Text = productName,
-                                Value = quantity,
-                            });
-                        }
-                        else
-                        {
-                            p.Value += b.quantity;
-                        }
-                    }
-                }
-                return list;
-            }
-            return null;
-
-        }
         public List<object> getListProductByStartDateAndEndDate2(DateTime startDate, DateTime endDate)
         {
             var result = (from b in db.Bills.ToList()
@@ -362,62 +327,6 @@ namespace ManageMiniMart.BLL
             return list;
         }
         // Customer
-        public List<ObjectDTO> getListCustomerByStartDateAndEndDate(DateTime startDate, DateTime endDate)
-        {
-            List<ObjectDTO> list = new List<ObjectDTO>();
-            var bills = db.Bills.Where(b => DbFunctions.TruncateTime(b.created_time) >= startDate.Date && DbFunctions.TruncateTime(b.created_time) <= endDate.Date && b.customer_id != null).ToList();
-            if (bills != null)
-            {
-                foreach (var x in bills)
-                {
-                    ObjectDTO p = getElementExist(list, x.created_time.Date.ToString("dd/MM/yyyy"));
-                    if (p == null)
-                    {
-                        int countCustomer = getCountCustomerByDate(x.created_time.Date);
-                        list.Add(new ObjectDTO
-                        {
-                            Text = x.created_time.Date.ToString("dd/MM/yyyy"),
-                            Value = countCustomer,
-                        });
-                    }
-                }
-                return list;
-            }
-
-            return null;
-
-        }
-        public List<object> getListCustomerByStartDateAndEndDate2(DateTime startDate, DateTime endDate)
-        {
-            var result = db.Bills
-                    .ToList()
-                    .OrderBy(p => p.created_time.Date)
-                    .Where(p => p.created_time.Date >= startDate.Date && p.created_time.Date <= endDate.Date && p.customer_id != null)
-                    .GroupBy(b => b.created_time.Date)
-                    .Select(g => new
-                    {
-                        Date = g.Key.ToString("dd/MM/yyyy"),
-                        Value = g.Select(b => b.customer_id).Distinct().Count()
-                    })
-                    .ToList<object>();
-            return result;
-
-        }
-        public List<object> getListCustomerByMonth(DateTime startDate, DateTime endDate)
-        {
-            var result = db.Bills
-                    .ToList()
-                    .OrderBy(p => p.created_time.Date)
-                    .Where(p => p.created_time.Date >= startDate.Date && p.created_time.Date <= endDate.Date && p.customer_id != null)
-                    .GroupBy(b => b.created_time.Month)
-                    .Select(g => new
-                    {
-                        Date = g.Key.ToString(),
-                        Value = g.Select(b => b.customer_id).Distinct().Count()
-                    })
-                    .ToList<object>();
-            return result;
-
-        }
+      
     }
 }

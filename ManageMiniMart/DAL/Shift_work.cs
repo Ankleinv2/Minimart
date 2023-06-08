@@ -14,9 +14,9 @@ namespace ManageMiniMart.DAL
     
     public partial class Shift_work
     {
+        public int shift_work_id { get; set; }
         public string person_id { get; set; }
         public int shift_id { get; set; }
-        public Nullable<bool> check_done { get; set; }
     
         public virtual Account Account { get; set; }
         public virtual Shift_detail Shift_detail { get; set; }

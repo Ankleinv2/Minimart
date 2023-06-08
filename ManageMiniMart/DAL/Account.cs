@@ -11,8 +11,7 @@ namespace ManageMiniMart.DAL
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Account
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,7 +22,6 @@ namespace ManageMiniMart.DAL
     
         public string person_id { get; set; }
         public int role_id { get; set; }
-        [MaxLength]
         public string password { get; set; }
     
         public virtual Person Person { get; set; }

@@ -415,11 +415,11 @@
     <EmbeddedResource Include="View\SelectProductToDiscount.resx">
       <DependentUpon>SelectProductToDiscount.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.Config" />
     <EntityDeploy Include="DAL\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
     <None Include="DAL\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>

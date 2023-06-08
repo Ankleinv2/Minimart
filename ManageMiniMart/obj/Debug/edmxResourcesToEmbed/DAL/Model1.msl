@@ -120,9 +120,9 @@
     <EntitySetMapping Name="Shift_work">
       <EntityTypeMapping TypeName="Manage_MinimartModel.Shift_work">
         <MappingFragment StoreEntitySet="Shift_work">
+          <ScalarProperty Name="shift_work_id" ColumnName="shift_work_id" />
           <ScalarProperty Name="person_id" ColumnName="person_id" />
           <ScalarProperty Name="shift_id" ColumnName="shift_id" />
-          <ScalarProperty Name="check_done" ColumnName="check_done" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

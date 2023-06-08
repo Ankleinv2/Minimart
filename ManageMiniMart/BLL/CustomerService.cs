@@ -58,26 +58,6 @@ namespace ManageMiniMart.BLL
             List<CustomerView> customerViews = convertToCustomerView(p);
             return customerViews;
         }
-        public List<int> getAllYear()
-        {
-            List<int> years = new List<int>();
-            var yearsInCustomer = db.Customers.OrderBy(C => C.created_time).Select(c => new { c.created_time.Year }).ToList().Distinct();
-            foreach (var year in yearsInCustomer)
-            {
-                years.Add(year.Year);
-            }
-            return years;
-        }
-        public int getAmountInMonthAndYear(int month, int year)
-        {
-            int result = 0;
-            result = db.Customers.Count(s => s.created_time.Month == month && s.created_time.Year == year);
-            return result;
-        }
-        public int getAmountCustomerInSystem()
-        {
-            return db.Customers.Count();
-        }
         // Check customerID (dùng khi thêm mới Customer)
         public bool checkCustomerID_Exist(string id)
         {

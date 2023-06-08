@@ -187,16 +187,6 @@ namespace ManageMiniMart.BLL
                 saveProduct(product);
             }
         }
-        // Delete 1 product
-        public void deleteProduct(int id)
-        {
-            var productDiscount = db.Product_Discount.Where(p => p.product_id == id).ToList();
-            db.Product_Discount.RemoveRange(productDiscount);
-
-            var product = db.Products.Where(p => p.product_id == id).ToList();
-            db.Products.RemoveRange(product);
-            db.SaveChanges();
-        }
 
     }
 }

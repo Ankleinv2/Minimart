@@ -32,21 +32,7 @@ namespace Register_Login
             discountService= new DiscountService();
             productDiscountService= new ProductDiscountService();
             shiftDetailService = new ShiftDetailService();
-            autoDeleteDiscountWhenOutOfTime();
-        }
-
-        private void autoDeleteDiscountWhenOutOfTime()
-        {
-            foreach(var discount in discountService.getAllDiscount())
-            {
-                if(discount.end_time.Date < DateTime.Now.Date) {
-                    List<Product_Discount> product_s = productDiscountService.getProduct_Discount_By_DiscountID(discount.discount_id);
-                    foreach(var product in product_s)
-                    {
-                        productDiscountService.deleteProduct_Discount(product);
-                    }
-                }
-            }
+            discountService.autoDeleteDiscountWhenOutOfTime();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

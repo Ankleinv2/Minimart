@@ -26,19 +26,6 @@ namespace ManageMiniMart.BLL
             db = new Manage_MinimartEntities();
             shiftWorkService = new ShiftWorkService();
         }
-        public List<CBBItem> getCBBShiftDetail()
-        {
-            List<CBBItem> list = new List<CBBItem>();
-            foreach (var item in db.Shift_detail)
-            {
-                list.Add(new CBBItem
-                {
-                    Value = item.shift_id,
-                    Text = item.shift_name,
-                });
-            }
-            return list;
-        }
         public List<ShiftDetailView> convertToShiftDetailView(List<Shift_detail> shift_Details)
         {
             List<ShiftDetailView> shiftDetailViews = new List<ShiftDetailView>();
@@ -62,10 +49,6 @@ namespace ManageMiniMart.BLL
             return shiftDetailViews;
         }
         // Get
-        public List<ShiftDetailView> getAllShiftDetailView()
-        {
-            return convertToShiftDetailView(db.Shift_detail.ToList());
-        }
 
         public bool verifyTimeLogin(string id)
         {
@@ -141,16 +124,6 @@ namespace ManageMiniMart.BLL
             shiftIdAdded = shift.shift_id;
         }
         // Delete
-        public void deleteShiftDetailbyID(int shiftID)
-        {
-            var shiftWork = db.Shift_work.Where(x => x.shift_id == shiftID).ToList();
-            db.Shift_work.RemoveRange(shiftWork);
-
-            var shiftDetail = db.Shift_detail.Where(p => p.shift_id == shiftID).ToList();
-            db.Shift_detail.RemoveRange(shiftDetail);
-
-            db.SaveChanges();
-        }
         public void deleteShiftDetailbyListShiftID(List<int> listShiftID)
         {
             foreach (var shiftID in listShiftID)

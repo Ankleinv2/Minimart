@@ -27,9 +27,5 @@ namespace ManageMiniMart.BLL
             }
             return list;
         }
-        public Role getRole(Account account)
-        {
-            return account.Role;
-        }
     }
 }

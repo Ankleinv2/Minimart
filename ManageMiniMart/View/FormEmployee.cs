@@ -95,19 +95,23 @@ namespace ManageMiniMart.View
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            //List<Account> accounts = new List<Account>();
-            List<string> listId = new List<string>();
-            if (dgvEmloyee.SelectedRows.Count > 0)
+            MyMessageBox messageBox = new MyMessageBox();
+            DialogResult rs = messageBox.show("Are you sure remove account?", "Confirm delete", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.QUESTION);
+            if (rs == DialogResult.Yes)
             {
-                foreach (DataGridViewRow row in dgvEmloyee.SelectedRows)
+                List<string> listId = new List<string>();
+                if (dgvEmloyee.SelectedRows.Count > 0)
                 {
-                    listId.Add(row.Cells[0].Value.ToString());
+                    foreach (DataGridViewRow row in dgvEmloyee.SelectedRows)
+                    {
+                        listId.Add(row.Cells[0].Value.ToString());
+                    }
                 }
+                userService.removeAccount(listId, currentAccount);
+                loadAllEmployee();
+                MyMessageBox myMessage = new MyMessageBox();
+                myMessage.show("Remove employee account successfully", "Notification");
             }
-            userService.removeAccount(listId, currentAccount);
-            loadAllEmployee();
-            MyMessageBox myMessage = new MyMessageBox();
-            myMessage.show("Remove employee account successfully", "Notification");
         }
     }
 }

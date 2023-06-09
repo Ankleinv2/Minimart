@@ -17,7 +17,8 @@ namespace ManageMiniMart.BLL
     public class UserService
     {
         private Manage_MinimartEntities db;
-        public UserService() {
+        public UserService()
+        {
             db = new Manage_MinimartEntities();
         }
         // Get
@@ -36,8 +37,9 @@ namespace ManageMiniMart.BLL
         {
             bool check = false;
             var account = db.Accounts.Where(p => p.person_id == employeeId).FirstOrDefault();
-            if (account != null) {
-                check= true;
+            if (account != null)
+            {
+                check = true;
             }
             return check;
         }
@@ -49,30 +51,26 @@ namespace ManageMiniMart.BLL
         }
         public void removeAccount(List<string> listId, Account current)
         {
-            MyMessageBox messageBox = new MyMessageBox();
-            DialogResult rs = messageBox.show("Are you sure remove account?", "Confirm delete", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.QUESTION);
-            if (rs == DialogResult.Yes)
+
+            bool isRemove = false;
+            foreach (string Id in listId)
             {
-                bool isRemove = false;
-                foreach (string Id in listId)
+                Account account = getAccountByPersonId(Id);
+                if (account != null)
                 {
-                    Account account = getAccountByPersonId(Id);
-                    if (account != null)
+                    if (account.person_id != current.person_id)
                     {
-                        if (account.person_id != current.person_id)
-                        {
-                            var shiftWork = db.Shift_work.Where(p => p.person_id == account.person_id).ToList();
-                            db.Shift_work.RemoveRange(shiftWork);
-                            db.Accounts.Remove(account);
-                            db.SaveChanges();
-                            isRemove = true;
-                        }
+                        var shiftWork = db.Shift_work.Where(p => p.person_id == account.person_id).ToList();
+                        db.Shift_work.RemoveRange(shiftWork);
+                        db.Accounts.Remove(account);
+                        db.SaveChanges();
+                        isRemove = true;
                     }
                 }
                 if (!isRemove) throw new Exception("Nothing to remove or you cannot remove your own account");
-            }  
+            }
         }
-        public void resetPassword(List<Account> accounts)   
+        public void resetPassword(List<Account> accounts)
         {
             if (accounts.Count == 0) throw new Exception("Nothing to reset");
             foreach (Account account in accounts)

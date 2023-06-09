@@ -75,22 +75,29 @@ namespace ManageMiniMart.View
 
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
-            List<Account> accounts = new List<Account>();
-            if (dgvEmloyee.SelectedRows.Count > 0)
+
+            MyMessageBox messageBox = new MyMessageBox();
+            DialogResult rs = messageBox.show("Are you sure reset password ", "Confirm reset", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.QUESTION);
+            if (rs == DialogResult.Yes)
             {
-                foreach (DataGridViewRow row in dgvEmloyee.SelectedRows)
+                List<Account> accounts = new List<Account>();
+                if (dgvEmloyee.SelectedRows.Count > 0)
                 {
-                    Account account = userService.getAccountByPersonId(row.Cells[0].Value.ToString());
-                    if (account != null)
+                    foreach (DataGridViewRow row in dgvEmloyee.SelectedRows)
                     {
-                        accounts.Add(account);
+                        Account account = userService.getAccountByPersonId(row.Cells[0].Value.ToString());
+                        if (account != null)
+                        {
+                            accounts.Add(account);
+                        }
                     }
                 }
+                userService.resetPassword(accounts);
+                loadAllEmployee();
+                MyMessageBox myMessage = new MyMessageBox();
+                myMessage.show("Reset password successfully", "Notification");
             }
-            userService.resetPassword(accounts);
-            loadAllEmployee();
-            MyMessageBox myMessage = new MyMessageBox();
-            myMessage.show("Reset password successfully", "Notification");
+
         }
 
         private void btnDel_Click(object sender, EventArgs e)

@@ -87,7 +87,12 @@ namespace ManageMiniMart.View
                     }
                 }
             }
-            userService.resetPassword(accounts);
+            MyMessageBox messageBox = new MyMessageBox();
+            DialogResult rs = messageBox.show("Are you sure reset password ", "Confirm reset", MyMessageBox.TypeMessage.YESNO, MyMessageBox.TypeIcon.QUESTION);
+            if (rs == DialogResult.Yes)
+            {
+                userService.resetPassword(accounts);
+            }
             loadAllEmployee();
             MyMessageBox myMessage = new MyMessageBox();
             myMessage.show("Reset password successfully", "Notification");

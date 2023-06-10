@@ -38,7 +38,7 @@ namespace ManageMiniMart.BLL
             });
             foreach (var item in p)
             {
-                if (item.end_time.Date >= DateTime.Now.Date)// && item.start_time.Date <= DateTime.Now.Date
+                if (item.end_time.Date >= DateTime.Now.Date && item.start_time.Date <= DateTime.Now.Date)// 
                 {
                     list.Add(new CBBItem
                     {
@@ -114,7 +114,7 @@ namespace ManageMiniMart.BLL
             Discount discount = db.Discounts.Find(discountId);
             if (discount != null)
             {
-                if (discount.end_time.Date < DateTime.Now.Date || discount.start_time.Date > DateTime.Now.Date)
+                if (discount.end_time.Date < DateTime.Now.Date || discount.start_time.Date > DateTime.Now.Date) //
                 {
                     MyMessageBox messageBox = new MyMessageBox();
                     messageBox.show("Discount is expired!!!");
@@ -186,7 +186,7 @@ namespace ManageMiniMart.BLL
             }
             foreach (var discount in getAllDiscount())
             {
-                if (discount.end_time.Date < DateTime.Now.Date || discount.start_time.Date > DateTime.Now.Date)
+                if (discount.end_time.Date < DateTime.Now.Date || discount.start_time.Date > DateTime.Now.Date) //
                 {
                     List<Product_Discount> product_s = productDiscountService.getProduct_Discount_By_DiscountID(discount.discount_id);
                     foreach (var product in product_s)

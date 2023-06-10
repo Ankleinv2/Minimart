@@ -1,11 +1,14 @@
 ﻿using ManageMiniMart.Custom;
 using ManageMiniMart.DAL;
 using ManageMiniMart.DTO;
+using ManageMiniMart.View;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +20,11 @@ namespace ManageMiniMart.BLL
     public class UserService
     {
         private Manage_MinimartEntities db;
+        private ShiftDetailService shiftDetailService;
         public UserService()
         {
             db = new Manage_MinimartEntities();
+            shiftDetailService = new ShiftDetailService();
         }
         // Get
         public Account getAccountByPersonId(string personId)
@@ -30,7 +35,9 @@ namespace ManageMiniMart.BLL
         }
         public Account getAccount(string username, string password)
         {
-            return db.Accounts.Where(user => user.person_id.Equals(username) && user.password.Equals(password)).FirstOrDefault();
+            Account account = db.Accounts.Where(user => user.person_id.Equals(username) && user.password.Equals(password)).FirstOrDefault();
+            if (account == null) throw new Exception("User id or password wrong!");
+            return account;
         }
         // Check
         public bool checkUserExits(string employeeId)
@@ -80,6 +87,7 @@ namespace ManageMiniMart.BLL
             }
             db.SaveChanges();
         }
+
         public string encryption(string password)
         {
             MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();

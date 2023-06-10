@@ -108,7 +108,7 @@ namespace ManageMiniMart.BLL
         public bool saveBill(int QuantityinBill, string Id, string employeeId, string Payment, DateTime CurrentTime, List<ProductInBill> ProductsInBill, bool checkUsePoint)
         {
             bool haveCustomer = false;
-            if (QuantityinBill == 0) throw new Exception("Chua co san pham trong gio hang");
+            if (QuantityinBill == 0) throw new Exception("There are no products in the cart");
             string customerId = Id;
             Customer customer = customerService.getCustomerById(Id);
             if (customer == null)

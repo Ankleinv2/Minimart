@@ -50,40 +50,24 @@ namespace Register_Login
         {
             string userId = txtUserId.Text;
             string password = userService.encryption(txtPassword.Text);
-            Account account = userService.getAccount(userId,password);
-            if (account != null)
+            txtPassword.Text = "";
+            txtPassword.Focus();
+            Account account = userService.getAccount(userId, password);
+            if (account.role_id == 1)
             {
-                if(account.role_id == 1)
+                if (shiftDetailService.verifyTimeLogin(account))
                 {
-                    if (shiftDetailService.verifyTimeLogin(account.person_id))
-                    {
-                        DashboardEmployee employee = new DashboardEmployee(account, showAgain);        // Employee 
-                        Hide();
-                        employee.Show();
-                    }
-                    else
-                    {
-                        txtPassword.Text = "";
-                        txtPassword.Focus();
-                        throw new Exception($"Khong phai ca lam cua nhan vien {account.Person.person_name}");
-                    }
-                }
-                else
-                {
-                    Dashboard dashboard = new Dashboard(account,showAgain);                   // Manager,closeForm
+                    DashboardEmployee employee = new DashboardEmployee(account, showAgain);        // Employee 
                     Hide();
-                    dashboard.Show();
-                    
+                    employee.Show();
                 }
             }
             else
             {
-                MyMessageBox messageBox = new MyMessageBox();
-                messageBox.show("User id or password wrong! ");
+                Dashboard dashboard = new Dashboard(account, showAgain);                   // Manager,closeForm
+                Hide();
+                dashboard.Show();
             }
-            txtPassword.Text = "";
-            txtPassword.Focus();
-
         }
 
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
@@ -101,10 +85,6 @@ namespace Register_Login
             txtUserId.Text = "";
             txtPassword.Text = "";
             txtUserId.Focus();
-        }
-        private void closeForm()
-        {
-            Dispose();
         }
 
 

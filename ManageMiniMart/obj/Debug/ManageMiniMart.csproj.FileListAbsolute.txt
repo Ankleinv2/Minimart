@@ -732,7 +732,6 @@ C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\zh-CHS\Microsoft.Re
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormBillPrint.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\bin\Debug\View\BillDetail.rdlc
-C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.AddDiscountProductsForm.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.FormStatistical.resources
 C:\Users\ACER\Desktop\PBL3\minimart\ManageMiniMart\obj\Debug\ManageMiniMart.View.SelectProductToDiscount.resources
 H:\OneDrive - The University of Technology\PBL3\PBL3_Minimart_v2\minimart-master\minimart-master\ManageMiniMart\bin\Debug\SqlServerTypes\x64\msvcr120.dll

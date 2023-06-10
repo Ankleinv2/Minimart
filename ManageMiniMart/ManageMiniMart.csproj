@@ -195,12 +195,6 @@
     <Compile Include="View\AddCustomerForm.Designer.cs">
       <DependentUpon>AddCustomerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\AddDiscountProductsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\AddDiscountProductsForm.Designer.cs">
-      <DependentUpon>AddDiscountProductsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\AddEmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,9 +331,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddCustomerForm.resx">
       <DependentUpon>AddCustomerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\AddDiscountProductsForm.resx">
-      <DependentUpon>AddDiscountProductsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>

@@ -8,6 +8,7 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -50,20 +51,19 @@ namespace ManageMiniMart.BLL
         }
         // Get
 
-        public bool verifyTimeLogin(string id)
+        public bool verifyTimeLogin(Account account)
         {
             DateTime currentTime = DateTime.Parse(DateTime.Now.ToShortTimeString());
             DateTime currentDay = DateTime.Now.Date;
-
             List<Shift_work> shift_work = db.Shift_work.Where(p => p.Shift_detail.shift_date == currentDay).ToList();
             foreach (var shift in shift_work)
             {
-                if (shift.person_id == id && (TimeSpan.Compare(currentTime.TimeOfDay, shift.Shift_detail.start_time) >= 0 && TimeSpan.Compare(currentTime.TimeOfDay, shift.Shift_detail.end_time) <= 0))
+                if (shift.person_id == account.person_id && (TimeSpan.Compare(currentTime.TimeOfDay, shift.Shift_detail.start_time) >= 0 && TimeSpan.Compare(currentTime.TimeOfDay, shift.Shift_detail.end_time) <= 0))
                 {
                     return true;
                 }
             }
-            return false;
+            throw new Exception($"Not the {account.Person.person_name} shift");
         }
 
         public Shift_detail getShift_detailById(int shiftId)

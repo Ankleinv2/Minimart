@@ -63,7 +63,7 @@ namespace ManageMiniMart
             }
             else
             {
-                dgvProduct.DataSource = productService.getListProductViewByProductName(productName);
+                dgvProduct.DataSource = productService.getListProductViewByProductName(productName, -1);
             }
             
         }
@@ -73,7 +73,7 @@ namespace ManageMiniMart
             int cID = ((CBBItem)cbbCategory.SelectedItem).Value;
             if(cID == 0)
             {
-                dgvProduct.DataSource = productService.getListProductViewByProductName(txtProductName.Text.Trim());
+                dgvProduct.DataSource = productService.getListProductViewByProductName(txtProductName.Text.Trim(), -1);
             }
             else
             {

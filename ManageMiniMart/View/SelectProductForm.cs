@@ -26,7 +26,7 @@ namespace ManageMiniMart.View
         }
         public void loadAllProducts(string name)
         {
-            dgvProduct.DataSource = productService.getListProductViewByProductName(name);
+            dgvProduct.DataSource = productService.getListProductViewByProductName(name, 1);
         }
         private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

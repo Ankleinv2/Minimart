@@ -8,6 +8,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Animation;
 using System.Xml.Linq;
 
 namespace ManageMiniMart.BLL
@@ -62,10 +63,10 @@ namespace ManageMiniMart.BLL
             Product product = db.Products.Where(p => p.product_id == id).FirstOrDefault();
             return product;
         }
-        public List<ProductView> getListProductViewByProductName(string name)                    // tìm kiếm danh sách theo tên sản phẩm
+        public List<ProductView> getListProductViewByProductName(string name, int value)                    // tìm kiếm danh sách theo tên sản phẩm
         {
             List<ProductView> products = new List<ProductView>();
-            var s = db.Products.Where(p => p.product_name.Contains(name) && p.quantity > 0).ToList();
+            var s = db.Products.Where(p => p.product_name.Contains(name) && p.quantity > value).ToList();
             products = convertToProductView(s);
             return products;
         }

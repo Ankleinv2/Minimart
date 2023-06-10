@@ -140,7 +140,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Bill__customer_i__3B75D760">
+  <Association Name="FK__Bill__customer_i__4D94879B">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
     <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
     <ReferentialConstraint>
@@ -152,7 +152,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Bill__person_id__3C69FB99">
+  <Association Name="FK__Bill__person_id__4E88ABD4">
     <End Role="Person" Type="Self.Person" Multiplicity="1" />
     <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
     <ReferentialConstraint>
@@ -164,7 +164,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Bill_Prod__bill___3D5E1FD2">
+  <Association Name="FK__Bill_Prod__bill___4F7CD00D">
     <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
     <End Role="Bill_Product" Type="Self.Bill_Product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -176,7 +176,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Bill_Prod__produ__3E52440B">
+  <Association Name="FK__Bill_Prod__produ__5070F446">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
     <End Role="Bill_Product" Type="Self.Bill_Product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -188,7 +188,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Product__categor__3F466844">
+  <Association Name="FK__Product__categor__5165187F">
     <End Role="Category" Type="Self.Category" Multiplicity="1" />
     <End Role="Product" Type="Self.Product" Multiplicity="*" />
     <ReferentialConstraint>
@@ -200,7 +200,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Product_D__disco__403A8C7D">
+  <Association Name="FK__Product_D__disco__52593CB8">
     <End Role="Discount" Type="Self.Discount" Multiplicity="1" />
     <End Role="Product_Discount" Type="Self.Product_Discount" Multiplicity="*" />
     <ReferentialConstraint>
@@ -212,7 +212,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Product_D__produ__412EB0B6">
+  <Association Name="FK__Product_D__produ__534D60F1">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
     <End Role="Product_Discount" Type="Self.Product_Discount" Multiplicity="*" />
     <ReferentialConstraint>
@@ -269,31 +269,31 @@
       <End Role="Role" EntitySet="Role" />
       <End Role="Account" EntitySet="Account" />
     </AssociationSet>
-    <AssociationSet Name="FK__Bill__customer_i__3B75D760" Association="Self.FK__Bill__customer_i__3B75D760">
+    <AssociationSet Name="FK__Bill__customer_i__4D94879B" Association="Self.FK__Bill__customer_i__4D94879B">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Bill" EntitySet="Bill" />
     </AssociationSet>
-    <AssociationSet Name="FK__Bill__person_id__3C69FB99" Association="Self.FK__Bill__person_id__3C69FB99">
+    <AssociationSet Name="FK__Bill__person_id__4E88ABD4" Association="Self.FK__Bill__person_id__4E88ABD4">
       <End Role="Person" EntitySet="Person" />
       <End Role="Bill" EntitySet="Bill" />
     </AssociationSet>
-    <AssociationSet Name="FK__Bill_Prod__bill___3D5E1FD2" Association="Self.FK__Bill_Prod__bill___3D5E1FD2">
+    <AssociationSet Name="FK__Bill_Prod__bill___4F7CD00D" Association="Self.FK__Bill_Prod__bill___4F7CD00D">
       <End Role="Bill" EntitySet="Bill" />
       <End Role="Bill_Product" EntitySet="Bill_Product" />
     </AssociationSet>
-    <AssociationSet Name="FK__Bill_Prod__produ__3E52440B" Association="Self.FK__Bill_Prod__produ__3E52440B">
+    <AssociationSet Name="FK__Bill_Prod__produ__5070F446" Association="Self.FK__Bill_Prod__produ__5070F446">
       <End Role="Product" EntitySet="Product" />
       <End Role="Bill_Product" EntitySet="Bill_Product" />
     </AssociationSet>
-    <AssociationSet Name="FK__Product__categor__3F466844" Association="Self.FK__Product__categor__3F466844">
+    <AssociationSet Name="FK__Product__categor__5165187F" Association="Self.FK__Product__categor__5165187F">
       <End Role="Category" EntitySet="Category" />
       <End Role="Product" EntitySet="Product" />
     </AssociationSet>
-    <AssociationSet Name="FK__Product_D__disco__403A8C7D" Association="Self.FK__Product_D__disco__403A8C7D">
+    <AssociationSet Name="FK__Product_D__disco__52593CB8" Association="Self.FK__Product_D__disco__52593CB8">
       <End Role="Discount" EntitySet="Discount" />
       <End Role="Product_Discount" EntitySet="Product_Discount" />
     </AssociationSet>
-    <AssociationSet Name="FK__Product_D__produ__412EB0B6" Association="Self.FK__Product_D__produ__412EB0B6">
+    <AssociationSet Name="FK__Product_D__produ__534D60F1" Association="Self.FK__Product_D__produ__534D60F1">
       <End Role="Product" EntitySet="Product" />
       <End Role="Product_Discount" EntitySet="Product_Discount" />
     </AssociationSet>

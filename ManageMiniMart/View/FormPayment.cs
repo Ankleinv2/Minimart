@@ -58,13 +58,13 @@ namespace ManageMiniMart.View
             if (customerService.getCustomerPoint(customerId) != 0)
             {
                 checkUsePoint.Visible = true;
-                guna2HtmlLabel1.Visible = true;
-                showPoint.Text = customerService.getCustomerPoint(customerId).ToString() + " points";
+                lblUsePoint.Visible = true;
+                lblUsePoint.Text = "Use Point: "+customerService.getCustomerPoint(customerId).ToString() + " points";
             }
             else
             {
                 checkUsePoint.Visible = false;
-                guna2HtmlLabel1.Visible = false;
+                lblUsePoint.Visible = false;
                 showPoint.Text = "";
             }
         }
@@ -73,7 +73,9 @@ namespace ManageMiniMart.View
             string customerName = txtCustomerName.Text;
             SelectCustomerForm selectCustomerForm = new SelectCustomerForm(setCustomerId_Input);
             selectCustomerForm.setCustomer(customerName);
-            selectCustomerForm.Show();
+            selectCustomerForm.ShowDialog();
+            if(txtCustomerID.Text!="")
+            btnRemoveCustomerSelect.Visible = true;
         }
 
         private void btnSearchProduct_Click(object sender, EventArgs e)
@@ -125,8 +127,9 @@ namespace ManageMiniMart.View
             txtCustomerName.Text = "";
             checkUsePoint.Visible = false;
             checkUsePoint.Checked = false;
-            guna2HtmlLabel1.Visible = false;
+            lblUsePoint.Visible = false;
             showPoint.Text = "";
+            btnRemoveCustomerSelect.Visible = false;
         }
     }
 }

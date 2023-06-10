@@ -49,6 +49,8 @@ namespace ManageMiniMart.BLL
         }
         public int getCustomerPoint(string id)
         {
+            db = null;
+            db = new Manage_MinimartEntities();
             Customer customer = getCustomerById(id);
             return Convert.ToInt32(customer.point);
         }

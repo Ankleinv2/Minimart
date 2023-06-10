@@ -152,8 +152,7 @@ namespace ManageMiniMart.BLL
             }
             if (customer != null)
             {                                                       // 20000 = 1 đ
-                int oldPoint = (int)customer.point;                  // 1đ = 1000
-                int pointAdd = (int)(totalMoney / 20000);
+                int oldPoint = (int)customer.point; // 1đ = 1000
                 if (checkUsePoint)
                 {
                     if (totalMoney < Convert.ToDouble(customer.point * 1000))
@@ -169,7 +168,7 @@ namespace ManageMiniMart.BLL
                         bill.used_points = oldPoint;
                     }
                 }
-                customer.point += pointAdd;
+                customer.point += (int)(totalMoney / 20000);
                 saveBill(bill);
                 customerService.saveCustomer(customer);
                 haveCustomer = true;

@@ -53,27 +53,30 @@ namespace ManageMiniMart.View
 
         private void setCustomerId_Input(string customerId)
         {
-            txtCustomerName.Text = customerService.getCustomerById(customerId).customer_name;
-            txtCustomerID.Text = customerId;
-            if (customerService.getCustomerPoint(customerId) != 0)
+            if (customerId != "")
             {
-                checkUsePoint.Visible = true;
-                guna2HtmlLabel1.Visible = true;
-                showPoint.Text = customerService.getCustomerPoint(customerId).ToString() + " points";
-            }
-            else
-            {
-                checkUsePoint.Visible = false;
-                guna2HtmlLabel1.Visible = false;
-                showPoint.Text = "";
-            }
+                txtCustomerName.Text = customerService.getCustomerById(customerId).customer_name;
+                txtCustomerID.Text = customerId;
+                if (customerService.getCustomerPoint(customerId) != 0)
+                {
+                    checkUsePoint.Visible = true;
+                    lblUsePoint.Visible = true;
+                    lblUsePoint.Text = "Use Point: " + customerService.getCustomerPoint(customerId).ToString() + " points";
+                }
+                else
+                {
+                    checkUsePoint.Visible = false;
+                    lblUsePoint.Visible = false;
+                }
+                btnRemoveCustomerSelect.Visible = true;
+            }  
         }
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
             string customerName = txtCustomerName.Text;
             SelectCustomerForm selectCustomerForm = new SelectCustomerForm(setCustomerId_Input);
             selectCustomerForm.setCustomer(customerName);
-            selectCustomerForm.Show();
+            selectCustomerForm.ShowDialog();
         }
 
         private void btnSearchProduct_Click(object sender, EventArgs e)
@@ -103,6 +106,7 @@ namespace ManageMiniMart.View
                 }
                 listProductInBill.Clear();
                 loadProductInBill();
+                setCustomerId_Input(txtCustomerID.Text);
             }
         }
 
@@ -125,8 +129,8 @@ namespace ManageMiniMart.View
             txtCustomerName.Text = "";
             checkUsePoint.Visible = false;
             checkUsePoint.Checked = false;
-            guna2HtmlLabel1.Visible = false;
-            showPoint.Text = "";
+            lblUsePoint.Visible = false;
+            btnRemoveCustomerSelect.Visible = false;
         }
     }
 }

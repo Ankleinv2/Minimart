@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPayment));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,13 +43,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRemove = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.showPoint = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblUsePoint = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.checkUsePoint = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtProductId = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCustomerName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnRemoveCustomerSelect = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearchCustomer = new Guna.UI2.WinForms.Guna2Button();
+            this.txtCustomerID = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvProduct = new Guna.UI2.WinForms.Guna2DataGridView();
             this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,7 +64,6 @@
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productInBillBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productInBillBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.txtCustomerID = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -217,13 +218,14 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.showPoint);
-            this.panel3.Controls.Add(this.guna2HtmlLabel1);
+            this.panel3.Controls.Add(this.guna2HtmlLabel2);
+            this.panel3.Controls.Add(this.lblUsePoint);
             this.panel3.Controls.Add(this.checkUsePoint);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.txtProductId);
             this.panel3.Controls.Add(this.txtCustomerName);
             this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.btnRemoveCustomerSelect);
             this.panel3.Controls.Add(this.btnSearchCustomer);
             this.panel3.Controls.Add(this.btnSearchProduct);
             this.panel3.Controls.Add(this.label2);
@@ -237,31 +239,31 @@
             this.panel3.Size = new System.Drawing.Size(901, 361);
             this.panel3.TabIndex = 13;
             // 
-            // showPoint
+            // guna2HtmlLabel2
             // 
-            this.showPoint.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.showPoint.BackColor = System.Drawing.Color.Transparent;
-            this.showPoint.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showPoint.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.showPoint.Location = new System.Drawing.Point(759, 303);
-            this.showPoint.Name = "showPoint";
-            this.showPoint.Size = new System.Drawing.Size(3, 2);
-            this.showPoint.TabIndex = 17;
-            this.showPoint.Text = null;
+            this.guna2HtmlLabel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(855, 295);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(3, 2);
+            this.guna2HtmlLabel2.TabIndex = 17;
+            this.guna2HtmlLabel2.Text = null;
             // 
-            // guna2HtmlLabel1
+            // lblUsePoint
             // 
-            this.guna2HtmlLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Enabled = false;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(668, 303);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(93, 24);
-            this.guna2HtmlLabel1.TabIndex = 16;
-            this.guna2HtmlLabel1.Text = "Use point:";
-            this.guna2HtmlLabel1.Visible = false;
+            this.lblUsePoint.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblUsePoint.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsePoint.Enabled = false;
+            this.lblUsePoint.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsePoint.ForeColor = System.Drawing.Color.White;
+            this.lblUsePoint.Location = new System.Drawing.Point(668, 300);
+            this.lblUsePoint.Name = "lblUsePoint";
+            this.lblUsePoint.Size = new System.Drawing.Size(93, 24);
+            this.lblUsePoint.TabIndex = 16;
+            this.lblUsePoint.Text = "Use point:";
+            this.lblUsePoint.Visible = false;
             // 
             // checkUsePoint
             // 
@@ -341,6 +343,28 @@
             this.txtCustomerName.Size = new System.Drawing.Size(225, 38);
             this.txtCustomerName.TabIndex = 10;
             // 
+            // btnRemoveCustomerSelect
+            // 
+            this.btnRemoveCustomerSelect.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRemoveCustomerSelect.BorderColor = System.Drawing.Color.Crimson;
+            this.btnRemoveCustomerSelect.BorderRadius = 9;
+            this.btnRemoveCustomerSelect.BorderThickness = 1;
+            this.btnRemoveCustomerSelect.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRemoveCustomerSelect.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRemoveCustomerSelect.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRemoveCustomerSelect.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRemoveCustomerSelect.FillColor = System.Drawing.Color.Empty;
+            this.btnRemoveCustomerSelect.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveCustomerSelect.ForeColor = System.Drawing.Color.White;
+            this.btnRemoveCustomerSelect.Image = ((System.Drawing.Image)(resources.GetObject("btnRemoveCustomerSelect.Image")));
+            this.btnRemoveCustomerSelect.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnRemoveCustomerSelect.Location = new System.Drawing.Point(609, 220);
+            this.btnRemoveCustomerSelect.Name = "btnRemoveCustomerSelect";
+            this.btnRemoveCustomerSelect.Size = new System.Drawing.Size(69, 48);
+            this.btnRemoveCustomerSelect.TabIndex = 9;
+            this.btnRemoveCustomerSelect.Visible = false;
+            this.btnRemoveCustomerSelect.Click += new System.EventHandler(this.btnClearCustomer_Click);
+            // 
             // btnSearchCustomer
             // 
             this.btnSearchCustomer.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -356,12 +380,38 @@
             this.btnSearchCustomer.ForeColor = System.Drawing.Color.White;
             this.btnSearchCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchCustomer.Image")));
             this.btnSearchCustomer.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnSearchCustomer.Location = new System.Drawing.Point(482, 228);
+            this.btnSearchCustomer.Location = new System.Drawing.Point(482, 220);
             this.btnSearchCustomer.Name = "btnSearchCustomer";
             this.btnSearchCustomer.Size = new System.Drawing.Size(106, 48);
             this.btnSearchCustomer.TabIndex = 9;
             this.btnSearchCustomer.Text = "Find";
             this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
+            // 
+            // txtCustomerID
+            // 
+            this.txtCustomerID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtCustomerID.BorderColor = System.Drawing.Color.MediumSeaGreen;
+            this.txtCustomerID.BorderRadius = 10;
+            this.txtCustomerID.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCustomerID.DefaultText = "";
+            this.txtCustomerID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCustomerID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCustomerID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomerID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCustomerID.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.txtCustomerID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomerID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerID.ForeColor = System.Drawing.Color.White;
+            this.txtCustomerID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCustomerID.Location = new System.Drawing.Point(228, 230);
+            this.txtCustomerID.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtCustomerID.Name = "txtCustomerID";
+            this.txtCustomerID.PasswordChar = '\0';
+            this.txtCustomerID.PlaceholderText = "";
+            this.txtCustomerID.SelectedText = "";
+            this.txtCustomerID.Size = new System.Drawing.Size(225, 38);
+            this.txtCustomerID.TabIndex = 18;
+            this.txtCustomerID.Visible = false;
             // 
             // panel2
             // 
@@ -374,21 +424,21 @@
             // 
             // dgvProduct
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            this.dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProduct.AutoGenerateColumns = false;
             this.dgvProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProduct.ColumnHeadersHeight = 50;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -402,15 +452,15 @@
             this.amountDataGridViewTextBoxColumn});
             this.dgvProduct.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dgvProduct.DataSource = this.productInBillBindingSource;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProduct.Location = new System.Drawing.Point(0, 0);
@@ -508,32 +558,6 @@
             // 
             this.productInBillBindingSource1.DataSource = typeof(ManageMiniMart.DTO.ProductInBill);
             // 
-            // txtCustomerID
-            // 
-            this.txtCustomerID.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCustomerID.BorderColor = System.Drawing.Color.MediumSeaGreen;
-            this.txtCustomerID.BorderRadius = 10;
-            this.txtCustomerID.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCustomerID.DefaultText = "";
-            this.txtCustomerID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCustomerID.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCustomerID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCustomerID.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.txtCustomerID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerID.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerID.ForeColor = System.Drawing.Color.White;
-            this.txtCustomerID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCustomerID.Location = new System.Drawing.Point(228, 230);
-            this.txtCustomerID.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtCustomerID.Name = "txtCustomerID";
-            this.txtCustomerID.PasswordChar = '\0';
-            this.txtCustomerID.PlaceholderText = "";
-            this.txtCustomerID.SelectedText = "";
-            this.txtCustomerID.Size = new System.Drawing.Size(225, 38);
-            this.txtCustomerID.TabIndex = 18;
-            this.txtCustomerID.Visible = false;
-            // 
             // FormPayment
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -578,9 +602,8 @@
         private System.Windows.Forms.BindingSource productInBillBindingSource;
         private Guna.UI2.WinForms.Guna2Button btnSearchCustomer;
         private System.Windows.Forms.BindingSource productInBillBindingSource1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblUsePoint;
         private Guna.UI2.WinForms.Guna2ToggleSwitch checkUsePoint;
-        private Guna.UI2.WinForms.Guna2HtmlLabel showPoint;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
@@ -590,5 +613,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private Guna.UI2.WinForms.Guna2TextBox txtCustomerID;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2Button btnRemoveCustomerSelect;
     }
 }

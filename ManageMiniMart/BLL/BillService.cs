@@ -61,27 +61,14 @@ namespace ManageMiniMart.BLL
             return result;
         }
         // Get
-        public List<BillView> getAllBillView()
-        {
-            var bills = db.Bills.ToList();
-            return convertToBillView(bills);
-        }
         public Bill getBillById(int id)
         {
             return db.Bills.Find(id);
         }
-        public List<BillView> getAllBillViewByCustomerName(string customerName)
+        public List<BillView> getAllBillViewByCustomerName(string customerName, DateTime date)
         {
-            if (customerName == "")
-            {
-                var bills = db.Bills.ToList();
+                var bills = db.Bills.Where(b => b.Customer.customer_name.Contains(customerName) && DbFunctions.TruncateTime(b.created_time) == date).ToList();
                 return convertToBillView(bills);
-            }
-            else
-            {
-                var bills = db.Bills.Where(b => b.Customer.customer_name.Contains(customerName)).ToList();
-                return convertToBillView(bills);
-            }
         }
         public double getTotalByBill(int billId)
         {
@@ -251,9 +238,9 @@ namespace ManageMiniMart.BLL
             }
         }
         // Sort
-        public List<BillView> getAllBillViewSortBy(string s, int flag)
+        public List<BillView> getAllBillViewSortBy(string s, int flag, DateTime date)
         {
-            var list = getAllBillView();
+            var list = getAllBillViewByBillDate(date);
             string format = "dd/MM/yyyy HH:mm:ss";
             if (s == "CreatedTime")
             {

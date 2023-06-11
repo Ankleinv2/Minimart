@@ -37,25 +37,6 @@ namespace ManageMiniMart.BLL
             }
             return total;
         }
-        public int getCountCustomerByDate(DateTime dateTime)
-        {
-            var l = db.Bills.Where(b => DbFunctions.TruncateTime(b.created_time) == dateTime.Date && b.customer_id != null)
-                .Select(x => x.customer_id)
-                .Distinct()
-                .ToList();
-
-            return l.Count();
-        }
-        public int getCountCustomerByMonth(DateTime dateTime)
-        {
-            var l = db.Bills.Where(b => DbFunctions.TruncateTime(b.created_time) == dateTime.Date && b.customer_id != null)
-                .Select(x => x.customer_id)
-                .Distinct()
-                .ToList();
-
-            return l.Count();
-        }
-
         public ObjectDTO getElementExist(List<ObjectDTO> list, string element)
         {
             foreach (var b in list)

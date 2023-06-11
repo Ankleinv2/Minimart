@@ -39,16 +39,16 @@ namespace ManageMiniMart
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string customerName = txtSearch.Text;
-            dgvBill.DataSource = billService.getAllBillViewByCustomerName(customerName);
+            dgvBill.DataSource = billService.getAllBillViewByCustomerName(customerName, dtpBillDate.Value.Date);
         }
 
         private void btnSortBy_Click(object sender, EventArgs e)
         {
             string s = cbbSort1.Text;
             int flag = cbbSort2.SelectedIndex;
-            var list = billService.getAllBillViewSortBy(s, flag);
+            var list = billService.getAllBillViewSortBy(s, flag, dtpBillDate.Value.Date);
 
-            dgvBill.DataSource = list;
+            dgvBill.DataSource = list; 
         }
 
         private void dgvBill_CellContentClick(object sender, DataGridViewCellEventArgs e)

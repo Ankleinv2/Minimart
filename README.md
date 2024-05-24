@@ -1,7 +1,10 @@
 # minimart
+
 ### Technology used in project
-> Back-end : .NET, EntityFramework
+> Back-end : .NET, EntityFramework 
+
 > Database : SQLServer
+
 ![image](https://github.com/GauMeoDaThanh/minimart/assets/95362295/3eb40d9f-b7f8-446e-974a-ff18360952e3)
 ![image](https://github.com/GauMeoDaThanh/minimart/assets/95362295/9452559a-a27f-4a3d-8b30-f0d18dd2527d)
 ![image](https://github.com/GauMeoDaThanh/minimart/assets/95362295/a864150a-7ee3-4082-a5ab-eaffe2502627)
